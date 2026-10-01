@@ -1,0 +1,21 @@
+@use "sass:map";
+
+// Mobile-first: styles without a query target the 390px mobile design.
+// The design only defines 390px and 1440px, so md/lg are intermediate steps (see docs/ARCHITECTURE.md).
+$breakpoints: (
+  md: 768px,
+  lg: 1024px,
+  xl: 1440px,
+);
+
+/// Applies the content from the given breakpoint upwards (min-width).
+/// @param {String} $name - key of $breakpoints (md, lg, xl)
+@mixin respond-to($name) {
+  @if map.has-key($breakpoints, $name) {
+    @media (min-width: map.get($breakpoints, $name)) {
+      @content;
+    }
+  } @else {
+    @error "Unknown breakpoint `#{$name}`. Use one of: #{map.keys($breakpoints)}.";
+  }
+}

@@ -1,0 +1,29 @@
+@use "variables" as v;
+
+// Base typography. Sizes of headings are set per section, because the design
+// uses different scales for hero, section titles and legal pages.
+body {
+  font-family: v.$font-family-base;
+  font-size: v.$font-size-body;
+  font-weight: v.$font-weight-regular;
+  line-height: v.$line-height-base;
+  color: v.$color-text;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: v.$font-weight-bold;
+  line-height: v.$line-height-base;
+}
+
+strong {
+  font-weight: v.$font-weight-bold;
+}
+
+a {
+  color: inherit;
+}
