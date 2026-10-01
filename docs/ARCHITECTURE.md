@@ -1,0 +1,30 @@
+# Architekturentscheidungen
+
+Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
+
+## Globales Fundament (Phase 2)
+
+### Design-Tokens als SCSS-Variablen
+- **Entscheidung:** Alle Farben, Abstände, Radien, Schriftgrößen und z-index-Stufen stehen in `src/styles/_variables.scss`. Komponenten laden sie per `@use "variables" as v;` (über `stylePreprocessorOptions.includePaths`).
+- **Warum:** Eine Quelle für das Design, Änderungen wirken überall. Hex-Werte und Magic Numbers erscheinen in Komponenten-Styles nicht.
+- **Trade-off:** SCSS-Variablen werden zur Build-Zeit aufgelöst und lassen sich zur Laufzeit nicht ändern (anders als CSS Custom Properties). Ein Laufzeit-Theme gibt es nicht, ist auch nicht gefordert.
+
+### Breakpoints
+- **Entscheidung:** Mobile-first mit `respond-to(md | lg | xl)` = 768 / 1024 / 1440 px.
+- **Warum:** Figma liefert nur 390 px (Mobile) und 1440 px (Desktop). `xl` entspricht dem Desktop-Frame, `md` und `lg` sind Zwischenstufen für Tablets, die das Design nicht zeigt. Die Checkliste erlaubt hier eigene Entscheidungen nach den Prinzipien des Mockups.
+- **Trade-off:** Zwischen 1024 und 1439 px ist das Verhalten abgeleitet, nicht vorgegeben. Phase 12 prüft diese Bereiche.
+
+### Schriften lokal
+- **Entscheidung:** Poppins (400, 700) über `@fontsource/poppins`, Subset `latin`, eingebunden in `angular.json`.
+- **Warum:** Kein Google-CDN, damit werden keine IP-Adressen an Dritte übertragen (DSGVO). Das Subset `latin` deckt ä, ö, ü, ß ab.
+- **Trade-off:** Die Schrift liegt im eigenen Build (etwas mehr Auslieferung), dafür kein externer Request.
+
+### Routing
+- **Entscheidung:** `ROUTES` mit Home (direkt gebunden) sowie Legal Notice und Privacy Policy per `loadComponent` (lazy). Unbekannte Pfade leiten auf `''`. `withInMemoryScrolling` aktiviert Anker-Scrolling.
+- **Warum:** Rechtsseiten werden selten besucht und müssen nicht im Start-Bundle liegen. Anker-Scrolling erlaubt `routerLink` mit Fragment auf Sektionen der Startseite, auch von den Rechtsseiten aus.
+- **Trade-off:** Ein Redirect statt einer 404-Seite. Für ein Ein-Personen-Portfolio ausreichend.
+
+### Zoneless
+- **Entscheidung:** Kein `zone.js`, kein Zone-Provider. Änderungserkennung läuft über Signals und Events.
+- **Warum:** Angular-22-Standard, weniger Laufzeit-Overhead, klarere Datenflüsse.
+- **Trade-off:** Zustand muss in Signals liegen, sonst aktualisiert sich die Ansicht nicht.

@@ -1,0 +1,23 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Centered content column: 1240px of content plus the page gutter on both sides.
+.container {
+  width: 100%;
+  max-width: calc(v.$container-width + 2 * v.$page-gutter-desktop);
+  margin-inline: auto;
+  padding-inline: v.$page-gutter-mobile;
+
+  @include bp.respond-to(xl) {
+    padding-inline: v.$page-gutter-desktop;
+  }
+}
+
+// Vertical rhythm between page sections.
+.section {
+  padding-block: v.$section-spacing-mobile;
+
+  @include bp.respond-to(xl) {
+    padding-block: v.$section-spacing;
+  }
+}
