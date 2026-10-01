@@ -1,0 +1,59 @@
+<header class="header">
+  <div class="container header__bar">
+    <a
+      class="header__logo"
+      routerLink="/"
+      [attr.aria-label]="text().homeLinkLabel"
+      (click)="closeMenu()"
+    >
+      {{ site().logoStart }}<span class="header__logo-accent">{{ site().logoAccent }}</span>
+    </a>
+
+    <button
+      class="header__burger"
+      type="button"
+      aria-controls="main-menu"
+      [attr.aria-expanded]="isMenuOpen()"
+      [attr.aria-label]="isMenuOpen() ? text().closeMenu : text().openMenu"
+      (click)="toggleMenu()"
+    >
+      <img src="icons/burger.svg" alt="" width="32" height="32" />
+    </button>
+
+    <!-- Overlay on mobile, inline row on desktop. -->
+    <div id="main-menu" class="header__menu" [class.header__menu--open]="isMenuOpen()">
+      <nav [attr.aria-label]="text().navLabel">
+        <ul class="header__nav-list">
+          @for (item of text().navItems; track item.fragment) {
+            <li [class.header__nav-item--mobile-only]="item.mobileOnly">
+              <a
+                class="header__nav-link"
+                routerLink="/"
+                [fragment]="item.fragment"
+                (click)="closeMenu()"
+                >{{ item.label }}</a
+              >
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <div class="header__languages" role="group" [attr.aria-label]="text().languageLabel">
+        @for (language of languages; track language; let isLast = $last) {
+          <button
+            class="header__language"
+            type="button"
+            [attr.aria-label]="text().languageNames[language]"
+            [attr.aria-pressed]="language === activeLanguage()"
+            (click)="selectLanguage(language)"
+          >
+            {{ language | uppercase }}
+          </button>
+          @if (!isLast) {
+            <span class="header__language-separator" aria-hidden="true">/</span>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</header>

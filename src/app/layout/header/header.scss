@@ -1,0 +1,145 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Fixed bar above the page content. On mobile the menu is a full-screen overlay.
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: v.$z-header;
+  background-color: v.$color-background;
+}
+
+.header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: v.$header-height;
+}
+
+// Logo and burger stay above the overlay.
+.header__logo,
+.header__burger {
+  position: relative;
+  z-index: v.$z-content;
+}
+
+.header__logo {
+  font-size: v.$font-size-heading;
+  font-weight: v.$font-weight-bold;
+  text-decoration: none;
+}
+
+.header__logo-accent {
+  color: v.$color-primary;
+}
+
+.header__burger {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: none;
+
+  @include bp.respond-to(lg) {
+    display: none;
+  }
+}
+
+.header__menu {
+  position: fixed;
+  inset: 0;
+  z-index: v.$z-base;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: safe center;
+  gap: v.$space-xl;
+  padding-top: v.$header-height;
+  overflow-y: auto;
+  background-color: v.$color-overlay;
+
+  @include bp.respond-to(lg) {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: v.$space-4xl;
+    padding-top: 0;
+    overflow-y: visible;
+    background: none;
+  }
+}
+
+.header__menu--open {
+  display: flex;
+}
+
+.header__nav-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$space-nav;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include bp.respond-to(lg) {
+    flex-direction: row;
+  }
+}
+
+.header__nav-item--mobile-only {
+  @include bp.respond-to(lg) {
+    display: none;
+  }
+}
+
+.header__nav-link {
+  font-size: v.$font-size-lead;
+  text-decoration: none;
+
+  &:hover {
+    color: v.$color-primary;
+  }
+}
+
+.header__languages {
+  display: flex;
+  align-items: center;
+  gap: v.$space-xs;
+  font-size: v.$font-size-lead;
+
+  @include bp.respond-to(lg) {
+    gap: v.$space-sm;
+    font-size: v.$font-size-toggle;
+  }
+}
+
+// Mobile: plain text "DE / EN". Desktop: two pill buttons.
+.header__language {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: inherit;
+
+  &[aria-pressed="true"] {
+    color: v.$color-primary;
+    font-weight: v.$font-weight-bold;
+  }
+
+  @include bp.respond-to(lg) {
+    padding: v.$space-xxs v.$space-xs;
+    border: v.$border-thin solid v.$color-primary;
+    border-radius: v.$radius-sm;
+
+    &[aria-pressed="true"] {
+      background-color: v.$color-primary;
+      color: v.$color-text;
+    }
+  }
+}
+
+.header__language-separator {
+  @include bp.respond-to(lg) {
+    display: none;
+  }
+}
