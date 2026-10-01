@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1440" height="1078.6" viewBox="0 0 1440 1078.6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Vector shape hero page" clip-path="url(#clip0_0_512)">
+<path id="Vector" d="M1438 337.7V1050.1C1039.8 1015.1 348.177 876.287 -0.00898743 716.6L-2 171.6C285.204 411.6 1438 337.7 1438 337.7Z" fill="url(#paint0_linear_0_512)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_512" x1="763.544" y1="324.6" x2="729.392" y2="806.078" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1A2743"/>
+<stop offset="0.130208" stop-color="#1E283D"/>
+<stop offset="0.489583" stop-color="#141D2F"/>
+</linearGradient>
+<clipPath id="clip0_0_512">
+<rect width="1440" height="1078.6" fill="white"/>
+</clipPath>
+</defs>
+</svg>
