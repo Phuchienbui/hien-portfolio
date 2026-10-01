@@ -1,0 +1,7 @@
+@use "variables" as v;
+
+// Keeps the content below the fixed header.
+:host {
+  display: block;
+  padding-top: v.$header-height;
+}

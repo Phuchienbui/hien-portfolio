@@ -53,3 +53,9 @@ ol[class] {
     scroll-behavior: smooth;
   }
 }
+
+// Visible keyboard focus for every interactive element.
+:focus-visible {
+  outline: v.$border-medium solid v.$color-primary;
+  outline-offset: v.$space-xxs;
+}

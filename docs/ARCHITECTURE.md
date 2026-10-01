@@ -28,3 +28,19 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 - **Entscheidung:** Kein `zone.js`, kein Zone-Provider. Änderungserkennung läuft über Signals und Events.
 - **Warum:** Angular-22-Standard, weniger Laufzeit-Overhead, klarere Datenflüsse.
 - **Trade-off:** Zustand muss in Signals liegen, sonst aktualisiert sich die Ansicht nicht.
+
+## Header und Content-Infrastruktur (Phase 3)
+
+### Texte aus Wörterbüchern statt im Template
+- **Entscheidung:** Alle sichtbaren Texte liegen in `src/app/content/` (`content.de.ts`, `content.en.ts`), typisiert über das Interface `SiteContent`. `LanguageService` hält die aktive Sprache als Signal und setzt `<html lang>`, `ContentService` liefert per `computed` die Texte der aktiven Sprache.
+- **Warum:** Die Sprache lässt sich ohne Reload wechseln, es gibt einen Build, und der Compiler erzwingt, dass beide Sprachen dieselben Schlüssel haben.
+- **Trade-off:** Gegenüber Angular-i18n gibt es keine Pluralregeln/ICU, und beide Übersetzungen liegen im Bundle. Für den Umfang eines Portfolios ist das vertretbar.
+
+### Ein Menü für Desktop und Mobil
+- **Entscheidung:** Das Menü (Navigation plus Sprachwahl) existiert einmal im DOM. Ab `lg` (1024 px) ist es eine Zeile in der Kopfleiste, darunter ein Vollbild-Overlay. Der Eintrag "Kontakt" ist nur im Overlay sichtbar.
+- **Warum:** Kein doppeltes `nav`-Landmark, keine doppelten Texte, ein einziger Zustand (`isMenuOpen`).
+- **Trade-off:** Die Darstellung wechselt rein über CSS, deshalb ist das Overlay im Test über Klassen und ARIA-Attribute prüfbar, nicht über Sichtbarkeit.
+
+### Zustand des Overlays
+- Schließen per Klick auf Link, `Escape`, Routenwechsel und Wechsel in die Desktop-Breite. Solange es offen ist, wird das Scrollen der Seite dahinter gesperrt.
+- Der Header ist `position: fixed` und liegt über dem Hero. Die Rechtsseiten bekommen deshalb oben einen Abstand in Höhe des Headers.
