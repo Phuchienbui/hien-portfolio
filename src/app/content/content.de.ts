@@ -26,7 +26,7 @@ export const CONTENT_DE: SiteContent = {
   },
   hero: {
     greeting: "Ich bin",
-    role: "[TODO_CONTENT: Rolle/Titel DE]",
+    role: "Fachinformatiker Anwendungsentwicklung",
     ctaLabel: "Sprich mich an!",
     socialLabel: "Profile und Kontakt",
     githubLabel: "GitHub-Profil",

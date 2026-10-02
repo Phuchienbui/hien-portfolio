@@ -26,7 +26,7 @@ export const CONTENT_EN: SiteContent = {
   },
   hero: {
     greeting: "I am",
-    role: "[TODO_CONTENT: role/title EN]",
+    role: "IT Specialist for Application Development",
     ctaLabel: "Let's talk!",
     socialLabel: "Profiles and contact",
     githubLabel: "GitHub profile",
