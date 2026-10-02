@@ -44,3 +44,18 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 ### Zustand des Overlays
 - Schließen per Klick auf Link, `Escape`, Routenwechsel und Wechsel in die Desktop-Breite. Solange es offen ist, wird das Scrollen der Seite dahinter gesperrt.
 - Der Header ist `position: fixed` und liegt über dem Hero. Die Rechtsseiten bekommen deshalb oben einen Abstand in Höhe des Headers.
+
+## Hero und About me (Phase 4 und 5)
+
+### Hintergrund-Glows per CSS
+- **Entscheidung:** Die violetten und grünen Flächen im Hero sind weichgezeichnete `div`s (`aria-hidden`), keine Bilder.
+- **Warum:** Kein Bildgewicht, skaliert mit jeder Breite, ändert sich über Design-Tokens.
+- **Trade-off:** Die Form ist ein Kreis statt der organischen Vektorform aus Figma.
+
+### Ankerziele unter dem fixierten Header
+- **Entscheidung:** `.section` setzt `scroll-margin-top` in Höhe des Headers.
+- **Warum:** Ohne diesen Abstand landet die Sektionsüberschrift nach einem Klick auf einen Navigationslink unter dem fixierten Header.
+
+### Bild-Prüfung
+- **Entscheidung:** `npm run check:images` (`scripts/check-images.mjs`) prüft alle Bilder in `public/` auf Größe (≤ 500 KB) und doppelte Dateien (Hash).
+- **Warum:** Die Abnahmekriterien verlangen schlanke, nicht doppelte Bilder; die Prüfung läuft ohne Zusatzpaket.

@@ -1,0 +1,39 @@
+<section id="about" class="section about">
+  <div class="container about__layout">
+    <div class="about__text">
+      <h2 class="about__title">{{ text().title }}</h2>
+      @for (paragraph of text().intro; track paragraph) {
+        <p>{{ paragraph }}</p>
+      }
+      <ul class="about__points">
+        @for (point of text().points; track point.icon) {
+          <li class="about__point">
+            <img
+              class="about__icon"
+              [src]="'icons/' + point.icon + '.svg'"
+              alt=""
+              width="48"
+              height="48"
+            />
+            <p>{{ point.text }}</p>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <figure class="about__figure">
+      @if (photoSrc()) {
+        <img
+          class="about__photo"
+          [src]="photoSrc()"
+          [alt]="text().photoAlt"
+          width="480"
+          height="640"
+          loading="lazy"
+        />
+      } @else {
+        <p class="about__photo-placeholder">{{ text().photoPlaceholder }}</p>
+      }
+    </figure>
+  </div>
+</section>
