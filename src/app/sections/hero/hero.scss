@@ -54,9 +54,11 @@
   gap: v.$space-md;
 }
 
-// Lets a long name wrap instead of overflowing on narrow screens.
+// Lets a long name or role wrap (hyphenated by the page language) instead of overflowing.
 .hero__headline {
   min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 // Reads bottom to top, like the rotated "I am" in the design.

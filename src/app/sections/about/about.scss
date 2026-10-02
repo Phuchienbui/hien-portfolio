@@ -1,0 +1,85 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Text first, photo below on mobile; side by side on desktop.
+.about__layout {
+  display: grid;
+  gap: v.$space-3xl;
+
+  @include bp.respond-to(xl) {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: v.$space-4xl;
+  }
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+}
+
+.about__title {
+  font-size: v.$font-size-title-mobile;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-title;
+  }
+}
+
+// Body text keeps the design's line length while the title may use the full column.
+.about__text > p,
+.about__points {
+  max-width: v.$width-about-text;
+}
+
+.about__points {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+  list-style: none;
+}
+
+.about__point {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+}
+
+// Fixed icon box so the texts line up although the icons differ in shape.
+.about__icon {
+  flex: none;
+  width: v.$size-about-icon;
+  height: v.$size-about-icon;
+  object-fit: contain;
+}
+
+.about__figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: v.$ratio-about-photo;
+  max-height: v.$height-about-photo;
+  justify-self: center;
+}
+
+.about__photo {
+  width: 100%;
+  height: 100%;
+  border-radius: v.$radius-lg;
+  object-fit: cover;
+}
+
+// Visible marker while no photo has been delivered.
+.about__photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: v.$space-lg;
+  border: v.$border-medium dashed v.$color-accent;
+  border-radius: v.$radius-lg;
+  color: v.$color-text-muted;
+  text-align: center;
+}

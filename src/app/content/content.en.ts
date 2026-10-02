@@ -9,6 +9,7 @@ export const CONTENT_EN: SiteContent = {
     email: "phuchienbui2@gmail.com",
     githubUrl: "https://github.com/Phuchienbui",
     linkedinUrl: "",
+    aboutPhotoSrc: "",
   },
   header: {
     homeLinkLabel: "Phuc Hien Bui – go to home page",
@@ -33,5 +34,22 @@ export const CONTENT_EN: SiteContent = {
     emailLabel: "Send an email",
     linkedinLabel: "LinkedIn profile",
     scrollLabel: "Scroll down",
+  },
+  about: {
+    title: "About me",
+    intro: ["[TODO_CONTENT: Intro text About me EN]"],
+    points: [
+      {
+        icon: "about-location-desktop",
+        text: "I live in Dortmund. [TODO_CONTENT: remote availability EN]",
+      },
+      {
+        icon: "about-bulb-desktop",
+        text: "[TODO_CONTENT: openness and willingness to learn EN]",
+      },
+      { icon: "about-puzzle-desktop", text: "[TODO_CONTENT: problem solving EN]" },
+    ],
+    photoAlt: "Portrait of Phuc Hien Bui",
+    photoPlaceholder: "[TODO_CONTENT: photo About me]",
   },
 };
