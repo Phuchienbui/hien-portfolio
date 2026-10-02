@@ -15,6 +15,10 @@ export interface SiteInfo {
   /** Text logo: the last letter is rendered in the accent color. */
   logoStart: string;
   logoAccent: string;
+  email: string;
+  githubUrl: string;
+  /** Empty until the profile URL is known; the icon is not rendered without it. */
+  linkedinUrl: string;
 }
 
 /** Texts of the header and the mobile menu. */
@@ -28,8 +32,22 @@ export interface HeaderContent {
   closeMenu: string;
 }
 
+/** Texts of the hero section. */
+export interface HeroContent {
+  /** Rotated word left of the name ("I am"). */
+  greeting: string;
+  role: string;
+  ctaLabel: string;
+  socialLabel: string;
+  githubLabel: string;
+  emailLabel: string;
+  linkedinLabel: string;
+  scrollLabel: string;
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
   site: SiteInfo;
   header: HeaderContent;
+  hero: HeroContent;
 }

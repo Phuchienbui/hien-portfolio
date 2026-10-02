@@ -13,7 +13,7 @@ describe("ROUTES", () => {
   });
 
   it.each([
-    ["/", "Home"],
+    ["/", "Phuc Hien Bui"],
     ["/legal-notice", "Legal notice"],
     ["/privacy-policy", "Privacy policy"],
   ])("should render exactly one h1 for %s", async (url, heading) => {
