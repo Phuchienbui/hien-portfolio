@@ -1,0 +1,133 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Fills exactly one viewport; the fixed header floats above it.
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+// Blurred color areas behind the content (drawn in CSS instead of bitmaps).
+.hero__glow {
+  position: absolute;
+  z-index: v.$z-base;
+  width: v.$size-hero-glow-mobile;
+  aspect-ratio: 1;
+  border-radius: v.$radius-circle;
+  opacity: v.$opacity-hero-glow;
+  filter: blur(v.$blur-hero-glow);
+  pointer-events: none;
+
+  @include bp.respond-to(xl) {
+    width: v.$size-hero-glow;
+  }
+}
+
+.hero__glow--purple {
+  top: 8%;
+  left: -20%;
+  background-color: v.$color-accent;
+}
+
+.hero__glow--green {
+  right: -15%;
+  bottom: 5%;
+  background-color: v.$color-primary;
+}
+
+.hero__content {
+  position: relative;
+  z-index: v.$z-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: v.$space-xl;
+  height: 100%;
+  padding-top: v.$header-height;
+}
+
+.hero__title-block {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+}
+
+// Lets a long name wrap instead of overflowing on narrow screens.
+.hero__headline {
+  min-width: 0;
+}
+
+// Reads bottom to top, like the rotated "I am" in the design.
+.hero__greeting {
+  font-size: v.$font-size-greeting;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-greeting-desktop;
+  }
+}
+
+.hero__name {
+  font-size: v.$font-size-hero-mobile;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-hero;
+  }
+}
+
+.hero__role {
+  font-size: v.$font-size-role-mobile;
+  color: v.$color-accent;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-role;
+  }
+}
+
+.hero__cta {
+  padding: v.$space-md v.$space-xl;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-primary;
+  font-size: v.$font-size-lead;
+  text-decoration: none;
+  box-shadow: v.$shadow-button;
+}
+
+.hero__social-list {
+  display: flex;
+  align-items: center;
+  gap: v.$space-social;
+  list-style: none;
+
+  // Line before the icons, as in the design.
+  &::before {
+    content: "";
+    width: v.$width-social-line;
+    border-top: v.$border-thick solid v.$color-primary;
+  }
+}
+
+.hero__social-link {
+  display: block;
+  line-height: v.$line-height-tight;
+}
+
+// Desktop only: vertical link at the right edge.
+.hero__scroll {
+  display: none;
+
+  @include bp.respond-to(xl) {
+    position: absolute;
+    right: v.$page-gutter-desktop;
+    bottom: v.$space-4xl;
+    display: flex;
+    align-items: center;
+    gap: v.$space-xs;
+    font-size: v.$font-size-lead;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+  }
+}

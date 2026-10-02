@@ -2,7 +2,14 @@ import { SiteContent } from "./content.model";
 
 /** German texts. */
 export const CONTENT_DE: SiteContent = {
-  site: { name: "Phuc Hien Bui", logoStart: "Hie", logoAccent: "n" },
+  site: {
+    name: "Phuc Hien Bui",
+    logoStart: "Hie",
+    logoAccent: "n",
+    email: "phuchienbui2@gmail.com",
+    githubUrl: "https://github.com/Phuchienbui",
+    linkedinUrl: "",
+  },
   header: {
     homeLinkLabel: "Phuc Hien Bui – zur Startseite",
     navLabel: "Hauptnavigation",
@@ -16,5 +23,15 @@ export const CONTENT_DE: SiteContent = {
     languageNames: { de: "Deutsch", en: "English" },
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
+  },
+  hero: {
+    greeting: "Ich bin",
+    role: "[TODO_CONTENT: Rolle/Titel DE]",
+    ctaLabel: "Sprich mich an!",
+    socialLabel: "Profile und Kontakt",
+    githubLabel: "GitHub-Profil",
+    emailLabel: "E-Mail schreiben",
+    linkedinLabel: "LinkedIn-Profil",
+    scrollLabel: "Nach unten scrollen",
   },
 };

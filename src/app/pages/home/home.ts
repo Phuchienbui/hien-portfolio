@@ -1,7 +1,10 @@
 import { Component } from "@angular/core";
 
+import { Hero } from "../../sections/hero/hero";
+
+/** Landing page: composes the sections in display order. */
 @Component({
-  imports: [],
+  imports: [Hero],
   selector: "app-home",
   styleUrl: "./home.scss",
   templateUrl: "./home.html",
