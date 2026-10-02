@@ -1,0 +1,24 @@
+<section id="skills" class="section skills">
+  <div class="container skills__layout">
+    <div class="skills__intro">
+      <h2 class="skills__title">{{ text().title }}</h2>
+      <p>{{ text().intro }}</p>
+    </div>
+
+    <ul class="skills__grid">
+      @for (skill of skills; track skill.id) {
+        <li>
+          <app-skill-item [icon]="skill.icon" [label]="text().skillNames[skill.id]" />
+        </li>
+      }
+    </ul>
+
+    <div class="skills__cta">
+      <h3 class="skills__cta-heading">
+        {{ text().ctaHeading }}<span class="skills__cta-highlight">{{ text().ctaHighlight }}</span>
+      </h3>
+      <p>{{ text().ctaText }}</p>
+      <a class="skills__button" routerLink="/" fragment="contact">{{ text().ctaLabel }}</a>
+    </div>
+  </div>
+</section>

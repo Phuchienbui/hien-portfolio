@@ -1,0 +1,101 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Mobile: intro, icons, call to action. Desktop: icons left, text right.
+.skills__layout {
+  display: grid;
+  gap: v.$space-3xl;
+
+  @include bp.respond-to(xl) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "grid intro"
+      "grid cta";
+    align-content: center;
+    column-gap: v.$space-4xl;
+    row-gap: v.$space-2xl;
+  }
+}
+
+.skills__intro,
+.skills__cta {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+  max-width: v.$width-skills-text;
+}
+
+.skills__intro {
+  @include bp.respond-to(xl) {
+    grid-area: intro;
+    align-self: end;
+  }
+}
+
+.skills__cta {
+  @include bp.respond-to(xl) {
+    grid-area: cta;
+    align-self: start;
+  }
+}
+
+// Title with the cyan line of the design to its right.
+.skills__title {
+  display: flex;
+  align-items: center;
+  gap: v.$space-lg;
+  font-size: v.$font-size-title-mobile;
+
+  &::after {
+    content: "";
+    flex: 1;
+    max-width: v.$width-skills-line-mobile;
+    height: v.$border-thick;
+    border-radius: v.$radius-pill;
+    background-color: v.$color-line-skills;
+  }
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-title;
+
+    &::after {
+      max-width: v.$width-skills-line;
+    }
+  }
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(3, v.$width-skill-cell);
+  gap: v.$space-md v.$space-skill-column;
+  justify-content: center;
+  list-style: none;
+
+  @include bp.respond-to(xl) {
+    grid-area: grid;
+    grid-template-columns: repeat(4, v.$width-skill-cell);
+    gap: v.$space-4xl;
+    justify-content: start;
+  }
+}
+
+.skills__cta-heading {
+  font-size: v.$font-size-lead;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-heading;
+  }
+}
+
+.skills__cta-highlight {
+  color: v.$color-accent;
+}
+
+.skills__button {
+  align-self: flex-start;
+  padding: v.$space-md v.$space-xl;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-primary;
+  text-decoration: none;
+  box-shadow: v.$shadow-button;
+}

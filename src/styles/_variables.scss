@@ -7,6 +7,7 @@ $color-primary: #70e61c;
 $color-accent: #9747ff;
 $color-text: #ffffff;
 $color-text-muted: #b6b6b6;
+$color-line-skills: #1cdae6;
 $color-disabled: #b6b6b6;
 // Derived from the design's error text (rgb 230/28/64, alpha 0 in the default state).
 $color-error: #e61c40;
@@ -102,3 +103,12 @@ $width-about-text: 29.4375rem;
 $ratio-about-photo: 3 / 4;
 $height-about-photo: 40rem;
 $size-about-icon: 3rem;
+
+// Skills
+$size-skill-icon: 3.75rem;
+$size-skill-icon-mobile: 3rem;
+$width-skill-cell: 5.5rem;
+$space-skill-column: 2.4375rem;
+$width-skills-text: 35rem;
+$width-skills-line-mobile: 14rem;
+$width-skills-line: 18.1875rem;
