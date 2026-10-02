@@ -1,4 +1,5 @@
 import { Language } from "../models/language";
+import { SkillId } from "../models/skill";
 
 /** One entry of the main navigation. */
 export interface NavItem {
@@ -64,10 +65,24 @@ export interface AboutContent {
   photoPlaceholder: string;
 }
 
+/** Texts of the skills section. */
+export interface SkillsContent {
+  title: string;
+  intro: string;
+  /** Visible name of every skill. */
+  skillNames: Record<SkillId, string>;
+  /** First part of the call-to-action heading, followed by the highlighted part. */
+  ctaHeading: string;
+  ctaHighlight: string;
+  ctaText: string;
+  ctaLabel: string;
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
   site: SiteInfo;
   header: HeaderContent;
   hero: HeroContent;
   about: AboutContent;
+  skills: SkillsContent;
 }

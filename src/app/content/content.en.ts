@@ -52,4 +52,23 @@ export const CONTENT_EN: SiteContent = {
     photoAlt: "Portrait of Phuc Hien Bui",
     photoPlaceholder: "[TODO_CONTENT: photo About me]",
   },
+  skills: {
+    title: "Skills",
+    intro: "[TODO_CONTENT: Text neben dem Skill-Raster EN]",
+    skillNames: {
+      html: "HTML",
+      css: "CSS",
+      javascript: "JavaScript",
+      typescript: "TypeScript",
+      angular: "Angular",
+      git: "Git",
+      "rest-api": "REST-API",
+      scrum: "Scrum",
+      "continually-learning": "Continually learning",
+    },
+    ctaHeading: "Looking for ",
+    ctaHighlight: "another skill?",
+    ctaText: "[TODO_CONTENT: Text unter der Frage EN]",
+    ctaLabel: "Get in touch",
+  },
 };

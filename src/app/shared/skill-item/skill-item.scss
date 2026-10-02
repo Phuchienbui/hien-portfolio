@@ -1,0 +1,30 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$space-sm;
+  text-align: center;
+}
+
+// Height is fixed, the width follows the icon's own proportions.
+.skill-item__icon {
+  width: auto;
+  height: v.$size-skill-icon-mobile;
+  filter: drop-shadow(v.$shadow-icon);
+
+  @include bp.respond-to(xl) {
+    height: v.$size-skill-icon;
+  }
+}
+
+.skill-item__label {
+  font-size: v.$font-size-label;
+  font-weight: v.$font-weight-bold;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-body;
+  }
+}
