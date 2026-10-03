@@ -1,0 +1,51 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+.portfolio__layout {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-3xl;
+}
+
+.portfolio__intro {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+  max-width: v.$width-portfolio-text;
+}
+
+// Title with the purple line of the design to its left.
+.portfolio__title {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+  font-size: v.$font-size-title-mobile;
+
+  &::before {
+    content: "";
+    width: v.$width-portfolio-line-mobile;
+    height: v.$border-thick;
+    border-radius: v.$radius-pill;
+    background-color: v.$color-accent;
+  }
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-title;
+
+    &::before {
+      width: v.$width-portfolio-line;
+    }
+  }
+}
+
+// One column on mobile, 2 x 2 on desktop.
+.portfolio__grid {
+  display: grid;
+  gap: v.$space-lg;
+  list-style: none;
+
+  @include bp.respond-to(md) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: v.$space-xl;
+  }
+}

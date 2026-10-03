@@ -1,0 +1,54 @@
+<article class="project-card">
+  <figure class="project-card__preview">
+    @if (project().image) {
+      <img
+        class="project-card__image"
+        [src]="project().image"
+        [alt]="imageAlt()"
+        width="600"
+        height="400"
+        loading="lazy"
+      />
+    } @else {
+      <p class="project-card__placeholder">{{ labels().imagePlaceholder }}</p>
+    }
+  </figure>
+
+  <div class="project-card__body">
+    <h3 class="project-card__title">{{ project().name }}</h3>
+    <p>{{ description() }}</p>
+
+    @if (project().tags.length > 0) {
+      <ul class="project-card__tags">
+        @for (tag of project().tags; track tag) {
+          <li class="project-card__tag">{{ tag }}</li>
+        }
+      </ul>
+    }
+
+    @if (project().liveUrl || project().githubUrl) {
+      <p class="project-card__links">
+        @if (project().liveUrl) {
+          <a
+            class="project-card__link project-card__link--live"
+            [href]="project().liveUrl"
+            [attr.aria-label]="liveAriaLabel()"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ labels().liveLabel }}</a
+          >
+        }
+        @if (project().githubUrl) {
+          <a
+            class="project-card__link"
+            [href]="project().githubUrl"
+            [attr.aria-label]="githubAriaLabel()"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ labels().githubLabel }}</a
+          >
+        }
+      </p>
+    }
+  </div>
+</article>
