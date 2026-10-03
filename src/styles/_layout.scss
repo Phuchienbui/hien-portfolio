@@ -23,3 +23,16 @@
     padding-block: v.$section-spacing;
   }
 }
+
+// Text for screen readers only, e.g. headings that the design does not show.
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

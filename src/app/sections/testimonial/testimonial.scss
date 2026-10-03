@@ -1,0 +1,99 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Mobile: portrait above the card. Desktop: card and portrait side by side.
+.testimonial__layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: v.$space-lg;
+
+  @include bp.respond-to(xl) {
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: v.$space-3xl;
+  }
+}
+
+.testimonial__avatar {
+  flex: none;
+  width: v.$size-avatar-mobile;
+  height: v.$size-avatar-mobile;
+  border: v.$border-thick solid v.$color-primary;
+  border-radius: v.$radius-circle;
+  object-fit: cover;
+
+  @include bp.respond-to(xl) {
+    width: v.$size-avatar;
+    height: v.$size-avatar;
+  }
+}
+
+.testimonial__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: v.$space-md;
+  max-width: v.$width-testimonial-card;
+  padding: v.$space-md;
+  border: v.$border-thick solid v.$color-accent;
+  border-radius: v.$radius-lg;
+
+  @include bp.respond-to(xl) {
+    padding: v.$space-3xl v.$space-5xl;
+  }
+}
+
+.testimonial__quote {
+  font-size: v.$font-size-body;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-lead;
+  }
+}
+
+.testimonial__author {
+  color: v.$color-text-muted;
+}
+
+.testimonial__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-lg;
+  margin-top: v.$space-xl;
+}
+
+.testimonial__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: v.$size-carousel-control;
+  height: v.$size-carousel-control;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.testimonial__dots {
+  display: flex;
+  align-items: center;
+  gap: v.$space-lg;
+  list-style: none;
+}
+
+// The visible dot is small; the padding keeps the touch target large.
+.testimonial__dot {
+  box-sizing: content-box;
+  width: v.$size-carousel-dot;
+  height: v.$size-carousel-dot;
+  padding: v.$space-xs;
+  border: 0;
+  border-radius: v.$radius-circle;
+  background-color: v.$color-primary;
+  background-clip: content-box;
+
+  &--active {
+    background-color: v.$color-line-skills;
+  }
+}
