@@ -1,0 +1,126 @@
+<section id="contact" class="section contact">
+  <div class="container contact__layout">
+    <h2 class="contact__title">{{ text().title }}</h2>
+
+    <div class="contact__intro">
+      <h3 class="contact__heading">{{ text().heading }}</h3>
+      <p>{{ text().intro }}</p>
+      <p class="contact__hint">
+        {{ text().hintText
+        }}<strong class="contact__hint-highlight">{{ text().hintHighlight }}</strong>
+      </p>
+    </div>
+
+    <form class="contact__form" novalidate [formGroup]="form" (ngSubmit)="submit()">
+      <div class="contact__field">
+        <label class="visually-hidden" for="contact-name">{{ text().name.label }}</label>
+        <input
+          class="contact__input"
+          id="contact-name"
+          type="text"
+          formControlName="name"
+          autocomplete="name"
+          [placeholder]="text().name.placeholder"
+          [attr.aria-invalid]="showError('name')"
+          aria-describedby="contact-name-error"
+        />
+        <p class="contact__error" id="contact-name-error">
+          @if (showError("name")) {
+            {{ text().name.error }}
+          }
+        </p>
+      </div>
+
+      <div class="contact__field">
+        <label class="visually-hidden" for="contact-email">{{ text().email.label }}</label>
+        <input
+          class="contact__input"
+          id="contact-email"
+          type="email"
+          formControlName="email"
+          autocomplete="email"
+          [placeholder]="text().email.placeholder"
+          [attr.aria-invalid]="showError('email')"
+          aria-describedby="contact-email-error"
+        />
+        <p class="contact__error" id="contact-email-error">
+          @if (showError("email")) {
+            {{ text().email.error }}
+          }
+        </p>
+      </div>
+
+      <div class="contact__field">
+        <label class="visually-hidden" for="contact-message">{{ text().message.label }}</label>
+        <textarea
+          class="contact__input contact__input--message"
+          id="contact-message"
+          formControlName="message"
+          rows="6"
+          [placeholder]="text().message.placeholder"
+          [attr.aria-invalid]="showError('message')"
+          aria-describedby="contact-message-error"
+        ></textarea>
+        <p class="contact__error" id="contact-message-error">
+          @if (showError("message")) {
+            {{ text().message.error }}
+          }
+        </p>
+      </div>
+
+      <!-- Honeypot against spam bots: hidden for people and assistive technology. -->
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="contact-website">{{ text().honeypotLabel }}</label>
+        <input
+          id="contact-website"
+          type="text"
+          formControlName="website"
+          tabindex="-1"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="contact__field">
+        <div class="contact__privacy">
+          <input
+            class="contact__checkbox"
+            id="contact-privacy"
+            type="checkbox"
+            formControlName="privacyAccepted"
+            [attr.aria-invalid]="showError('privacyAccepted')"
+            aria-describedby="contact-privacy-error"
+          />
+          <label for="contact-privacy"
+            >{{ text().privacy.before
+            }}<a class="contact__privacy-link" routerLink="/privacy-policy">{{
+              text().privacy.link
+            }}</a
+            >{{ text().privacy.after }}</label
+          >
+        </div>
+        <p class="contact__error" id="contact-privacy-error">
+          @if (showError("privacyAccepted")) {
+            {{ text().privacy.error }}
+          }
+        </p>
+      </div>
+
+      <button class="contact__submit" type="submit" [disabled]="!canSubmit()">
+        {{ submitState() === "sending" ? text().sendingLabel : text().submitLabel }}
+      </button>
+
+      @if (submitState() === "success") {
+        <p class="contact__feedback" role="status">{{ text().success }}</p>
+      }
+      @if (submitState() === "error") {
+        <p class="contact__feedback contact__feedback--error" role="alert">
+          {{ text().failure }}
+        </p>
+      }
+    </form>
+
+    <a class="contact__to-top" routerLink="/" fragment="hero" [attr.aria-label]="text().backToTop">
+      <img src="icons/arrow-down-line.svg" alt="" width="24" height="24" />
+    </a>
+  </div>
+</section>

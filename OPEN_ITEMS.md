@@ -33,3 +33,11 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 ## Testimonials (`src/app/data/testimonials.ts`)
 
 - Es gibt keine echten Testimonials. Die Sektion wird deshalb nicht gerendert (Projektregel: keine erfundenen Zitate). Sobald echte vorliegen, in `TESTIMONIALS` eintragen (Zitat, Name, Rolle, optional Foto). Ab zwei Einträgen erscheinen Pfeile und Punkte automatisch.
+
+## Kontaktformular (`src/app/core/config.ts`, `contact` in `content.de.ts` / `content.en.ts`)
+
+- `CONTACT_ENDPOINT` ist leer, weil der Server noch nicht existiert. Im Entwicklungsmodus (`ng serve`) läuft ein Mock, der Erfolg meldet, aber nichts versendet. Der Produktionsbuild zeigt bewusst eine Fehlermeldung, damit keine Nachricht unbemerkt verloren geht. Endpoint-URL eintragen, sobald der Empfänger steht.
+- Empfänger-E-Mail: Vorschlag `phuchienbui2@gmail.com`, bitte bestätigen.
+- Text unter der Überschrift „Kontakt“ DE und EN.
+- Die Überschrift „Hast du ein Problem zu lösen?“ und der Satz „Suchst du einen Entwickler? Schreib mir!“ sind sinngemäße Übersetzungen der Figma-Texte. Bitte prüfen oder ersetzen.
+- Die Datenschutzerklärung (`/privacy-policy`) ist noch ein Platzhalter, bis Phase 10 sie füllt.
