@@ -1,0 +1,183 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Mobile: title, intro, form, button stacked. Desktop: intro left, form right.
+.contact__layout {
+  display: grid;
+  gap: v.$space-xl;
+
+  @include bp.respond-to(xl) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "title title"
+      "intro form";
+    column-gap: v.$space-4xl;
+    row-gap: v.$space-3xl;
+  }
+}
+
+// Title with the green line of the design to its right.
+.contact__title {
+  display: flex;
+  align-items: center;
+  gap: v.$space-lg;
+  font-size: v.$font-size-title-mobile;
+
+  &::after {
+    content: "";
+    flex: 1;
+    max-width: v.$width-contact-line-mobile;
+    height: v.$border-thick;
+    border-radius: v.$radius-pill;
+    background-color: v.$color-primary;
+  }
+
+  @include bp.respond-to(xl) {
+    grid-area: title;
+    font-size: v.$font-size-title;
+
+    &::after {
+      max-width: v.$width-contact-line;
+    }
+  }
+}
+
+.contact__intro {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-lg;
+  max-width: v.$width-contact-text;
+
+  @include bp.respond-to(xl) {
+    grid-area: intro;
+  }
+}
+
+.contact__heading {
+  font-size: v.$font-size-lead;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-heading;
+  }
+}
+
+.contact__hint-highlight {
+  color: v.$color-primary;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-xs;
+  max-width: v.$width-contact-form;
+
+  @include bp.respond-to(xl) {
+    grid-area: form;
+  }
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-xxs;
+}
+
+.contact__input {
+  width: 100%;
+  padding: v.$space-md v.$space-lg;
+  border: v.$border-thin solid v.$color-accent;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-background;
+  color: v.$color-text;
+
+  &::placeholder {
+    color: v.$color-text;
+  }
+
+  &:focus-visible {
+    outline: v.$border-medium solid v.$color-primary;
+    outline-offset: v.$border-thin;
+  }
+
+  // Browser autofill must not change the design: keep dark background and white text.
+  &:-webkit-autofill,
+  &:-webkit-autofill:focus {
+    box-shadow: 0 0 0 v.$autofill-spread v.$color-background inset;
+    -webkit-text-fill-color: v.$color-text;
+    caret-color: v.$color-text;
+  }
+
+  &--message {
+    min-height: v.$height-contact-message;
+    resize: vertical;
+  }
+}
+
+// The space of the message is always reserved, so showing it does not shift the layout.
+.contact__error {
+  min-height: v.$height-contact-error;
+  font-size: v.$font-size-label;
+  color: v.$color-error;
+}
+
+.contact__privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: v.$space-md;
+  font-size: v.$font-size-label;
+}
+
+.contact__checkbox {
+  flex: none;
+  width: v.$size-checkbox;
+  height: v.$size-checkbox;
+  accent-color: v.$color-primary;
+}
+
+.contact__privacy-link {
+  color: v.$color-accent;
+}
+
+.contact__submit {
+  align-self: flex-start;
+  padding: v.$space-md v.$space-xl;
+  border: 0;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-primary;
+  color: v.$color-text;
+  font-size: v.$font-size-lead;
+  box-shadow: v.$shadow-button;
+
+  &:disabled {
+    background-color: v.$color-disabled;
+    cursor: not-allowed;
+  }
+}
+
+.contact__feedback {
+  margin-top: v.$space-md;
+
+  &--error {
+    color: v.$color-error;
+  }
+}
+
+// Circle with an up arrow (the down arrow of the icon set, turned around).
+.contact__to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  width: v.$size-to-top;
+  height: v.$size-to-top;
+  border: v.$border-medium solid v.$color-text;
+  border-radius: v.$radius-circle;
+
+  @include bp.respond-to(xl) {
+    grid-column: 1 / -1;
+  }
+
+  img {
+    transform: rotate(180deg);
+  }
+}

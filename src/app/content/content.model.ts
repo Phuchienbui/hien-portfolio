@@ -110,6 +110,34 @@ export interface TestimonialContent {
   avatarAlt: string;
 }
 
+/** Texts of one form field. */
+export interface FormFieldContent {
+  /** Visually hidden label (the design shows only the placeholder). */
+  label: string;
+  placeholder: string;
+  error: string;
+}
+
+/** Texts of the contact section. */
+export interface ContactContent {
+  title: string;
+  heading: string;
+  intro: string;
+  hintText: string;
+  hintHighlight: string;
+  name: FormFieldContent;
+  email: FormFieldContent;
+  message: FormFieldContent;
+  /** Label of the hidden spam trap field. */
+  honeypotLabel: string;
+  privacy: { before: string; link: string; after: string; error: string };
+  submitLabel: string;
+  sendingLabel: string;
+  success: string;
+  failure: string;
+  backToTop: string;
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
   site: SiteInfo;
@@ -119,4 +147,5 @@ export interface SiteContent {
   skills: SkillsContent;
   portfolio: PortfolioContent;
   testimonial: TestimonialContent;
+  contact: ContactContent;
 }

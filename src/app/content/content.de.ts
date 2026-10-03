@@ -101,4 +101,35 @@ export const CONTENT_DE: SiteContent = {
     goToLabel: "Zitat {n} anzeigen",
     avatarAlt: "Porträt von {name}",
   },
+  contact: {
+    title: "Kontakt",
+    heading: "Hast du ein Problem zu lösen?",
+    intro: "[TODO_CONTENT: Text unter der Überschrift Kontakt DE]",
+    hintText: "Suchst du einen Entwickler? ",
+    hintHighlight: "Schreib mir!",
+    name: { label: "Name", placeholder: "Dein Name", error: "Bitte gib mindestens 2 Zeichen ein." },
+    email: {
+      label: "E-Mail",
+      placeholder: "Deine E-Mail",
+      error: "Bitte gib eine gültige E-Mail-Adresse ein.",
+    },
+    message: {
+      label: "Nachricht",
+      placeholder: "Deine Nachricht",
+      error: "Bitte gib mindestens 10 Zeichen ein.",
+    },
+    honeypotLabel: "Website (bitte leer lassen)",
+    privacy: {
+      before: "Ich habe die ",
+      link: "Datenschutzerklärung",
+      after: " gelesen und stimme der Verarbeitung meiner Daten zu.",
+      error: "Bitte stimme der Datenschutzerklärung zu.",
+    },
+    submitLabel: "Nachricht senden :)",
+    sendingLabel: "Wird gesendet …",
+    success: "Danke! Deine Nachricht wurde gesendet.",
+    failure:
+      "Das Senden hat leider nicht geklappt. Bitte versuche es später noch einmal oder schreibe mir per E-Mail.",
+    backToTop: "Zurück nach oben",
+  },
 };
