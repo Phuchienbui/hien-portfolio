@@ -94,4 +94,11 @@ export const CONTENT_DE: SiteContent = {
       imagePlaceholder: "[TODO_CONTENT: Vorschaubild]",
     },
   },
+  testimonial: {
+    title: "Referenzen",
+    previousLabel: "Vorheriges Zitat",
+    nextLabel: "Nächstes Zitat",
+    goToLabel: "Zitat {n} anzeigen",
+    avatarAlt: "Porträt von {name}",
+  },
 };

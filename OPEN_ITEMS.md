@@ -29,3 +29,7 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 - Vorschaubilder: nur vom User, `Project.image` in `projects.ts` setzen (Datei in `public/`, höchstens 500 KB). Bis dahin zeigt jede Karte einen sichtbaren Platzhalter.
 - Text unter dem Titel Portfolio DE und EN.
 - Tags für `El-Pollo-Loco` und `pokedex` sind aus den Sprachanteilen der Repositories abgeleitet. Ob das Pokédex-Projekt eine REST-API nutzt, ist nicht belegt.
+
+## Testimonials (`src/app/data/testimonials.ts`)
+
+- Es gibt keine echten Testimonials. Die Sektion wird deshalb nicht gerendert (Projektregel: keine erfundenen Zitate). Sobald echte vorliegen, in `TESTIMONIALS` eintragen (Zitat, Name, Rolle, optional Foto). Ab zwei Einträgen erscheinen Pfeile und Punkte automatisch.

@@ -98,6 +98,18 @@ export interface PortfolioContent {
   card: ProjectCardLabels;
 }
 
+/** Texts of the testimonial section. */
+export interface TestimonialContent {
+  /** Visually hidden heading of the section. */
+  title: string;
+  previousLabel: string;
+  nextLabel: string;
+  /** Label of a dot; `{n}` is the position of the testimonial. */
+  goToLabel: string;
+  /** Alt text of a portrait; `{name}` is the person's name. */
+  avatarAlt: string;
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
   site: SiteInfo;
@@ -106,4 +118,5 @@ export interface SiteContent {
   about: AboutContent;
   skills: SkillsContent;
   portfolio: PortfolioContent;
+  testimonial: TestimonialContent;
 }

@@ -1,0 +1,65 @@
+@if (current(); as item) {
+  <section id="testimonials" class="section testimonial" aria-labelledby="testimonial-title">
+    <div class="container">
+      <h2 id="testimonial-title" class="visually-hidden">{{ text().title }}</h2>
+
+      <div class="testimonial__layout">
+        @if (item.photo) {
+          <img
+            class="testimonial__avatar"
+            [src]="item.photo"
+            [alt]="text().avatarAlt.replace('{name}', item.name)"
+            width="272"
+            height="272"
+            loading="lazy"
+          />
+        }
+
+        <blockquote class="testimonial__card" aria-live="polite" aria-atomic="true">
+          <p class="testimonial__quote">{{ item.quote }}</p>
+          <footer class="testimonial__author">
+            <cite>{{ item.name }}</cite>
+            <span> – {{ item.role }}</span>
+          </footer>
+        </blockquote>
+      </div>
+
+      @if (hasMultiple()) {
+        <div class="testimonial__controls">
+          <button
+            class="testimonial__arrow"
+            type="button"
+            [attr.aria-label]="text().previousLabel"
+            (click)="previous()"
+          >
+            <img src="icons/carousel-arrow-back.svg" alt="" width="21" height="20" />
+          </button>
+
+          <ul class="testimonial__dots">
+            @for (entry of testimonials(); track entry.id; let index = $index) {
+              <li>
+                <button
+                  class="testimonial__dot"
+                  type="button"
+                  [class.testimonial__dot--active]="index === currentIndex()"
+                  [attr.aria-label]="dotLabel(index)"
+                  [attr.aria-current]="index === currentIndex()"
+                  (click)="goTo(index)"
+                ></button>
+              </li>
+            }
+          </ul>
+
+          <button
+            class="testimonial__arrow"
+            type="button"
+            [attr.aria-label]="text().nextLabel"
+            (click)="next()"
+          >
+            <img src="icons/carousel-arrow-forward.svg" alt="" width="21" height="20" />
+          </button>
+        </div>
+      }
+    </div>
+  </section>
+}
