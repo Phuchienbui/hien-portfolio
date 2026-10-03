@@ -72,4 +72,26 @@ export const CONTENT_DE: SiteContent = {
     ctaText: "[TODO_CONTENT: Text unter der Frage DE]",
     ctaLabel: "Kontakt aufnehmen",
   },
+  portfolio: {
+    title: "Portfolio",
+    intro: "[TODO_CONTENT: Text unter dem Titel Portfolio DE]",
+    descriptions: {
+      bestellapp:
+        "[TODO_CONTENT: Beschreibung BestellApp, das Repository ist privat und nicht lesbar]",
+      "memory-duel":
+        "Memory-Spiel für zwei Spieler im Browser mit vier Themen und drei Spielfeldgrößen. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+      "el-pollo-loco":
+        "Browser-Projekt mit JavaScript, HTML und CSS. Das Repository hat keine README. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+      pokedex:
+        "Webanwendung zum Erkunden von Pokémon-Daten, laut Repository noch in Arbeit. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+    },
+    card: {
+      liveLabel: "Live",
+      githubLabel: "GitHub",
+      liveAria: "{name} live ansehen",
+      githubAria: "{name} auf GitHub ansehen",
+      imageAlt: "Vorschau von {name}",
+      imagePlaceholder: "[TODO_CONTENT: Vorschaubild]",
+    },
+  },
 };

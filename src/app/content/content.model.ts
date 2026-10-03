@@ -1,4 +1,5 @@
 import { Language } from "../models/language";
+import { ProjectId } from "../models/project";
 import { SkillId } from "../models/skill";
 
 /** One entry of the main navigation. */
@@ -78,6 +79,25 @@ export interface SkillsContent {
   ctaLabel: string;
 }
 
+/** Labels of one project card; `{name}` is replaced by the project name. */
+export interface ProjectCardLabels {
+  liveLabel: string;
+  githubLabel: string;
+  liveAria: string;
+  githubAria: string;
+  imageAlt: string;
+  imagePlaceholder: string;
+}
+
+/** Texts of the portfolio section. */
+export interface PortfolioContent {
+  title: string;
+  intro: string;
+  /** Short description of every project. */
+  descriptions: Record<ProjectId, string>;
+  card: ProjectCardLabels;
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
   site: SiteInfo;
@@ -85,4 +105,5 @@ export interface SiteContent {
   hero: HeroContent;
   about: AboutContent;
   skills: SkillsContent;
+  portfolio: PortfolioContent;
 }
