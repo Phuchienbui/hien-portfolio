@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
+@use "touch" as t;
 
 // Fixed bar above the page content. On mobile the menu is a full-screen overlay.
 .header {
@@ -27,6 +28,7 @@
   font-size: v.$font-size-heading;
   font-weight: v.$font-weight-bold;
   text-decoration: none;
+  @include t.touch-target;
 }
 
 .header__logo-accent {
@@ -38,6 +40,7 @@
   padding: 0;
   border: 0;
   background: none;
+  @include t.touch-target;
 
   @include bp.respond-to(lg) {
     display: none;
@@ -94,8 +97,10 @@
 }
 
 .header__nav-link {
+  position: relative;
   font-size: v.$font-size-lead;
   text-decoration: none;
+  @include t.touch-target;
 
   &:hover {
     color: v.$color-primary;
@@ -116,10 +121,12 @@
 
 // Mobile: plain text "DE / EN". Desktop: two pill buttons.
 .header__language {
+  position: relative;
   padding: 0;
   border: 0;
   background: none;
   font-size: inherit;
+  @include t.touch-target;
 
   &[aria-pressed="true"] {
     color: v.$color-primary;
@@ -133,7 +140,7 @@
 
     &[aria-pressed="true"] {
       background-color: v.$color-primary;
-      color: v.$color-text;
+      color: v.$color-on-primary;
     }
   }
 }

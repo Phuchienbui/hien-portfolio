@@ -1,11 +1,12 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
+@use "touch" as t;
 
-// Fills exactly one viewport; the fixed header floats above it.
+// Fills at least one viewport; the fixed header floats above it. On very low windows (landscape
+// phones) it grows with its content instead of cutting it off.
 .hero {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .hero__content {
@@ -16,7 +17,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: v.$space-xl;
-  height: 100%;
+  min-height: 100vh;
   padding-top: v.$header-height;
 }
 
@@ -65,6 +66,7 @@
   padding: v.$space-md v.$space-xl;
   border-radius: v.$radius-sm;
   background-color: v.$color-primary;
+  color: v.$color-on-primary;
   font-size: v.$font-size-lead;
   text-decoration: none;
   box-shadow: v.$shadow-button;
@@ -85,8 +87,10 @@
 }
 
 .hero__social-link {
+  position: relative;
   display: block;
   line-height: v.$line-height-tight;
+  @include t.touch-target;
 }
 
 // Desktop only: vertical link at the right edge.
@@ -104,4 +108,6 @@
     text-decoration: none;
     writing-mode: vertical-rl;
   }
+
+  @include t.touch-target;
 }

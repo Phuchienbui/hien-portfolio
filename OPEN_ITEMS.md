@@ -19,12 +19,11 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 ## Portfolio (`portfolio` in `content.de.ts` / `content.en.ts`, `src/app/data/projects.ts`)
 
-- Beschreibungen aller vier Projekte bestätigen oder ersetzen (DE und EN). El Pollo Loco und Pokédex sind Entwürfe aus den öffentlichen Repositories. Die Texte und Tags von Join und DABubble stammen aus dem Figma-Entwurf (Template-Beschreibung) und müssen zu deinen Projekten passen, ebenso die Tags (z. B. Firebase).
-- Join und DABubble: Es gibt keine GitHub- und keine Live-URL, deshalb erscheinen für beide keine Buttons. Eintragen in `projects.ts` (`githubUrl`, `liveUrl`), sobald es sie gibt. Bitte außerdem bestätigen, dass beide Projekte von dir sind.
+- Join und DABubble: Es gibt keine GitHub- und keine Live-URL, deshalb erscheinen für beide keine Buttons. Eintragen in `projects.ts` (`githubUrl`, `liveUrl`), sobald es sie gibt.
 - Live-URLs: keine vorhanden, die Live-Buttons werden nicht gerendert. Eintragen in `projects.ts`, sobald die Projekte laufen.
 - Vorschaubilder: Laptop-Mockups für El Pollo Loco, Join, DABubble und Pokédex liegen in `public/images/projects/`. Bitte bestätigen, dass die Screenshots darin deine eigenen Projekte zeigen (das Repository `pokedex` ist fast leer).
 - Text unter dem Titel Portfolio DE und EN.
-- Tags für `El-Pollo-Loco` und `pokedex` sind aus den Sprachanteilen der Repositories abgeleitet. Laut deinem Skills-Text nutzt der Pokédex eine REST-API. Soll das Tag „REST-API“ bei Pokédex ergänzt werden?
+- Tags für `El-Pollo-Loco` und `pokedex` stammen aus den Sprachanteilen der Repositories und deinem Skills-Text (Pokédex mit REST-API). Bitte prüfen.
 
 ## Testimonials (`src/app/data/testimonials.ts`)
 
@@ -34,7 +33,7 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 - `CONTACT_ENDPOINT` ist leer, weil der Server noch nicht existiert. Im Entwicklungsmodus (`ng serve`) läuft ein Mock, der Erfolg meldet, aber nichts versendet. Der Produktionsbuild zeigt bewusst eine Fehlermeldung, damit keine Nachricht unbemerkt verloren geht. Endpoint-URL eintragen, sobald der Empfänger steht.
 - Empfänger-E-Mail: Vorschlag `phuchienbui2@gmail.com`, bitte bestätigen.
-- Text unter der Überschrift „Kontakt“ DE und EN.
+- Kontakt-Text: Deutsch ist eingebaut, die englische Fassung ist meine Übersetzung mit `[TODO_CONTENT: Übersetzung prüfen]` und muss geprüft werden.
 - Die Überschrift „Hast du ein Problem zu lösen?“ und der Satz „Suchst du einen Entwickler? Schreib mir!“ sind sinngemäße Übersetzungen der Figma-Texte. Bitte prüfen oder ersetzen.
 - Die Datenschutzerklärung (`/privacy-policy`) ist noch ein Platzhalter, bis Phase 10 sie füllt.
 
@@ -51,4 +50,9 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 - Die englischen UI-Texte (Navigation, Formular, Meldungen, Footer, Rechtsseiten) stammen von mir. Laut Checkliste (User Story 3) bitte mit deepl.com oder grammarly.com gegenprüfen, die deutschen Texte z. B. mit languagetool.org.
 - Die Sprache wird bewusst nicht gespeichert: Die Seite startet immer auf Deutsch. Dadurch bleibt die Aussage der Datenschutzerklärung richtig, dass nichts im Browser abgelegt wird.
-- Persönliche Texte (Über mich, Skills, Portfolio, Kontakt) haben beide Sprachen als `[TODO_CONTENT: …]`-Marker, bis du sie lieferst. Die Beschreibungen der Projekte sind Entwürfe in beiden Sprachen und müssen bestätigt werden.
+- Persönliche Texte (Über mich, Skills, Portfolio, Kontakt) haben beide Sprachen als `[TODO_CONTENT: …]`-Marker, bis du sie lieferst. Die Beschreibungen der Projekte sind von dir bestätigt.
+
+## Responsive und Zugänglichkeit (Phase 12, siehe `docs/responsive-check.md`)
+
+- Bitte bestätige die **Abweichungen vom Figma-Design**, die der Lesbarkeit dienen: dunkler Text auf grünen Buttons (statt weiß), dunkleres Grün für die Tags in den Projektkarten, helleres Violett für kleine violette Texte, helleres Rot für Fehlermeldungen. Wenn du das Design wörtlich willst, ändert man nur wenige Tokens in `_variables.scss`, der Kontrast sinkt dann aber unter die WCAG-AA-Grenze.
+- Die Messungen stammen aus Edge (headless), nicht von echten Geräten. Sieh dir die Seite bitte einmal auf deinem Handy und mit Tastatur (Tab) an. Mit Screenreadern wurde nicht getestet.

@@ -8,9 +8,14 @@ $color-accent: #9747ff;
 $color-text: #ffffff;
 $color-text-muted: #b6b6b6;
 $color-line-skills: #1cdae6;
+// Contrast-safe variants (WCAG AA, see docs/responsive-check.md)
+$color-accent-text: #a97bff; // small purple text on the dark background (5.6:1; #9747ff has 3.7:1)
+$color-primary-on-light: #2a7d00; // green text on white (5.2:1; #70e61c has 1.6:1)
+$color-on-primary: $color-background; // text on green buttons (10.5:1; white has 1.6:1)
 $color-disabled: #b6b6b6;
 // Derived from the design's error text (rgb 230/28/64, alpha 0 in the default state).
-$color-error: #e61c40;
+// Adjusted for contrast on the dark background (5.0:1); the design's red (#e61c40) reaches only 3.7:1.
+$color-error: #f4506a;
 $color-overlay: rgba(20, 29, 47, 0.8);
 $color-shadow: rgba(0, 0, 0, 0.25);
 
@@ -27,11 +32,11 @@ $font-weight-bold: 700;
 $line-height-base: 1.2;
 
 $font-size-hero: 8rem;
-$font-size-hero-mobile: 2.8125rem;
+$font-size-hero-mobile: clamp(1.875rem, 11.5vw, 2.8125rem);
 $font-size-title: 5.625rem;
 $font-size-title-mobile: 2.8125rem;
 $font-size-role: 4rem;
-$font-size-role-mobile: 1.8125rem;
+$font-size-role-mobile: clamp(1.25rem, 7.4vw, 1.8125rem);
 $font-size-heading: 2rem;
 $font-size-lead: 1.4375rem;
 $font-size-body: 1rem;
@@ -70,6 +75,9 @@ $shadow-button: 4px 4px 2px $color-shadow;
 $shadow-icon: 5px 5px 6px $color-shadow;
 $blur-header: 32.5px;
 
+// Minimum size of touch targets (WCAG 2.5.5 / project rule: 44 x 44 px)
+$size-touch: 2.75rem;
+
 // Layout
 $container-width: 1240px;
 $page-gutter-mobile: 1.5625rem;
@@ -87,7 +95,7 @@ $space-nav: 1.8125rem;
 $font-size-toggle: 1.125rem;
 
 // Hero
-$font-size-greeting: 1.8125rem;
+$font-size-greeting: clamp(1.25rem, 7.4vw, 1.8125rem);
 $font-size-greeting-desktop: 5.625rem;
 $size-social-icon: 1.875rem;
 $space-social: 2.625rem;
@@ -145,6 +153,14 @@ $bg-shadows-left: -35.56%;
 $bg-photo-top: 17.9%;
 $bg-photo-left: 43.2%;
 $bg-photo-width: 55.5%;
+// Upper limits (the sizes of the design at 1440 px): wider windows do not enlarge the shapes,
+// they only move them together with the centered content.
+$bg-design-width: 90rem;
+$bg-shadows-width-max: 158.5rem;
+$bg-shadows-left-max: 32rem;
+$bg-photo-left-max: 38.875rem;
+$bg-photo-width-max: 50rem;
+$opacity-bg-blob-mobile: 0.5;
 
 // Project card (design: "47. Portfolio component set", Version B). Sizes in cqw scale with the
 // card width (container query units), so the card looks the same at every width.

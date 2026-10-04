@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
+@use "touch" as t;
 
 // Mobile: title, intro, form, button stacked. Desktop: intro left, form right.
 .contact__layout {
@@ -61,10 +62,6 @@
   }
 }
 
-.contact__hint-highlight {
-  color: v.$color-primary;
-}
-
 .contact__form {
   display: flex;
   flex-direction: column;
@@ -120,9 +117,11 @@
   color: v.$color-error;
 }
 
+// The whole row (checkbox and text) toggles the checkbox and is at least touch height.
 .contact__privacy {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  min-height: v.$size-touch;
   gap: v.$space-md;
   font-size: v.$font-size-label;
 }
@@ -135,7 +134,7 @@
 }
 
 .contact__privacy-link {
-  color: v.$color-accent;
+  color: v.$color-accent-text;
 }
 
 .contact__submit {
@@ -144,7 +143,7 @@
   border: 0;
   border-radius: v.$radius-sm;
   background-color: v.$color-primary;
-  color: v.$color-text;
+  color: v.$color-on-primary;
   font-size: v.$font-size-lead;
   box-shadow: v.$shadow-button;
 
@@ -164,6 +163,7 @@
 
 // Circle with an up arrow (the down arrow of the icon set, turned around).
 .contact__to-top {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,4 +180,5 @@
   img {
     transform: rotate(180deg);
   }
+  @include t.touch-target;
 }

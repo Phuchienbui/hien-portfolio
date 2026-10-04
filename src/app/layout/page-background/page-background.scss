@@ -30,17 +30,25 @@
 
 // The file is wider than the page (as in the design) and stretched to the page height,
 // so the shapes keep their relative position when the page gets longer or shorter.
+// Above the design width the content stays 1440 px wide and centered, so the shapes keep their
+// size and shift by the same amount as the content: (window - 1440) / 2.
 .page-background__shadows {
   top: 0;
-  left: v.$bg-shadows-left;
-  width: v.$bg-shadows-width;
+  left: calc(
+    (100% - min(100%, #{v.$bg-design-width})) /
+      2 - min(#{-(v.$bg-shadows-left)}, #{v.$bg-shadows-left-max})
+  );
+  width: min(#{v.$bg-shadows-width}, #{v.$bg-shadows-width-max});
   height: 100%;
 }
 
 .page-background__photo-shadows {
   top: v.$bg-photo-top;
-  left: v.$bg-photo-left;
-  width: v.$bg-photo-width;
+  left: calc(
+    (100% - min(100%, #{v.$bg-design-width})) / 2 +
+      min(#{v.$bg-photo-left}, #{v.$bg-photo-left-max})
+  );
+  width: min(#{v.$bg-photo-width}, #{v.$bg-photo-width-max});
 }
 
 // Mobile shapes: position (top, side, width) as percentages of the page, estimated from the
@@ -51,6 +59,8 @@
   position: absolute;
   max-width: none;
   height: auto;
+  // Dimmed so that text on top of a shape keeps a readable contrast (white on full green: 1.6:1).
+  opacity: v.$opacity-bg-blob-mobile;
 
   @include bp.respond-to(lg) {
     display: none;
@@ -60,36 +70,37 @@
 // Note: the Figma layers are named "Purple shadow", but purple-shadow-mobile-1 and -4 are cyan
 // in the exported files. The classes keep the file names so they can be traced back.
 $blobs: (
+  // Fixed distance from the top: the shape must end above the hero text on every screen height.
   "purple-1": (
-    top: -6%,
-    left: -30%,
-    width: 143%,
-  ),
+      top: -24rem,
+      left: -30%,
+      width: min(143%, 34.875rem),
+    ),
   "green-1": (
     top: 26%,
     right: -80%,
-    width: 133%,
+    width: min(133%, 32.375rem),
   ),
   "purple-2": (
     top: 26%,
     left: -45%,
-    width: 114%,
+    width: min(114%, 27.8125rem),
   ),
   "green-2": (
     top: 45%,
     right: -30%,
-    width: 89%,
+    width: min(89%, 21.75rem),
   ),
   "purple-3": (
     top: 68%,
     left: -25%,
-    width: 101%,
+    width: min(101%, 24.5625rem),
   ),
   "purple-4": (
     top: 84%,
     right: -40%,
-    width: 114%,
-  ),
+    width: min(114%, 27.75rem),
+  )
 );
 
 @each $name, $placement in $blobs {

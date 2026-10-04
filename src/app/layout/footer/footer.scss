@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
+@use "touch" as t;
 
 // Full-width bar with the green top border of the design.
 .footer {
@@ -26,9 +27,11 @@
 }
 
 .footer__logo {
+  position: relative;
   font-size: v.$font-size-heading;
   font-weight: v.$font-weight-bold;
   text-decoration: none;
+  @include t.touch-target;
 
   @include bp.respond-to(xl) {
     grid-area: logo;
@@ -61,8 +64,10 @@
 }
 
 .footer__social-link {
+  position: relative;
   display: block;
   line-height: v.$line-height-tight;
+  @include t.touch-target;
 }
 
 .footer__legal {
@@ -78,5 +83,8 @@
 }
 
 .footer__legal-link {
+  position: relative;
+  display: inline-block;
   text-decoration: underline;
+  @include t.touch-target;
 }

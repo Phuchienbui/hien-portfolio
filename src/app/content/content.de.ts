@@ -81,13 +81,11 @@ export const CONTENT_DE: SiteContent = {
     title: "Portfolio",
     intro: "[TODO_CONTENT: Text unter dem Titel Portfolio DE]",
     descriptions: {
-      "el-pollo-loco":
-        "Browser-Projekt mit JavaScript, HTML und CSS. Das Repository hat keine README. [TODO_CONTENT: Beschreibung vom User bestätigen]",
-      join: "Aufgabenverwaltung nach dem Kanban-Prinzip: Aufgaben lassen sich per Drag-and-drop anlegen und organisieren sowie Nutzern und Kategorien zuweisen. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+      "el-pollo-loco": "Browsergame, umgesetzt mit JavaScript, HTML und CSS.",
+      join: "Aufgabenverwaltung nach dem Kanban-Prinzip: Aufgaben lassen sich per Drag-and-drop anlegen und organisieren sowie Nutzern und Kategorien zuweisen.",
       dabubble:
-        "Chat-App nach dem Vorbild von Slack für die Zusammenarbeit im Team, mit übersichtlicher Oberfläche, Echtzeit-Nachrichten und klar gegliederten Kanälen. [TODO_CONTENT: Beschreibung vom User bestätigen]",
-      pokedex:
-        "Webanwendung zum Erkunden von Pokémon-Daten, laut Repository noch in Arbeit. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+        "Chat-App nach dem Vorbild von Slack für die Zusammenarbeit im Team, mit übersichtlicher Oberfläche, Echtzeit-Nachrichten und klar gegliederten Kanälen.",
+      pokedex: "Pokédex als Webanwendung mit REST-API zum Erkunden von Pokémon-Daten.",
     },
     card: {
       liveLabel: "Live-Test",
@@ -109,9 +107,8 @@ export const CONTENT_DE: SiteContent = {
   contact: {
     title: "Kontakt",
     heading: "Hast du ein Problem zu lösen?",
-    intro: "[TODO_CONTENT: Text unter der Überschrift Kontakt DE]",
-    hintText: "Suchst du einen Entwickler? ",
-    hintHighlight: "Schreib mir!",
+    intro:
+      "Du hast eine Idee, ein Projekt oder eine offene Stelle? Schreib mir kurz, worum es geht. Ich melde mich so schnell wie möglich bei dir.",
     name: { label: "Name", placeholder: "Dein Name", error: "Bitte gib mindestens 2 Zeichen ein." },
     email: {
       label: "E-Mail",

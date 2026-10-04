@@ -1,0 +1,15 @@
+@use "variables" as v;
+
+/// Extends the clickable area of a link or button to at least the touch size (44 x 44 px)
+/// without changing how it looks. The element itself must be positioned (`position: relative`).
+@mixin touch-target {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max(100%, v.$size-touch);
+    height: max(100%, v.$size-touch);
+    transform: translate(-50%, -50%);
+  }
+}
