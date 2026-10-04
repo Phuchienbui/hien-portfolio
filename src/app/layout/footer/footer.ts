@@ -4,18 +4,20 @@ import { RouterLink } from "@angular/router";
 import { ContentService } from "../../core/services/content";
 import { SocialLinksService } from "../../core/services/social-links";
 
-/** Full-viewport hero with name, role, call to action and social links. */
+/** Site footer with logo, copyright, social links and the legal pages. */
 @Component({
   imports: [RouterLink],
-  selector: "app-hero",
-  styleUrl: "./hero.scss",
-  templateUrl: "./hero.html",
+  selector: "app-footer",
+  styleUrl: "./footer.scss",
+  templateUrl: "./footer.html",
 })
-export class Hero {
+export class Footer {
   private readonly contentService = inject(ContentService);
 
   protected readonly site = computed(() => this.contentService.content().site);
-  protected readonly text = computed(() => this.contentService.content().hero);
+  protected readonly text = computed(() => this.contentService.content().footer);
   protected readonly social = computed(() => this.contentService.content().social);
   protected readonly socialLinks = inject(SocialLinksService).links;
+  /** The copyright year always matches the current year. */
+  protected readonly year = new Date().getFullYear();
 }

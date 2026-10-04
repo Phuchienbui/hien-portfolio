@@ -1,0 +1,82 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Full-width bar with the green top border of the design.
+.footer {
+  border-top: v.$border-thick solid v.$color-primary;
+  background-color: v.$color-background;
+}
+
+// Mobile: everything stacked and centered. Desktop: logo, copyright and icons in one row.
+.footer__content {
+  display: grid;
+  justify-items: center;
+  gap: v.$space-lg;
+  padding-block: v.$space-3xl;
+
+  @include bp.respond-to(xl) {
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+      "logo copyright socials"
+      "legal . .";
+    align-items: center;
+    justify-items: start;
+    row-gap: v.$space-xl;
+  }
+}
+
+.footer__logo {
+  font-size: v.$font-size-heading;
+  font-weight: v.$font-weight-bold;
+  text-decoration: none;
+
+  @include bp.respond-to(xl) {
+    grid-area: logo;
+  }
+}
+
+.footer__logo-accent {
+  color: v.$color-primary;
+}
+
+.footer__copyright {
+  font-size: v.$font-size-lead;
+
+  @include bp.respond-to(xl) {
+    grid-area: copyright;
+  }
+}
+
+.footer__social-list {
+  display: flex;
+  gap: v.$space-social;
+  list-style: none;
+}
+
+.footer__socials {
+  @include bp.respond-to(xl) {
+    grid-area: socials;
+    justify-self: end;
+  }
+}
+
+.footer__social-link {
+  display: block;
+  line-height: v.$line-height-tight;
+}
+
+.footer__legal {
+  @include bp.respond-to(xl) {
+    grid-area: legal;
+  }
+}
+
+.footer__legal-list {
+  display: flex;
+  gap: v.$space-xl;
+  list-style: none;
+}
+
+.footer__legal-link {
+  text-decoration: underline;
+}

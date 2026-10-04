@@ -1,4 +1,5 @@
 import { SiteContent } from "./content.model";
+import { LEGAL_NOTICE_EN, PRIVACY_POLICY_EN } from "./legal.en";
 
 /** English texts. */
 export const CONTENT_EN: SiteContent = {
@@ -29,10 +30,6 @@ export const CONTENT_EN: SiteContent = {
     greeting: "I am",
     role: "IT Specialist for Application Development",
     ctaLabel: "Let's talk!",
-    socialLabel: "Profiles and contact",
-    githubLabel: "GitHub profile",
-    emailLabel: "Send an email",
-    linkedinLabel: "LinkedIn profile",
     scrollLabel: "Scroll down",
   },
   about: {
@@ -130,4 +127,18 @@ export const CONTENT_EN: SiteContent = {
     failure: "Sending failed, sorry. Please try again later or send me an email.",
     backToTop: "Back to top",
   },
+  social: {
+    label: "Profiles and contact",
+    githubLabel: "GitHub profile",
+    emailLabel: "Send an email",
+    linkedinLabel: "LinkedIn profile",
+  },
+  footer: {
+    homeLinkLabel: "Phuc Hien Bui – go to home page",
+    legalLabel: "Legal",
+    legalNotice: "Legal notice",
+    privacyPolicy: "Privacy policy",
+  },
+  legalNotice: LEGAL_NOTICE_EN,
+  privacyPolicy: PRIVACY_POLICY_EN,
 };
