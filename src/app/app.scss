@@ -1,0 +1,17 @@
+@use "variables" as v;
+
+// The page background is positioned against the whole app; content and footer sit above it.
+:host {
+  display: block;
+  position: relative;
+}
+
+main,
+app-footer {
+  position: relative;
+  z-index: v.$z-content;
+}
+
+app-footer {
+  display: block;
+}

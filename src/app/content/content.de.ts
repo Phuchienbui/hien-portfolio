@@ -11,7 +11,7 @@ export const CONTENT_DE: SiteContent = {
     email: "phuchienbui2@gmail.com",
     githubUrl: "https://github.com/Phuchienbui",
     linkedinUrl: "",
-    aboutPhotoSrc: "",
+    aboutPhotoSrc: "images/about-portrait.jpg",
   },
   header: {
     homeLinkLabel: "Phuc Hien Bui – zur Startseite",
@@ -36,24 +36,30 @@ export const CONTENT_DE: SiteContent = {
   },
   about: {
     title: "Über mich",
-    intro: ["[TODO_CONTENT: Intro-Text Über mich DE]"],
+    intro: [
+      "Ich bin Phuc Hien Bui und mache eine Umschulung zum Fachinformatiker für Anwendungsentwicklung. Ich baue Webanwendungen mit Angular, TypeScript und SCSS. Mir geht es nicht darum, nur Syntax zu tippen, sondern zu verstehen, warum Code so aufgebaut ist, wie er aufgebaut ist.",
+    ],
     points: [
       {
         icon: "about-location-desktop",
-        text: "Ich lebe in Dortmund. [TODO_CONTENT: Remote-Bereitschaft DE]",
+        text: "Ich lebe in Dortmund. Ich arbeite gern vor Ort im Team und bin auch für Hybrid-Modelle offen.",
       },
       {
         icon: "about-bulb-desktop",
-        text: "[TODO_CONTENT: Offenheit und Lernbereitschaft DE]",
+        text: "Ich bin vor Kurzem in die Softwareentwicklung eingestiegen und lerne jeden Tag dazu. Ich nehme Feedback offen an, schreibe Gelerntes in eigenen Projekten wie dem Pokédex und El Pollo Loco auf die Probe und halte es mit Anki langfristig im Kopf.",
       },
-      { icon: "about-puzzle-desktop", text: "[TODO_CONTENT: Problemlösung DE]" },
+      {
+        icon: "about-puzzle-desktop",
+        text: "Probleme gehe ich systematisch an: Ich zerlege sie in kleine Teile, suche die Ursache statt am Symptom zu flicken und prüfe, ob meine Lösung wirklich hält. Strategiespiele wie Schach schulen mein vorausschauendes Denken.",
+      },
     ],
     photoAlt: "Porträt von Phuc Hien Bui",
     photoPlaceholder: "[TODO_CONTENT: Foto Über mich]",
   },
   skills: {
     title: "Skills",
-    intro: "Ich lasse mich zum Softwareentwickler mit Schwerpunkt Webentwicklung umschulen. In meinen Projekten, vom Browsergame in JavaScript über einen Pokédex mit REST-API bis zu diesem Portfolio in Angular, arbeite ich mit HTML, CSS/SCSS, JavaScript und TypeScript und verwalte meinen Code mit Git und GitHub. Mir ist wichtig zu verstehen, warum etwas funktioniert, nicht nur, wie man es tippt. Das Web verändert sich schnell, deshalb lerne ich jeden Tag weiter.",
+    intro:
+      "Ich lasse mich zum Softwareentwickler mit Schwerpunkt Webentwicklung umschulen. In meinen Projekten, vom Browsergame in JavaScript über einen Pokédex mit REST-API bis zu diesem Portfolio in Angular, arbeite ich mit HTML, CSS/SCSS, JavaScript und TypeScript und verwalte meinen Code mit Git und GitHub. Mir ist wichtig zu verstehen, warum etwas funktioniert, nicht nur, wie man es tippt. Das Web verändert sich schnell, deshalb lerne ich jeden Tag weiter.",
     skillNames: {
       html: "HTML",
       css: "CSS",
@@ -67,27 +73,28 @@ export const CONTENT_DE: SiteContent = {
     },
     ctaHeading: "Du suchst einen ",
     ctaHighlight: "anderen Skill?",
-    ctaText: "Ein neues Framework, eine Sprache wie Python oder ein Tool, das ich noch nicht kenne: Ich arbeite mich gern in neue Technologien ein und lerne systematisch mit praktischen Projekten und Spaced Repetition. Sag mir, womit dein Team arbeitet, dann arbeite ich mich ein.",
+    ctaText:
+      "Ein neues Framework, eine Sprache wie Python oder ein Tool, das ich noch nicht kenne: Ich arbeite mich gern in neue Technologien ein und lerne systematisch mit praktischen Projekten und Spaced Repetition. Sag mir, womit dein Team arbeitet, dann arbeite ich mich ein.",
     ctaLabel: "Kontakt aufnehmen",
   },
   portfolio: {
     title: "Portfolio",
     intro: "[TODO_CONTENT: Text unter dem Titel Portfolio DE]",
     descriptions: {
-      bestellapp:
-        "[TODO_CONTENT: Beschreibung BestellApp, das Repository ist privat und nicht lesbar]",
-      "memory-duel":
-        "Memory-Spiel für zwei Spieler im Browser mit vier Themen und drei Spielfeldgrößen. [TODO_CONTENT: Beschreibung vom User bestätigen]",
       "el-pollo-loco":
         "Browser-Projekt mit JavaScript, HTML und CSS. Das Repository hat keine README. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+      join: "Aufgabenverwaltung nach dem Kanban-Prinzip: Aufgaben lassen sich per Drag-and-drop anlegen und organisieren sowie Nutzern und Kategorien zuweisen. [TODO_CONTENT: Beschreibung vom User bestätigen]",
+      dabubble:
+        "Chat-App nach dem Vorbild von Slack für die Zusammenarbeit im Team, mit übersichtlicher Oberfläche, Echtzeit-Nachrichten und klar gegliederten Kanälen. [TODO_CONTENT: Beschreibung vom User bestätigen]",
       pokedex:
         "Webanwendung zum Erkunden von Pokémon-Daten, laut Repository noch in Arbeit. [TODO_CONTENT: Beschreibung vom User bestätigen]",
     },
     card: {
-      liveLabel: "Live",
+      liveLabel: "Live-Test",
       githubLabel: "GitHub",
       liveAria: "{name} live ansehen",
       githubAria: "{name} auf GitHub ansehen",
+      toggleLabel: "Details zu {name} anzeigen",
       imageAlt: "Vorschau von {name}",
       imagePlaceholder: "[TODO_CONTENT: Vorschaubild]",
     },

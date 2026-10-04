@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
+import { CONTENT_DE } from "../../content/content.de";
 import { ContentService } from "../../core/services/content";
 import { About } from "./about";
 
@@ -27,8 +28,27 @@ describe("About", () => {
     expect(element.querySelectorAll(".about__point").length).toBe(points.length);
   });
 
-  it("shows a placeholder instead of a photo while none is delivered", () => {
-    expect(element.querySelector(".about__photo")).toBeNull();
-    expect(element.querySelector(".about__photo-placeholder")).toBeTruthy();
+  it("shows the delivered portrait with alt text and fixed dimensions", () => {
+    const photo = element.querySelector<HTMLImageElement>(".about__photo");
+    expect(photo?.getAttribute("alt")).toBeTruthy();
+    expect(photo?.getAttribute("width")).toBe("480");
+    expect(photo?.getAttribute("height")).toBe("640");
+    expect(element.querySelector(".about__photo-placeholder")).toBeNull();
+  });
+
+  it("falls back to a visible placeholder while no photo path is set", async () => {
+    TestBed.resetTestingModule();
+    const content = { ...CONTENT_DE, site: { ...CONTENT_DE.site, aboutPhotoSrc: "" } };
+    await TestBed.configureTestingModule({
+      imports: [About],
+      providers: [
+        { provide: ContentService, useValue: { content: (): typeof content => content } },
+      ],
+    }).compileComponents();
+    const emptyFixture = TestBed.createComponent(About);
+    await emptyFixture.whenStable();
+    const root: HTMLElement = emptyFixture.nativeElement;
+    expect(root.querySelector(".about__photo")).toBeNull();
+    expect(root.querySelector(".about__photo-placeholder")).toBeTruthy();
   });
 });

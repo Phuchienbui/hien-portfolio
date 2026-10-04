@@ -1,5 +1,5 @@
 /** Identifiers of the projects shown in the portfolio. */
-export type ProjectId = "bestellapp" | "memory-duel" | "el-pollo-loco" | "pokedex";
+export type ProjectId = "el-pollo-loco" | "join" | "dabubble" | "pokedex";
 
 /** A portfolio project; its description comes from the content dictionaries. */
 export interface Project {

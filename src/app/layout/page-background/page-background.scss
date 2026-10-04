@@ -1,0 +1,101 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+// Fills the whole page behind the content; shapes that leave the page are clipped.
+:host {
+  position: absolute;
+  inset: 0;
+  z-index: v.$z-base;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-background {
+  position: relative;
+  height: 100%;
+}
+
+// Desktop shapes are only shown from the desktop layout on.
+.page-background__shadows,
+.page-background__photo-shadows {
+  display: none;
+  position: absolute;
+  // The reset limits images to their container; these shapes are meant to be wider.
+  max-width: none;
+
+  @include bp.respond-to(lg) {
+    display: block;
+  }
+}
+
+// The file is wider than the page (as in the design) and stretched to the page height,
+// so the shapes keep their relative position when the page gets longer or shorter.
+.page-background__shadows {
+  top: 0;
+  left: v.$bg-shadows-left;
+  width: v.$bg-shadows-width;
+  height: 100%;
+}
+
+.page-background__photo-shadows {
+  top: v.$bg-photo-top;
+  left: v.$bg-photo-left;
+  width: v.$bg-photo-width;
+}
+
+// Mobile shapes: position (top, side, width) as percentages of the page, estimated from the
+// mobile frame, because the design does not give them as numbers. The first green shape sits
+// behind the photo in the design, so it is placed behind the portrait of the About section,
+// where it does not lower the contrast of any text.
+.page-background__blob {
+  position: absolute;
+  max-width: none;
+  height: auto;
+
+  @include bp.respond-to(lg) {
+    display: none;
+  }
+}
+
+// Note: the Figma layers are named "Purple shadow", but purple-shadow-mobile-1 and -4 are cyan
+// in the exported files. The classes keep the file names so they can be traced back.
+$blobs: (
+  "purple-1": (
+    top: -6%,
+    left: -30%,
+    width: 143%,
+  ),
+  "green-1": (
+    top: 26%,
+    right: -80%,
+    width: 133%,
+  ),
+  "purple-2": (
+    top: 26%,
+    left: -45%,
+    width: 114%,
+  ),
+  "green-2": (
+    top: 45%,
+    right: -30%,
+    width: 89%,
+  ),
+  "purple-3": (
+    top: 68%,
+    left: -25%,
+    width: 101%,
+  ),
+  "purple-4": (
+    top: 84%,
+    right: -40%,
+    width: 114%,
+  ),
+);
+
+@each $name, $placement in $blobs {
+  .page-background__blob--#{$name} {
+    @each $property, $value in $placement {
+      #{$property}: $value;
+    }
+  }
+}

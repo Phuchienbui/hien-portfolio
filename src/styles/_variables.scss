@@ -92,10 +92,6 @@ $font-size-greeting-desktop: 5.625rem;
 $size-social-icon: 1.875rem;
 $space-social: 2.625rem;
 $width-social-line: 6.25rem;
-$size-hero-glow: 28rem;
-$size-hero-glow-mobile: 15rem;
-$blur-hero-glow: 93px;
-$opacity-hero-glow: 0.55;
 $line-height-tight: 1;
 
 // About me
@@ -142,3 +138,51 @@ $width-legal-text: 69.5rem;
 $width-legal-line: 8.125rem;
 $font-size-legal-title: 3.8125rem;
 $font-size-legal-title-mobile: 1.625rem;
+
+// Page background (positions as in the design frame "Background and Photo", 1440 px wide)
+$bg-shadows-width: 176.1%;
+$bg-shadows-left: -35.56%;
+$bg-photo-top: 17.9%;
+$bg-photo-left: 43.2%;
+$bg-photo-width: 55.5%;
+
+// Project card (design: "47. Portfolio component set", Version B). Sizes in cqw scale with the
+// card width (container query units), so the card looks the same at every width.
+$color-cyan: #1cdae6;
+$color-ink: #000000;
+$color-laptop-bezel: #1d1d1f;
+$color-laptop-bezel-light: #3b3b3f;
+$color-laptop-base-light: #e4e4e7;
+$color-laptop-base-dark: #9a9aa1;
+$radius-card-panel: 2.5rem;
+$duration-card: 0.25s;
+$opacity-card-preview: 0.4;
+$blur-card-preview: 2px;
+$ratio-card: 1;
+$ratio-laptop-screen: 8 / 5;
+$ratio-laptop-base: 21.7;
+$laptop-top: 21%;
+$laptop-width: 71.5%;
+$laptop-bezel: 3.5%;
+$laptop-radius: 4%;
+$laptop-base-width: 121.5%;
+$laptop-base-offset: -10.75%;
+$glow-left: -13.8%;
+$glow-top: 57.4%;
+$glow-width: 97.6%;
+$panel-top: 42%;
+$buttons-top: 23%;
+$space-card-buttons: 14cqw;
+$space-card-button-y: 2.5cqw;
+$space-card-button-x: 5cqw;
+$space-card-panel: 5cqw;
+$font-size-card-title: clamp(1.25rem, 6cqw, 2.25rem);
+$font-size-card-text: clamp(0.875rem, 3.8cqw, 1.4375rem);
+$font-size-card-placeholder: clamp(0.625rem, 2.2cqw, 0.875rem);
+
+// Preview crop: the laptop screen (400 x 250 px at x 90, y 144 inside the 600 px mockup),
+// enlarged to the card width. The top offset is relative to the frame height (62.5 % of the card).
+$mockup-crop-width: 150%;
+$mockup-crop-left: -22.5%;
+$mockup-crop-top: -57.6%;
+$mockup-crop-height: 62.5%;

@@ -1,77 +1,229 @@
 @use "variables" as v;
 
-// Dark card with green border; the preview sits on top of the text.
+// Square card with a green border. Container query units (cqw) make the content scale
+// with the card width, so it matches the design at every size.
 .project-card {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  position: relative;
+  container-type: inline-size;
+  aspect-ratio: v.$ratio-card;
   overflow: hidden;
   border: v.$border-thin solid v.$color-primary;
   border-radius: v.$radius-md;
   background-color: v.$color-background;
 }
 
-.project-card__preview {
+// --- Default view: laptop with preview ---------------------------------------------------
+
+.project-card__stage {
+  position: absolute;
+  inset: 0;
+}
+
+// Dark glow below the laptop (vector from the design).
+.project-card__glow {
+  position: absolute;
+  top: v.$glow-top;
+  left: v.$glow-left;
+  width: v.$glow-width;
+  max-width: none;
+  pointer-events: none;
+}
+
+.project-card__laptop {
+  position: absolute;
+  top: v.$laptop-top;
+  left: 50%;
+  width: v.$laptop-width;
+  margin: 0;
+  transform: translateX(-50%);
+}
+
+.project-card__lid {
+  padding: v.$laptop-bezel;
+  border-radius: v.$laptop-radius v.$laptop-radius 0 0;
+  background: linear-gradient(v.$color-laptop-bezel-light, v.$color-laptop-bezel);
+}
+
+.project-card__screen {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: v.$ratio-project-preview;
-  border-bottom: v.$border-thin solid v.$color-primary;
+  aspect-ratio: v.$ratio-laptop-screen;
+  overflow: hidden;
+  background-color: v.$color-background;
 }
 
-.project-card__image {
+// The finished mockup (laptop with the project) fills the card.
+.project-card__mockup {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 // Visible marker while no preview image has been delivered.
 .project-card__placeholder {
-  padding: v.$space-lg;
+  padding: v.$space-xs;
   color: v.$color-text-muted;
+  font-size: v.$font-size-card-placeholder;
   text-align: center;
 }
 
-.project-card__body {
+// The wider base of the laptop with its notch.
+.project-card__base {
+  position: relative;
+  margin-inline: v.$laptop-base-offset;
+  aspect-ratio: v.$ratio-laptop-base;
+  border-radius: 0 0 v.$laptop-radius v.$laptop-radius;
+  background: linear-gradient(v.$color-laptop-base-light, v.$color-laptop-base-dark);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 16%;
+    height: 45%;
+    border-radius: 0 0 v.$radius-sm v.$radius-sm;
+    background-color: v.$color-laptop-base-dark;
+    transform: translateX(-50%);
+  }
+}
+
+// --- Details: dimmed preview, links and white panel -------------------------------------
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: v.$color-background;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity v.$duration-card;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+// Visible on tap, on keyboard focus anywhere in the card, and on hover where hover exists.
+.project-card--active .project-card__overlay,
+.project-card:focus-within .project-card__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (hover: hover) {
+  .project-card:hover .project-card__overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+// The laptop screen of the mockup, enlarged, dimmed and slightly blurred behind the buttons.
+.project-card__preview {
+  position: absolute;
+  inset: 0 0 auto;
+  height: v.$mockup-crop-height;
+  overflow: hidden;
+  opacity: v.$opacity-card-preview;
+  filter: blur(v.$blur-card-preview);
+}
+
+.project-card__preview-image {
+  position: absolute;
+  top: v.$mockup-crop-top;
+  left: v.$mockup-crop-left;
+  width: v.$mockup-crop-width;
+  max-width: none;
+  // The height attribute of the image must not distort the enlarged picture.
+  height: auto;
+}
+
+.project-card__panel {
+  position: absolute;
+  inset: v.$panel-top 0 0;
   display: flex;
-  flex: 1;
   flex-direction: column;
-  gap: v.$space-md;
-  padding: v.$space-lg;
+  align-items: center;
+  justify-content: center;
+  gap: v.$space-card-panel;
+  padding: v.$space-card-panel;
+  border-radius: v.$radius-card-panel v.$radius-card-panel 0 0;
+  background-color: v.$color-text;
+  color: v.$color-ink;
+  text-align: center;
 }
 
 .project-card__title {
-  font-size: v.$font-size-lead;
+  color: v.$color-accent;
+  font-size: v.$font-size-card-title;
+}
+
+.project-card__description {
+  font-size: v.$font-size-card-text;
 }
 
 .project-card__tags {
   display: flex;
   flex-wrap: wrap;
-  gap: v.$space-xs;
+  justify-content: center;
+  color: v.$color-primary;
+  font-size: v.$font-size-card-text;
   list-style: none;
 }
 
-.project-card__tag {
-  padding: v.$space-xxs v.$space-sm;
-  border: v.$border-thin solid v.$color-accent;
-  border-radius: v.$radius-pill;
-  font-size: v.$font-size-label;
+// Transparent button over the whole card: the tap target for touch screens and a real,
+// focusable control for the keyboard. The links sit above it.
+.project-card__toggle {
+  position: absolute;
+  inset: 0;
+  z-index: v.$z-content;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: v.$border-medium solid v.$color-primary;
+    outline-offset: -(v.$border-medium);
+  }
+}
+
+// Visible separator between the technologies; spacing by margin so it never collapses.
+.project-card__separator {
+  margin-inline: 0.4em;
 }
 
 .project-card__links {
+  position: absolute;
+  z-index: v.$z-content + 1;
+  pointer-events: none;
+  top: v.$buttons-top;
+  right: 0;
+  left: 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: v.$space-md;
-  margin-top: auto;
+  justify-content: center;
+  gap: v.$space-card-buttons;
+  transform: translateY(-50%);
 }
 
 .project-card__link {
-  padding: v.$space-xs v.$space-lg;
-  border: v.$border-thin solid v.$color-primary;
+  pointer-events: auto;
+  padding: v.$space-card-button-y v.$space-card-button-x;
+  border: v.$border-thin solid v.$color-cyan;
   border-radius: v.$radius-sm;
+  color: v.$color-text;
+  font-size: v.$font-size-card-text;
   text-decoration: none;
+
+  &:focus-visible {
+    outline: v.$border-medium solid v.$color-text;
+    outline-offset: v.$border-medium;
+  }
 }
 
 .project-card__link--live {
-  background-color: v.$color-primary;
+  border-color: v.$color-accent;
+  background-color: v.$color-accent;
 }

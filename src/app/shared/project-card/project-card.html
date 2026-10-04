@@ -1,43 +1,77 @@
-<article class="project-card">
-  <figure class="project-card__preview">
+<article class="project-card" [class.project-card--active]="isActive()">
+  <!-- Default view: the project on a laptop. -->
+  <div class="project-card__stage">
+    <img
+      class="project-card__glow"
+      src="icons/decor/portfolio-card-glow.svg"
+      alt=""
+      width="587"
+      height="276"
+    />
     @if (project().image) {
       <img
-        class="project-card__image"
+        class="project-card__mockup"
         [src]="project().image"
         [alt]="imageAlt()"
-        width="600"
-        height="400"
+        width="601"
+        height="600"
         loading="lazy"
       />
     } @else {
-      <p class="project-card__placeholder">{{ labels().imagePlaceholder }}</p>
+      <!-- No preview delivered yet: an empty laptop with a visible marker. -->
+      <figure class="project-card__laptop">
+        <div class="project-card__lid">
+          <div class="project-card__screen">
+            <p class="project-card__placeholder">{{ labels().imagePlaceholder }}</p>
+          </div>
+        </div>
+        <div class="project-card__base" aria-hidden="true"></div>
+      </figure>
     }
-  </figure>
+  </div>
 
-  <div class="project-card__body">
-    <h3 class="project-card__title">{{ project().name }}</h3>
-    <p>{{ description() }}</p>
-
-    @if (project().tags.length > 0) {
-      <ul class="project-card__tags">
-        @for (tag of project().tags; track tag) {
-          <li class="project-card__tag">{{ tag }}</li>
-        }
-      </ul>
+  <!-- Details: shown on hover, keyboard focus or tap, always available to screen readers. -->
+  <div class="project-card__overlay">
+    @if (project().image) {
+      <div class="project-card__preview" aria-hidden="true">
+        <img
+          class="project-card__preview-image"
+          [src]="project().image"
+          alt=""
+          width="601"
+          height="600"
+        />
+      </div>
     }
+
+    <div class="project-card__panel">
+      <h3 class="project-card__title">{{ project().name }}</h3>
+      <p class="project-card__description">{{ description() }}</p>
+
+      @if (project().tags.length > 0) {
+        <ul class="project-card__tags">
+          @for (tag of project().tags; track tag; let isLast = $last) {
+            <li>
+              {{ tag }}
+              @if (!isLast) {
+                <span class="project-card__separator" aria-hidden="true">|</span>
+              }
+            </li>
+          }
+        </ul>
+      }
+    </div>
+
+    <button
+      class="project-card__toggle"
+      type="button"
+      [attr.aria-expanded]="isActive()"
+      [attr.aria-label]="toggleAriaLabel()"
+      (click)="toggleActive()"
+    ></button>
 
     @if (project().liveUrl || project().githubUrl) {
       <p class="project-card__links">
-        @if (project().liveUrl) {
-          <a
-            class="project-card__link project-card__link--live"
-            [href]="project().liveUrl"
-            [attr.aria-label]="liveAriaLabel()"
-            target="_blank"
-            rel="noopener noreferrer"
-            >{{ labels().liveLabel }}</a
-          >
-        }
         @if (project().githubUrl) {
           <a
             class="project-card__link"
@@ -46,6 +80,16 @@
             target="_blank"
             rel="noopener noreferrer"
             >{{ labels().githubLabel }}</a
+          >
+        }
+        @if (project().liveUrl) {
+          <a
+            class="project-card__link project-card__link--live"
+            [href]="project().liveUrl"
+            [attr.aria-label]="liveAriaLabel()"
+            target="_blank"
+            rel="noopener noreferrer"
+            >{{ labels().liveLabel }}</a
           >
         }
       </p>

@@ -11,7 +11,7 @@ export const CONTENT_EN: SiteContent = {
     email: "phuchienbui2@gmail.com",
     githubUrl: "https://github.com/Phuchienbui",
     linkedinUrl: "",
-    aboutPhotoSrc: "",
+    aboutPhotoSrc: "images/about-portrait.jpg",
   },
   header: {
     homeLinkLabel: "Phuc Hien Bui – go to home page",
@@ -35,24 +35,30 @@ export const CONTENT_EN: SiteContent = {
   },
   about: {
     title: "About me",
-    intro: ["[TODO_CONTENT: Intro text About me EN]"],
+    intro: [
+      "I am Phuc Hien Bui and I am retraining as an IT specialist for application development. I build web applications with Angular, TypeScript and SCSS. For me it is not about just typing syntax but about understanding why code is structured the way it is. [TODO_CONTENT: Übersetzung prüfen]",
+    ],
     points: [
       {
         icon: "about-location-desktop",
-        text: "I live in Dortmund. [TODO_CONTENT: remote availability EN]",
+        text: "I live in Dortmund. I enjoy working on site in a team and am also open to hybrid models. [TODO_CONTENT: Übersetzung prüfen]",
       },
       {
         icon: "about-bulb-desktop",
-        text: "[TODO_CONTENT: openness and willingness to learn EN]",
+        text: "I only recently started in software development and learn something new every day. I welcome feedback, put what I learn to the test in my own projects such as the Pokédex and El Pollo Loco, and keep it in my head long-term with Anki. [TODO_CONTENT: Übersetzung prüfen]",
       },
-      { icon: "about-puzzle-desktop", text: "[TODO_CONTENT: problem solving EN]" },
+      {
+        icon: "about-puzzle-desktop",
+        text: "I approach problems systematically: I break them into small parts, look for the cause instead of patching the symptom, and check whether my solution really holds. Strategy games such as chess train my ability to think ahead. [TODO_CONTENT: Übersetzung prüfen]",
+      },
     ],
     photoAlt: "Portrait of Phuc Hien Bui",
     photoPlaceholder: "[TODO_CONTENT: photo About me]",
   },
   skills: {
     title: "Skills",
-    intro: "I am retraining as a software developer with a focus on web development. In my projects, from a browser game in JavaScript to a Pokédex with a REST API to this portfolio in Angular, I work with HTML, CSS/SCSS, JavaScript and TypeScript and manage my code with Git and GitHub. It matters to me to understand why something works, not just how to type it. The web changes quickly, so I keep learning every day. [TODO_CONTENT: Übersetzung prüfen]",
+    intro:
+      "I am retraining as a software developer with a focus on web development. In my projects, from a browser game in JavaScript to a Pokédex with a REST API to this portfolio in Angular, I work with HTML, CSS/SCSS, JavaScript and TypeScript and manage my code with Git and GitHub. It matters to me to understand why something works, not just how to type it. The web changes quickly, so I keep learning every day. [TODO_CONTENT: Übersetzung prüfen]",
     skillNames: {
       html: "HTML",
       css: "CSS",
@@ -66,27 +72,28 @@ export const CONTENT_EN: SiteContent = {
     },
     ctaHeading: "Looking for ",
     ctaHighlight: "another skill?",
-    ctaText: "A new framework, a language like Python or a tool I do not know yet: I enjoy getting into new technologies and learn systematically with hands-on projects and spaced repetition. Tell me what your team works with, and I will get up to speed. [TODO_CONTENT: Übersetzung prüfen]",
+    ctaText:
+      "A new framework, a language like Python or a tool I do not know yet: I enjoy getting into new technologies and learn systematically with hands-on projects and spaced repetition. Tell me what your team works with, and I will get up to speed. [TODO_CONTENT: Übersetzung prüfen]",
     ctaLabel: "Get in touch",
   },
   portfolio: {
     title: "Portfolio",
     intro: "[TODO_CONTENT: text below the Portfolio title EN]",
     descriptions: {
-      bestellapp:
-        "[TODO_CONTENT: BestellApp description, the repository is private and not readable]",
-      "memory-duel":
-        "Two-player memory game in the browser with four themes and three board sizes. [TODO_CONTENT: confirm description]",
       "el-pollo-loco":
         "Browser project built with JavaScript, HTML and CSS. The repository has no README. [TODO_CONTENT: confirm description]",
+      join: "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories. [TODO_CONTENT: confirm description]",
+      dabubble:
+        "Slack clone app for team communication and collaboration, with an intuitive interface, real-time messaging and a robust channel organization. [TODO_CONTENT: confirm description]",
       pokedex:
         "Web application for exploring Pokémon data, still a work in progress according to the repository. [TODO_CONTENT: confirm description]",
     },
     card: {
-      liveLabel: "Live",
+      liveLabel: "Live test",
       githubLabel: "GitHub",
       liveAria: "View {name} live",
       githubAria: "View {name} on GitHub",
+      toggleLabel: "Show details of {name}",
       imageAlt: "Preview of {name}",
       imagePlaceholder: "[TODO_CONTENT: preview image]",
     },
