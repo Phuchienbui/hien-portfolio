@@ -5,10 +5,11 @@ import { RouterOutlet } from "@angular/router";
 import { ContentService } from "./core/services/content";
 import { Footer } from "./layout/footer/footer";
 import { Header } from "./layout/header/header";
+import { PageBackground } from "./layout/page-background/page-background";
 
 /** Application shell: fixed header, page content and footer. Keeps the tab title in the active language. */
 @Component({
-  imports: [Footer, Header, RouterOutlet],
+  imports: [Footer, Header, PageBackground, RouterOutlet],
   selector: "app-root",
   styleUrl: "./app.scss",
   templateUrl: "./app.html",

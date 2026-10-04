@@ -8,34 +8,6 @@
   overflow: hidden;
 }
 
-// Blurred color areas behind the content (drawn in CSS instead of bitmaps).
-.hero__glow {
-  position: absolute;
-  z-index: v.$z-base;
-  width: v.$size-hero-glow-mobile;
-  aspect-ratio: 1;
-  border-radius: v.$radius-circle;
-  opacity: v.$opacity-hero-glow;
-  filter: blur(v.$blur-hero-glow);
-  pointer-events: none;
-
-  @include bp.respond-to(xl) {
-    width: v.$size-hero-glow;
-  }
-}
-
-.hero__glow--purple {
-  top: 8%;
-  left: -20%;
-  background-color: v.$color-accent;
-}
-
-.hero__glow--green {
-  right: -15%;
-  bottom: 5%;
-  background-color: v.$color-primary;
-}
-
 .hero__content {
   position: relative;
   z-index: v.$z-content;
