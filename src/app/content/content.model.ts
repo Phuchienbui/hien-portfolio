@@ -81,6 +81,8 @@ export interface ProjectCardLabels {
   githubLabel: string;
   liveAria: string;
   githubAria: string;
+  /** Label of the button that shows or hides the details; `{name}` is the project name. */
+  toggleLabel: string;
   imageAlt: string;
   imagePlaceholder: string;
 }
