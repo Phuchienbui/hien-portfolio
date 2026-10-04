@@ -5,10 +5,6 @@
     <div class="contact__intro">
       <h3 class="contact__heading">{{ text().heading }}</h3>
       <p>{{ text().intro }}</p>
-      <p class="contact__hint">
-        {{ text().hintText
-        }}<strong class="contact__hint-highlight">{{ text().hintHighlight }}</strong>
-      </p>
     </div>
 
     <form class="contact__form" novalidate [formGroup]="form" (ngSubmit)="submit()">

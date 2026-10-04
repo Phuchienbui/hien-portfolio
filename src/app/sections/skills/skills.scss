@@ -66,9 +66,8 @@
 
 .skills__grid {
   display: grid;
-  grid-template-columns: repeat(3, v.$width-skill-cell);
-  gap: v.$space-md v.$space-skill-column;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(v.$width-skill-cell, 1fr));
+  gap: v.$space-md;
   list-style: none;
 
   @include bp.respond-to(xl) {
@@ -96,6 +95,7 @@
   padding: v.$space-md v.$space-xl;
   border-radius: v.$radius-sm;
   background-color: v.$color-primary;
+  color: v.$color-on-primary;
   text-decoration: none;
   box-shadow: v.$shadow-button;
 }

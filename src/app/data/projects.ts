@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
     id: "pokedex",
     name: "Pokédex",
     image: "images/projects/pokedex.png",
-    tags: ["HTML", "CSS", "JavaScript"],
+    tags: ["HTML", "CSS", "JavaScript", "REST-API"],
     githubUrl: "https://github.com/Phuchienbui/pokedex",
     liveUrl: "",
   },

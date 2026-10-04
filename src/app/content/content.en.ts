@@ -80,13 +80,11 @@ export const CONTENT_EN: SiteContent = {
     title: "Portfolio",
     intro: "[TODO_CONTENT: text below the Portfolio title EN]",
     descriptions: {
-      "el-pollo-loco":
-        "Browser project built with JavaScript, HTML and CSS. The repository has no README. [TODO_CONTENT: confirm description]",
-      join: "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories. [TODO_CONTENT: confirm description]",
+      "el-pollo-loco": "Browser game built with JavaScript, HTML and CSS.",
+      join: "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
       dabubble:
-        "Slack clone app for team communication and collaboration, with an intuitive interface, real-time messaging and a robust channel organization. [TODO_CONTENT: confirm description]",
-      pokedex:
-        "Web application for exploring Pokémon data, still a work in progress according to the repository. [TODO_CONTENT: confirm description]",
+        "Slack clone app for team communication and collaboration, with an intuitive interface, real-time messaging and a robust channel organization.",
+      pokedex: "Pokédex web application using a REST API to explore Pokémon data.",
     },
     card: {
       liveLabel: "Live test",
@@ -108,9 +106,8 @@ export const CONTENT_EN: SiteContent = {
   contact: {
     title: "Contact",
     heading: "Got a problem to solve?",
-    intro: "[TODO_CONTENT: text below the Contact heading EN]",
-    hintText: "Looking for a developer? ",
-    hintHighlight: "Contact me!",
+    intro:
+      "Do you have an idea, a project or an open position? Briefly tell me what it is about. I will get back to you as soon as possible. [TODO_CONTENT: Übersetzung prüfen]",
     name: { label: "Name", placeholder: "Your name", error: "Please enter at least 2 characters." },
     email: {
       label: "Email",

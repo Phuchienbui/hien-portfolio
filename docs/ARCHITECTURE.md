@@ -130,3 +130,33 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 
 - **Entscheidung:** `App` setzt `document.title` aus dem Wörterbuch (`meta.title`), reaktiv über ein `effect`.
 - **Trade-off:** Alle Seiten teilen einen Titel. Seitenspezifische Titel und Meta-Tags kommen mit Phase 13 (SEO).
+
+## Responsive Feinschliff (Phase 12)
+
+### Zwischenbreiten aus dem Designprinzip
+
+- **Entscheidung:** Das Design kennt nur 390 px und 1440 px. Dazwischen gilt: Unter 1024 px ist das Layout einspaltig mit Burger-Menü, ab 1024 px erscheint die Navigation, ab 1440 px das Zwei-Spalten-Layout von Hero, About, Skills und Kontakt. Das Portfolio-Raster ist ab 768 px zweispaltig. Oberhalb von 1440 px bleibt der Inhalt 1240 px breit und zentriert.
+- **Warum:** Die zweispaltigen Layouts des Designs brauchen die volle Breite von 1440 px. Darunter würden Text und Foto zu eng. Der Wechsel erst bei 1440 px ist sicher, kostet aber auf mittleren Breiten (1024 bis 1439 px) etwas Platzausnutzung.
+- **Trade-off:** Bei 1280 px stehen die Skill-Icons in einer langen Reihe statt im 4-Spalten-Raster des Designs. Das ist ein Kompromiss, den das Design nicht vorgibt.
+
+### Fließende Größen statt fester Breiten
+
+- **Entscheidung:** Die Hero-Schriften nutzen `clamp()` mit `vw`, das Skill-Raster `auto-fill`. Karten skalieren ihren Inhalt mit Container-Query-Einheiten (`cqw`). Der Hero hat `min-height` statt fester Höhe.
+- **Warum:** Feste Größen laufen bei 320 px über oder schneiden Inhalt im Querformat ab. Fließende Größen passen sich an, ohne für jede Breite eine Regel zu brauchen.
+
+### Klickflächen per Mixin
+
+- **Entscheidung:** Das Mixin `touch-target` vergrößert die anklickbare Fläche über ein unsichtbares `::after`-Element auf mindestens 44 × 44 px, ohne das Aussehen zu ändern.
+- **Warum:** Das Design hat kleine Icons und Links. Ein größeres Aussehen würde vom Design abweichen, eine größere Klickfläche nicht.
+- **Trade-off:** Benachbarte Klickflächen können sich minimal überlappen. Das tritt bei den vorhandenen Abständen nicht auf.
+
+### Kontrast: Abweichungen vom Design
+
+- **Entscheidung:** Vier Farben sind für die Lesbarkeit angepasst (dunkler Text auf Grün, dunkleres Grün auf Weiß, helleres Violett für kleinen Text, helleres Rot für Fehler). Alle Tokens stehen in `_variables.scss` mit ihrem Kontrastverhältnis.
+- **Warum:** Weiß auf dem Grün aus dem Design erreicht nur 1,6 : 1. Das ist für viele Besucher kaum lesbar. Die Prüfung steht in [responsive-check.md](responsive-check.md).
+- **Trade-off:** Das Aussehen weicht an diesen Stellen leicht vom Figma-Entwurf ab. Rückgängig machen ist eine Änderung weniger Tokens.
+
+### Hintergrund-Formen oberhalb von 1440 px
+
+- **Entscheidung:** Der Desktop-Hintergrund bleibt bei Designgröße und wird um die halbe Mehrbreite verschoben. Mobile Formen sind auf ihre Dateigröße begrenzt und abgedunkelt.
+- **Warum:** Wachsende Formen schoben sich bei 1920 px unter den Text und senkten den Kontrast.

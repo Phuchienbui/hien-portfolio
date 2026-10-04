@@ -121,8 +121,6 @@ export interface ContactContent {
   title: string;
   heading: string;
   intro: string;
-  hintText: string;
-  hintHighlight: string;
   name: FormFieldContent;
   email: FormFieldContent;
   message: FormFieldContent;
