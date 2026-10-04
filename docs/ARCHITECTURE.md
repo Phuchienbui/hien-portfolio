@@ -112,3 +112,21 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 
 - **Entscheidung:** Name, Anschrift und E-Mail stehen einmal in `content/owner.ts` und werden in beide Sprachen eingesetzt. Alles Unbelegte (Hosting, Speicherdauer, Empfänger der Nachrichten) bleibt als `[TODO_CONTENT: …]` sichtbar.
 - **Warum:** Rechtstexte dürfen keine erfundenen Angaben enthalten. Sichtbare Marker verhindern, dass ein unvollständiger Text unbemerkt veröffentlicht wird.
+
+## Mehrsprachigkeit (Phase 11)
+
+### Sprache wird nicht gespeichert
+
+- **Entscheidung:** Die Seite startet immer auf Deutsch. Die gewählte Sprache wird weder in `localStorage` noch in einem Cookie abgelegt.
+- **Warum:** Die Datenschutzerklärung sagt, dass die Seite nichts im Browser speichert. Ein gespeicherter Sprachwunsch würde diese Aussage ändern und einen Hinweis im Text nötig machen. Der Preis ist gering, weil der Sprachwechsel ein Klick ist.
+- **Trade-off:** Wer Englisch bevorzugt, muss bei jedem Besuch erneut umschalten. Wird das später gewünscht, ist die Änderung klein (Speichern im `LanguageService`), erfordert aber eine angepasste Datenschutzerklärung.
+
+### Absicherung gegen fehlende Übersetzungen
+
+- **Entscheidung:** Das Interface `SiteContent` erzwingt zur Compile-Zeit, dass beide Sprachen dieselben Schlüssel haben. Zusätzlich vergleicht ein Test alle verschachtelten Pfade und prüft, dass kein Text leer ist. Ein Test über die ganze App stellt sicher, dass ein Sprachwechsel Header, Formular, Footer, Rechtsseiten, `lang` und Tab-Titel aktualisiert.
+- **Warum:** Die Typen fangen fehlende Schlüssel, der Test fängt leere Texte und Abweichungen in verschachtelten Listen (z. B. Abschnitte der Rechtstexte), die ein Typ nicht erzwingt.
+
+### Tab-Titel je Sprache
+
+- **Entscheidung:** `App` setzt `document.title` aus dem Wörterbuch (`meta.title`), reaktiv über ein `effect`.
+- **Trade-off:** Alle Seiten teilen einen Titel. Seitenspezifische Titel und Meta-Tags kommen mit Phase 13 (SEO).

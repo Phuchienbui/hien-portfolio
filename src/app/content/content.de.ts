@@ -3,6 +3,7 @@ import { LEGAL_NOTICE_DE, PRIVACY_POLICY_DE } from "./legal.de";
 
 /** German texts. */
 export const CONTENT_DE: SiteContent = {
+  meta: { title: "Phuc Hien Bui – Portfolio" },
   site: {
     name: "Phuc Hien Bui",
     logoStart: "Hie",
