@@ -50,3 +50,9 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 - Annahme „keine Analyse- und Tracking-Dienste“ aus `CONTENT_INPUT.md`: Die Seite setzt im Code keine Cookies und nutzt keinen Browser-Speicher. Bitte bestätigen, dass das auch für den Server gilt.
 - Impressum: Telefon ist nicht angegeben (nicht erfunden). Wenn für deine Situation weitere Pflichtangaben nötig sind (z. B. Umsatzsteuer-ID, Berufsbezeichnung), ergänzen.
 - Die Rechtstexte verwenden Poppins statt Open Sans wie im Figma-Entwurf, damit keine zweite Schrift geladen werden muss.
+
+## Sprachen (Phase 11)
+
+- Die englischen UI-Texte (Navigation, Formular, Meldungen, Footer, Rechtsseiten) stammen von mir. Laut Checkliste (User Story 3) bitte mit deepl.com oder grammarly.com gegenprüfen, die deutschen Texte z. B. mit languagetool.org.
+- Die Sprache wird bewusst nicht gespeichert: Die Seite startet immer auf Deutsch. Dadurch bleibt die Aussage der Datenschutzerklärung richtig, dass nichts im Browser abgelegt wird.
+- Persönliche Texte (Über mich, Skills, Portfolio, Kontakt) haben beide Sprachen als `[TODO_CONTENT: …]`-Marker, bis du sie lieferst. Die Beschreibungen der Projekte sind Entwürfe in beiden Sprachen und müssen bestätigt werden.

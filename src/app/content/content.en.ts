@@ -3,6 +3,7 @@ import { LEGAL_NOTICE_EN, PRIVACY_POLICY_EN } from "./legal.en";
 
 /** English texts. */
 export const CONTENT_EN: SiteContent = {
+  meta: { title: "Phuc Hien Bui – Portfolio" },
   site: {
     name: "Phuc Hien Bui",
     logoStart: "Hie",

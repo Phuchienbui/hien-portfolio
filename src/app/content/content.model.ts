@@ -162,8 +162,15 @@ export interface LegalDocument {
   sections: LegalSection[];
 }
 
+/** Page-level texts. */
+export interface PageMeta {
+  /** Text of the browser tab (`document.title`). */
+  title: string;
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
+  meta: PageMeta;
   site: SiteInfo;
   header: HeaderContent;
   hero: HeroContent;
