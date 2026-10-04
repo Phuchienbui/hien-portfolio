@@ -14,7 +14,7 @@
 
     <a class="hero__cta" routerLink="/" fragment="contact">{{ text().ctaLabel }}</a>
 
-    <nav class="hero__socials" [attr.aria-label]="text().socialLabel">
+    <nav class="hero__socials" [attr.aria-label]="social().label">
       <ul class="hero__social-list">
         @for (link of socialLinks(); track link.icon) {
           <li>

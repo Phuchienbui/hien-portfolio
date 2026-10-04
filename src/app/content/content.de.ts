@@ -1,4 +1,5 @@
 import { SiteContent } from "./content.model";
+import { LEGAL_NOTICE_DE, PRIVACY_POLICY_DE } from "./legal.de";
 
 /** German texts. */
 export const CONTENT_DE: SiteContent = {
@@ -30,10 +31,6 @@ export const CONTENT_DE: SiteContent = {
     // Soft hyphen (U+00AD) marks where the long word may break on narrow screens.
     role: "Fachinformatiker Anwendungs­entwicklung",
     ctaLabel: "Sprich mich an!",
-    socialLabel: "Profile und Kontakt",
-    githubLabel: "GitHub-Profil",
-    emailLabel: "E-Mail schreiben",
-    linkedinLabel: "LinkedIn-Profil",
     scrollLabel: "Nach unten scrollen",
   },
   about: {
@@ -132,4 +129,18 @@ export const CONTENT_DE: SiteContent = {
       "Das Senden hat leider nicht geklappt. Bitte versuche es später noch einmal oder schreibe mir per E-Mail.",
     backToTop: "Zurück nach oben",
   },
+  social: {
+    label: "Profile und Kontakt",
+    githubLabel: "GitHub-Profil",
+    emailLabel: "E-Mail schreiben",
+    linkedinLabel: "LinkedIn-Profil",
+  },
+  footer: {
+    homeLinkLabel: "Phuc Hien Bui – zur Startseite",
+    legalLabel: "Rechtliches",
+    legalNotice: "Impressum",
+    privacyPolicy: "Datenschutz",
+  },
+  legalNotice: LEGAL_NOTICE_DE,
+  privacyPolicy: PRIVACY_POLICY_DE,
 };

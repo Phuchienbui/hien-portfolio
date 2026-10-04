@@ -94,3 +94,21 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 
 - **Entscheidung:** Ein verstecktes Feld (`aria-hidden`, `tabindex="-1"`, aus dem Sichtbereich) fängt einfache Spam-Bots. Ist es gefüllt, wird nichts gesendet, der Besucher sieht aber den normalen Erfolg.
 - **Trade-off:** Schützt nur gegen einfache Bots. Echter Schutz braucht serverseitige Prüfung.
+
+## Footer und rechtliche Seiten (Phase 10)
+
+### Ein Layout für beide Rechtstexte
+
+- **Entscheidung:** Impressum und Datenschutzerklärung nutzen eine gemeinsame Komponente (`shared/legal-document`). Die Texte liegen als typisierte Daten (`LegalDocument`: Titel, Abschnitte, Absätze) in den Content-Dateien, getrennt nach Sprache.
+- **Warum:** Beide Seiten haben dieselbe Struktur (ein `h1`, `h2` je Abschnitt). Eine Komponente hält das Layout einheitlich, und die Sprache wechselt wie überall ohne Reload.
+- **Trade-off:** Absätze sind reiner Text ohne Links oder Listen. Für die aktuellen Texte reicht das, für Verlinkungen im Text müsste das Modell erweitert werden.
+
+### Gemeinsame Social-Links
+
+- **Entscheidung:** Hero und Footer beziehen ihre Links aus `SocialLinksService`. Ein fehlender Link (LinkedIn ohne URL) verschwindet überall zugleich.
+- **Warum:** Eine Quelle für die Links verhindert, dass Hero und Footer auseinanderlaufen oder ein Eintrag in nur einem von beiden fehlt.
+
+### Inhalte nur aus belegten Fakten
+
+- **Entscheidung:** Name, Anschrift und E-Mail stehen einmal in `content/owner.ts` und werden in beide Sprachen eingesetzt. Alles Unbelegte (Hosting, Speicherdauer, Empfänger der Nachrichten) bleibt als `[TODO_CONTENT: …]` sichtbar.
+- **Warum:** Rechtstexte dürfen keine erfundenen Angaben enthalten. Sichtbare Marker verhindern, dass ein unvollständiger Text unbemerkt veröffentlicht wird.

@@ -1,0 +1,12 @@
+<article class="container legal-document">
+  <h1 class="legal-document__title">{{ document().title }}</h1>
+
+  @for (section of document().sections; track section.heading) {
+    <section class="legal-document__section">
+      <h2 class="legal-document__heading">{{ section.heading }}</h2>
+      @for (paragraph of section.paragraphs; track $index) {
+        <p>{{ paragraph }}</p>
+      }
+    </section>
+  }
+</article>

@@ -1,0 +1,38 @@
+<footer class="footer">
+  <div class="container footer__content">
+    <a class="footer__logo" routerLink="/" [attr.aria-label]="text().homeLinkLabel">
+      {{ site().logoStart }}<span class="footer__logo-accent">{{ site().logoAccent }}</span>
+    </a>
+
+    <p class="footer__copyright">© {{ site().name }} {{ year }}</p>
+
+    <nav class="footer__socials" [attr.aria-label]="social().label">
+      <ul class="footer__social-list">
+        @for (link of socialLinks(); track link.icon) {
+          <li>
+            <a
+              class="footer__social-link"
+              [href]="link.href"
+              [attr.aria-label]="link.label"
+              [attr.target]="link.isExternal ? '_blank' : null"
+              [attr.rel]="link.isExternal ? 'noopener noreferrer' : null"
+            >
+              <img [src]="'icons/' + link.footerIcon + '.svg'" alt="" width="30" height="30" />
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <nav class="footer__legal" [attr.aria-label]="text().legalLabel">
+      <ul class="footer__legal-list">
+        <li>
+          <a class="footer__legal-link" routerLink="/legal-notice">{{ text().legalNotice }}</a>
+        </li>
+        <li>
+          <a class="footer__legal-link" routerLink="/privacy-policy">{{ text().privacyPolicy }}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</footer>

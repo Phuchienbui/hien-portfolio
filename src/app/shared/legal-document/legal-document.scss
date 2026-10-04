@@ -1,0 +1,59 @@
+@use "variables" as v;
+@use "breakpoints" as bp;
+
+.legal-document {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-xl;
+  max-width: v.$width-legal-text;
+  padding-block: v.$space-3xl;
+}
+
+// Green title with the purple lines of the design on both sides.
+.legal-document__title {
+  display: flex;
+  align-items: center;
+  gap: v.$space-md;
+  color: v.$color-primary;
+  font-size: v.$font-size-legal-title-mobile;
+  // A long word may break instead of running out of the screen.
+  overflow-wrap: anywhere;
+
+  // The decorative lines need room, so they appear only from tablet width on.
+  &::before,
+  &::after {
+    content: "";
+    display: none;
+    flex: 1;
+    max-width: v.$width-legal-line;
+    height: v.$border-thick;
+    border-radius: v.$radius-pill;
+    background-color: v.$color-accent;
+  }
+
+  @include bp.respond-to(md) {
+    &::before,
+    &::after {
+      display: block;
+    }
+  }
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-legal-title;
+  }
+}
+
+.legal-document__section {
+  display: flex;
+  flex-direction: column;
+  gap: v.$space-md;
+}
+
+.legal-document__heading {
+  color: v.$color-accent;
+  font-size: v.$font-size-lead;
+
+  @include bp.respond-to(xl) {
+    font-size: v.$font-size-heading;
+  }
+}

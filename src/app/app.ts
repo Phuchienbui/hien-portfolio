@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 
+import { Footer } from "./layout/footer/footer";
 import { Header } from "./layout/header/header";
 
-/** Application shell with the fixed header. The footer follows in a later phase. */
+/** Application shell: fixed header, page content and footer. */
 @Component({
-  imports: [Header, RouterOutlet],
+  imports: [Footer, Header, RouterOutlet],
   selector: "app-root",
   styleUrl: "./app.scss",
   templateUrl: "./app.html",

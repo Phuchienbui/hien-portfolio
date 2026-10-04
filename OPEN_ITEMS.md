@@ -41,3 +41,12 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 - Text unter der Überschrift „Kontakt“ DE und EN.
 - Die Überschrift „Hast du ein Problem zu lösen?“ und der Satz „Suchst du einen Entwickler? Schreib mir!“ sind sinngemäße Übersetzungen der Figma-Texte. Bitte prüfen oder ersetzen.
 - Die Datenschutzerklärung (`/privacy-policy`) ist noch ein Platzhalter, bis Phase 10 sie füllt.
+
+## Footer, Impressum und Datenschutz (`legal.de.ts` / `legal.en.ts`, `owner.ts`)
+
+- **Die Rechtstexte sind ein Entwurf, keine Rechtsberatung.** Sie stammen ausschließlich aus den Fakten in `CONTENT_INPUT.md` und müssen vor der Veröffentlichung von dir geprüft werden, gern mit einem Generator oder einer Beratungsstelle.
+- Hosting-Anbieter mit Anschrift und Speicherdauer der Server-Logfiles (Datenschutz, Abschnitt „Hosting“).
+- Kontaktformular: Empfänger, Übertragungsweg und Speicherdauer der Nachrichten (Datenschutz, Abschnitt „Kontaktformular“), sobald der Versand eingerichtet ist.
+- Annahme „keine Analyse- und Tracking-Dienste“ aus `CONTENT_INPUT.md`: Die Seite setzt im Code keine Cookies und nutzt keinen Browser-Speicher. Bitte bestätigen, dass das auch für den Server gilt.
+- Impressum: Telefon ist nicht angegeben (nicht erfunden). Wenn für deine Situation weitere Pflichtangaben nötig sind (z. B. Umsatzsteuer-ID, Berufsbezeichnung), ergänzen.
+- Die Rechtstexte verwenden Poppins statt Open Sans wie im Figma-Entwurf, damit keine zweite Schrift geladen werden muss.

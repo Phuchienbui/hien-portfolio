@@ -14,8 +14,8 @@ describe("ROUTES", () => {
 
   it.each([
     ["/", "Phuc Hien Bui"],
-    ["/legal-notice", "Legal notice"],
-    ["/privacy-policy", "Privacy policy"],
+    ["/legal-notice", "Impressum"],
+    ["/privacy-policy", "Datenschutzerklärung"],
   ])("should render exactly one h1 for %s", async (url, heading) => {
     await harness.navigateByUrl(url);
     const headings = (harness.routeNativeElement as HTMLElement).querySelectorAll("h1");

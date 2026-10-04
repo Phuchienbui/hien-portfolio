@@ -42,10 +42,6 @@ export interface HeroContent {
   greeting: string;
   role: string;
   ctaLabel: string;
-  socialLabel: string;
-  githubLabel: string;
-  emailLabel: string;
-  linkedinLabel: string;
   scrollLabel: string;
 }
 
@@ -138,6 +134,34 @@ export interface ContactContent {
   backToTop: string;
 }
 
+/** Social link labels shared by hero and footer. */
+export interface SocialContent {
+  label: string;
+  githubLabel: string;
+  emailLabel: string;
+  linkedinLabel: string;
+}
+
+/** Texts of the footer. */
+export interface FooterContent {
+  homeLinkLabel: string;
+  legalLabel: string;
+  legalNotice: string;
+  privacyPolicy: string;
+}
+
+/** One section of a legal text. */
+export interface LegalSection {
+  heading: string;
+  paragraphs: string[];
+}
+
+/** A legal text (legal notice or privacy policy). */
+export interface LegalDocument {
+  title: string;
+  sections: LegalSection[];
+}
+
 /** All visible texts of the site for one language. Extended phase by phase. */
 export interface SiteContent {
   site: SiteInfo;
@@ -148,4 +172,8 @@ export interface SiteContent {
   portfolio: PortfolioContent;
   testimonial: TestimonialContent;
   contact: ContactContent;
+  social: SocialContent;
+  footer: FooterContent;
+  legalNotice: LegalDocument;
+  privacyPolicy: LegalDocument;
 }
