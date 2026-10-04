@@ -33,7 +33,8 @@ export const PRIVACY_POLICY_DE: LegalDocument = {
       heading: "Hosting",
       paragraphs: [
         "Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten, zum Beispiel die IP-Adresse, damit die Seite ausgeliefert werden kann.",
-        "[TODO_CONTENT: Name und Anschrift des Hosting-Anbieters sowie Speicherdauer der Server-Logfiles]",
+        "Diese Website wird bei der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland, gehostet. Der Server befindet sich in [TODO_CONTENT: Standort des Servers, Deutschland oder Finnland]. Mit Hetzner besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
+        "Beim Aufruf der Seite speichert der Webserver in Logfiles [TODO_CONTENT: welche Daten genau, z. B. IP-Adresse gekürzt oder vollständig, Datum und Uhrzeit, aufgerufene Seite, Browser und Betriebssystem, Referrer-URL]. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO: Mein berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. Die Logfiles werden nach [TODO_CONTENT: Anzahl, z. B. 7] Tagen gelöscht.",
       ],
     },
     {
@@ -41,7 +42,7 @@ export const PRIVACY_POLICY_DE: LegalDocument = {
       paragraphs: [
         "Wenn du das Kontaktformular nutzt, verarbeite ich die Angaben aus dem Formular (Name, E-Mail-Adresse und Nachricht), um deine Anfrage zu bearbeiten und zu beantworten.",
         "Rechtsgrundlage ist deine Einwilligung, die du mit dem Häkchen zur Datenschutzerklärung erteilst (Art. 6 Abs. 1 lit. a DSGVO). Du kannst sie jederzeit mit Wirkung für die Zukunft widerrufen.",
-        "[TODO_CONTENT: Empfänger und Übertragungsweg der Nachrichten sowie Speicherdauer, sobald der Versand eingerichtet ist]",
+        "Deine Nachricht wird verschlüsselt (HTTPS) an meinen Server übertragen und per E-Mail an mein Postfach bei [TODO_CONTENT: Anbieter des Postfachs, Name und Anschrift] weitergeleitet. Empfänger ist ausschließlich ich. Ich speichere deine Angaben, bis deine Anfrage abschließend bearbeitet ist, und lösche sie danach, spätestens nach [TODO_CONTENT: Anzahl, z. B. 6] Monaten, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht.",
       ],
     },
     {

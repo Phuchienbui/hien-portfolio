@@ -17,8 +17,7 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 ## Skills (`skills` in `content.de.ts` / `content.en.ts`)
 
-- Text neben dem Skill-Raster DE und EN.
-- Text unter "Looking for another skill?" DE und EN.
+- Skills-Texte: Deutsch ist geliefert und eingebaut. Die englische Fassung ist meine 1:1-Übersetzung und mit `[TODO_CONTENT: Übersetzung prüfen]` markiert, bitte prüfen und den Marker entfernen.
 - Skill-Icons: HTML, CSS, JavaScript, TypeScript, Angular und Git stammen aus simple-icons (CC0), weil der Figma-Export nur ein Platzhalter-Icon enthält. Optik bei Bedarf prüfen.
 
 ## Portfolio (`portfolio` in `content.de.ts` / `content.en.ts`, `src/app/data/projects.ts`)
@@ -28,7 +27,7 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 - Live-URLs: keine vorhanden, die Live-Buttons werden nicht gerendert. Eintragen in `projects.ts`, sobald die Projekte laufen.
 - Vorschaubilder: nur vom User, `Project.image` in `projects.ts` setzen (Datei in `public/`, höchstens 500 KB). Bis dahin zeigt jede Karte einen sichtbaren Platzhalter.
 - Text unter dem Titel Portfolio DE und EN.
-- Tags für `El-Pollo-Loco` und `pokedex` sind aus den Sprachanteilen der Repositories abgeleitet. Ob das Pokédex-Projekt eine REST-API nutzt, ist nicht belegt.
+- Tags für `El-Pollo-Loco` und `pokedex` sind aus den Sprachanteilen der Repositories abgeleitet. Laut deinem Skills-Text nutzt der Pokédex eine REST-API. Soll das Tag „REST-API“ bei Pokédex ergänzt werden?
 
 ## Testimonials (`src/app/data/testimonials.ts`)
 
@@ -45,8 +44,8 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 ## Footer, Impressum und Datenschutz (`legal.de.ts` / `legal.en.ts`, `owner.ts`)
 
 - **Die Rechtstexte sind ein Entwurf, keine Rechtsberatung.** Sie stammen ausschließlich aus den Fakten in `CONTENT_INPUT.md` und müssen vor der Veröffentlichung von dir geprüft werden, gern mit einem Generator oder einer Beratungsstelle.
-- Hosting-Anbieter mit Anschrift und Speicherdauer der Server-Logfiles (Datenschutz, Abschnitt „Hosting“).
-- Kontaktformular: Empfänger, Übertragungsweg und Speicherdauer der Nachrichten (Datenschutz, Abschnitt „Kontaktformular“), sobald der Versand eingerichtet ist.
+- Datenschutz, Abschnitt „Hosting“ (Hetzner ist eingetragen): Serverstandort (Deutschland oder Finnland), welche Daten die Logfiles genau enthalten, Löschfrist in Tagen. Bitte bestätigen, dass mit Hetzner ein Vertrag zur Auftragsverarbeitung besteht. Die englische Fassung ist mit `[TODO_CONTENT: Übersetzung prüfen]` markiert.
+- Datenschutz, Abschnitt „Kontaktformular“: Anbieter des Postfachs (Name und Anschrift) und Löschfrist in Monaten. Die Aussagen „verschlüsselt per HTTPS“ und „Empfänger ausschließlich ich“ stimmen erst, wenn der Versand eingerichtet ist (`CONTACT_ENDPOINT`). Die englische Fassung ist mit `[TODO_CONTENT: Übersetzung prüfen]` markiert.
 - Annahme „keine Analyse- und Tracking-Dienste“ aus `CONTENT_INPUT.md`: Die Seite setzt im Code keine Cookies und nutzt keinen Browser-Speicher. Bitte bestätigen, dass das auch für den Server gilt.
 - Impressum: Telefon ist nicht angegeben (nicht erfunden). Wenn für deine Situation weitere Pflichtangaben nötig sind (z. B. Umsatzsteuer-ID, Berufsbezeichnung), ergänzen.
 - Die Rechtstexte verwenden Poppins statt Open Sans wie im Figma-Entwurf, damit keine zweite Schrift geladen werden muss.

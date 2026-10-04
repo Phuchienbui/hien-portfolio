@@ -53,7 +53,7 @@ export const CONTENT_DE: SiteContent = {
   },
   skills: {
     title: "Skills",
-    intro: "[TODO_CONTENT: Text neben dem Skill-Raster DE]",
+    intro: "Ich lasse mich zum Softwareentwickler mit Schwerpunkt Webentwicklung umschulen. In meinen Projekten, vom Browsergame in JavaScript über einen Pokédex mit REST-API bis zu diesem Portfolio in Angular, arbeite ich mit HTML, CSS/SCSS, JavaScript und TypeScript und verwalte meinen Code mit Git und GitHub. Mir ist wichtig zu verstehen, warum etwas funktioniert, nicht nur, wie man es tippt. Das Web verändert sich schnell, deshalb lerne ich jeden Tag weiter.",
     skillNames: {
       html: "HTML",
       css: "CSS",
@@ -67,7 +67,7 @@ export const CONTENT_DE: SiteContent = {
     },
     ctaHeading: "Du suchst einen ",
     ctaHighlight: "anderen Skill?",
-    ctaText: "[TODO_CONTENT: Text unter der Frage DE]",
+    ctaText: "Ein neues Framework, eine Sprache wie Python oder ein Tool, das ich noch nicht kenne: Ich arbeite mich gern in neue Technologien ein und lerne systematisch mit praktischen Projekten und Spaced Repetition. Sag mir, womit dein Team arbeitet, dann arbeite ich mich ein.",
     ctaLabel: "Kontakt aufnehmen",
   },
   portfolio: {

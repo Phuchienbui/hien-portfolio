@@ -52,7 +52,7 @@ export const CONTENT_EN: SiteContent = {
   },
   skills: {
     title: "Skills",
-    intro: "[TODO_CONTENT: Text neben dem Skill-Raster EN]",
+    intro: "I am retraining as a software developer with a focus on web development. In my projects, from a browser game in JavaScript to a Pokédex with a REST API to this portfolio in Angular, I work with HTML, CSS/SCSS, JavaScript and TypeScript and manage my code with Git and GitHub. It matters to me to understand why something works, not just how to type it. The web changes quickly, so I keep learning every day. [TODO_CONTENT: Übersetzung prüfen]",
     skillNames: {
       html: "HTML",
       css: "CSS",
@@ -66,7 +66,7 @@ export const CONTENT_EN: SiteContent = {
     },
     ctaHeading: "Looking for ",
     ctaHighlight: "another skill?",
-    ctaText: "[TODO_CONTENT: Text unter der Frage EN]",
+    ctaText: "A new framework, a language like Python or a tool I do not know yet: I enjoy getting into new technologies and learn systematically with hands-on projects and spaced repetition. Tell me what your team works with, and I will get up to speed. [TODO_CONTENT: Übersetzung prüfen]",
     ctaLabel: "Get in touch",
   },
   portfolio: {
