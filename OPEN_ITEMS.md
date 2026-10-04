@@ -9,11 +9,8 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 ## Über mich (`about` in `content.de.ts` / `content.en.ts`)
 
-- Intro-Text DE und EN.
-- Punkt 1: Remote-Bereitschaft DE und EN (Standort Dortmund steht bereits).
-- Punkt 2: Offenheit und Lernbereitschaft DE und EN.
-- Punkt 3: Problemlösung DE und EN.
-- Foto: Pfad in `site.aboutPhotoSrc` setzen, sobald die Datei in `public/` liegt (≤ 500 KB). Bis dahin zeigt die Sektion einen sichtbaren Platzhalter.
+- Die deutschen Texte (Intro, Ort und Remote, Offenheit, Problemlösung) sind eingebaut. Die englischen Fassungen sind meine 1:1-Übersetzung und mit `[TODO_CONTENT: Übersetzung prüfen]` markiert, bitte prüfen und die Marker entfernen.
+- Foto: `public/images/about-portrait.jpg` (480 × 640 px, 26 KB) ist ein Ausschnitt deines Fotos, weil im Original andere Gäste zu sehen waren. Die Quelle ist klein und weich (906 × 1600 px). Ein schärferes Porträt wäre besser. Das Repository ist öffentlich: Das Foto ist damit für alle sichtbar.
 
 ## Skills (`skills` in `content.de.ts` / `content.en.ts`)
 
@@ -22,10 +19,10 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 ## Portfolio (`portfolio` in `content.de.ts` / `content.en.ts`, `src/app/data/projects.ts`)
 
-- Beschreibungen aller vier Projekte bestätigen oder ersetzen (DE und EN). Die Entwürfe stammen aus den öffentlichen Repositories `memory-duel` (README und Repo-Beschreibung), `El-Pollo-Loco` (keine README, nur Sprachanteile) und `pokedex` (README: "Work in progress").
-- BestellApp: Das Repository ist privat bzw. nicht lesbar, deshalb gibt es weder Beschreibung noch Technologie-Tags noch einen GitHub-Button. Repo auf public stellen oder Button weglassen, Beschreibung und Tags liefern.
+- Beschreibungen aller vier Projekte bestätigen oder ersetzen (DE und EN). El Pollo Loco und Pokédex sind Entwürfe aus den öffentlichen Repositories. Die Texte und Tags von Join und DABubble stammen aus dem Figma-Entwurf (Template-Beschreibung) und müssen zu deinen Projekten passen, ebenso die Tags (z. B. Firebase).
+- Join und DABubble: Es gibt keine GitHub- und keine Live-URL, deshalb erscheinen für beide keine Buttons. Eintragen in `projects.ts` (`githubUrl`, `liveUrl`), sobald es sie gibt. Bitte außerdem bestätigen, dass beide Projekte von dir sind.
 - Live-URLs: keine vorhanden, die Live-Buttons werden nicht gerendert. Eintragen in `projects.ts`, sobald die Projekte laufen.
-- Vorschaubilder: nur vom User, `Project.image` in `projects.ts` setzen (Datei in `public/`, höchstens 500 KB). Bis dahin zeigt jede Karte einen sichtbaren Platzhalter.
+- Vorschaubilder: Laptop-Mockups für El Pollo Loco, Join, DABubble und Pokédex liegen in `public/images/projects/`. Bitte bestätigen, dass die Screenshots darin deine eigenen Projekte zeigen (das Repository `pokedex` ist fast leer).
 - Text unter dem Titel Portfolio DE und EN.
 - Tags für `El-Pollo-Loco` und `pokedex` sind aus den Sprachanteilen der Repositories abgeleitet. Laut deinem Skills-Text nutzt der Pokédex eine REST-API. Soll das Tag „REST-API“ bei Pokédex ergänzt werden?
 
