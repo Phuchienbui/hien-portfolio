@@ -42,3 +42,7 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Personal working documents
+OPEN_ITEMS.md
+docs/INTERVIEW_CHEATSHEET.md

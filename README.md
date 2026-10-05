@@ -1,59 +1,61 @@
-# HienPortfolio
+# Portfolio – Phuc Hien Bui
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Portfolio-Website für die Bewerbung als Fachinformatiker für Anwendungsentwicklung. Zweisprachig (Deutsch, Englisch), responsiv, mit Kontaktformular, Impressum und Datenschutzerklärung.
 
-## Development server
+Stack: Angular 22 (Standalone-Komponenten, zoneless, Signals), TypeScript (strict), SCSS, ESLint, Prettier.
 
-To start a local development server, run:
+## Setup
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Voraussetzung: Node.js (siehe `packageManager` in `package.json`) und npm.
 
 ```bash
-ng generate component component-name
+npm ci
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Die Seite läuft dann auf `http://localhost:4200/`.
 
-```bash
-ng generate --help
+## Skripte
+
+| Befehl | Zweck |
+| --- | --- |
+| `npm start` | Entwicklungsserver |
+| `npm run build` | Produktionsbuild nach `dist/hien-portfolio/browser` |
+| `npm run lint` | ESLint (u. a. max. 14 Zeilen pro Funktion, Barrierefreiheit im Template) |
+| `npm test -- --watch=false` | Unit-Tests einmalig |
+| `npm run check:images` | Bilder höchstens 500 KB, kein Bild doppelt |
+| `npm run format` | Prettier |
+
+## Struktur
+
+```
+src/app/
+  layout/     Header, Footer, Hintergrundformen
+  sections/   Hero, About, Skills, Portfolio, Testimonial, Contact
+  pages/      Startseite, Impressum, Datenschutz
+  shared/     Projektkarte, Skill-Eintrag, Rechtstext-Layout
+  core/       Services (Sprache, Content, Kontakt, Social-Links), Konfiguration
+  models/     Typen
+  data/       Projekte, Skills, Testimonials
+  content/    Texte DE/EN, Rechtstexte, Angaben zum Betreiber
+src/styles/   Design-Tokens, Breakpoints, Typografie, Reset, Layout
+public/       Bilder, Icons, Favicon, robots.txt, sitemap.xml
+deploy/       nginx-Konfigurationen und Anleitung
+docs/         Architekturentscheidungen, Abnahme, Messungen
 ```
 
-## Building
+## Wichtige Entscheidungen
 
-To build the project run:
+- **Texte als typisierte Wörterbücher** statt im Template: fehlende Übersetzungen fallen beim Kompilieren und im Test auf.
+- **Sprache per Signal**, nicht gespeichert: Es werden keine Daten im Browser abgelegt.
+- **Mobile-first** mit festen Breakpoints (768, 1024, 1440 px), fließende Größen über `clamp()`.
+- **Design-Tokens** in SCSS, keine Hex-Werte in Komponenten.
+- **Schriften lokal** (`@fontsource/poppins`), kein Google-CDN.
+- **Bilder als WebP** mit `NgOptimizedImage`.
+- **Kontaktformular** mit Reactive Forms: Fehler erst nach dem Verlassen eines Feldes, kein Layout-Sprung, Honeypot gegen Bots.
 
-```bash
-ng build
-```
+Begründungen und Trade-offs: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Abgleich mit der Abnahme-Checkliste: [docs/ACCEPTANCE.md](docs/ACCEPTANCE.md).
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Deployment
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Anleitung für einen eigenen Server mit nginx und HTTPS: [deploy/DEPLOY.md](deploy/DEPLOY.md). Das Kontaktformular verschickt erst Nachrichten, wenn `CONTACT_ENDPOINT` in `src/app/core/config.ts` gesetzt ist.
