@@ -119,3 +119,17 @@ Soll das Portfolio neben anderen Projekten unter `PROJEKT.DEINE-DOMAIN.de` laufe
 ## 10. Automatische Prüfung (CI)
 
 `.github/workflows/ci.yml` führt bei jedem Push auf `master` und bei Pull Requests Lint, Build, Tests und Bildprüfung aus. Es wird bewusst **nicht** automatisch deployt: Dafür wären Server-Zugangsdaten als GitHub-Secrets nötig. Das lässt sich später ergänzen, sobald Server und Domain feststehen.
+
+## 11. Alternative: Apache-Hosting per FileZilla (Developer Akademie)
+
+Läuft die Seite auf einem Apache-Webhosting ohne eigenen Server (nur FTP-Zugang), entfallen nginx und Zertifikat. Das HTTPS-Zertifikat stellt der Hoster.
+
+1. Lokal bauen: `npm ci` und `npm run build`.
+2. In FileZilla mit „Erfordert explizites FTP über TLS“ verbinden. Der Webordner ist der Ordner mit der vorhandenen `index.html`. Auf dem Akademie-Server ist das die Wurzel `/`.
+3. **Vorher sichern:** Vorhandene Dateien im Webordner (`index.html`, `robots.txt`, `Download.jpeg`) nach lokal herunterladen und ansehen. Die Projektordner (z. B. `bookstore`, `El pollo loco`) nicht anfassen, nicht löschen und nicht überschreiben.
+4. Den **Inhalt** von `dist/hien-portfolio/browser/` in den Webordner hochladen (nicht den Ordner `browser` selbst). Dabei wird `index.html` überschrieben, die Namen der Projektordner kommen im Build nicht vor. **`robots.txt` und `sitemap.xml` nicht hochladen:** Die vorhandene `robots.txt` stammt von der Akademie (`Disallow: /`, sperrt Suchmaschinen für Übungsprojekte) und wird automatisch wiederhergestellt. Auf dieser Adresse wird die Seite deshalb nicht über Suchmaschinen gefunden.
+5. `deploy/htaccess.txt` hochladen und auf dem Server in `.htaccess` umbenennen. Sie leitet HTTP auf HTTPS um, lässt `/legal-notice` und `/privacy-policy` nach dem Neuladen funktionieren und setzt das Caching. Bestehende Projektordner bleiben unberührt, weil die Regel nur diese zwei Pfade betrifft.
+6. Kontrolle wie in Abschnitt 9. `.htaccess`-Dateien sind in FileZilla nur sichtbar, wenn unter Server → „Anzeige versteckter Dateien erzwingen“ aktiv ist.
+7. Danach bei Änderungen: neu bauen und die geänderten Dateien hochladen. Dateien mit Hash im Namen (`main-XXXX.js`) ändern bei jedem Build ihren Namen, die alten kannst du auf dem Server löschen.
+
+Ein Rollback ist hier nicht eingebaut: Behalte den vorherigen Build lokal als Kopie.
