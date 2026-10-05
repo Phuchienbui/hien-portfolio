@@ -19,20 +19,17 @@ describe("Contact", () => {
   let element: HTMLElement;
   let send: ReturnType<typeof vi.fn<(message: ContactMessage) => Observable<void>>>;
 
-  /** Types a value into the control with the given form control name. */
   async function fill(values: Record<string, unknown>): Promise<void> {
     (component as unknown as { form: { patchValue(v: unknown): void } }).form.patchValue(values);
     await fixture.whenStable();
   }
 
-  /** Marks the control as touched, as leaving the field would do. */
   async function blur(controlName: string): Promise<void> {
     const input = element.querySelector<HTMLElement>(`[formControlName="${controlName}"]`);
     input?.dispatchEvent(new Event("blur"));
     await fixture.whenStable();
   }
 
-  /** The submit button of the form. */
   function submitButton(): HTMLButtonElement {
     return element.querySelector<HTMLButtonElement>(".contact__submit") as HTMLButtonElement;
   }

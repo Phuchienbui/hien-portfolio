@@ -2,7 +2,6 @@
 @use "breakpoints" as bp;
 @use "touch" as t;
 
-// Mobile: portrait above the card. Desktop: card and portrait side by side.
 .testimonial__layout {
   display: flex;
   flex-direction: column;
@@ -85,7 +84,6 @@
   list-style: none;
 }
 
-// The visible dot is small; the padding keeps the touch target large.
 .testimonial__dot {
   position: relative;
   box-sizing: content-box;

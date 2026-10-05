@@ -4,7 +4,6 @@ import { RouterLink } from "@angular/router";
 import { ContentService } from "../../core/services/content";
 import { SocialLinksService } from "../../core/services/social-links";
 
-/** Full-viewport hero with name, role, call to action and social links. */
 @Component({
   imports: [RouterLink],
   selector: "app-hero",

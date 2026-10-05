@@ -2,7 +2,6 @@
 @use "breakpoints" as bp;
 @use "touch" as t;
 
-// Mobile: title, intro, form, button stacked. Desktop: intro left, form right.
 .contact__layout {
   display: grid;
   gap: v.$space-xl;
@@ -17,7 +16,6 @@
   }
 }
 
-// Title with the green line of the design to its right.
 .contact__title {
   display: flex;
   align-items: center;
@@ -96,7 +94,6 @@
     outline-offset: v.$border-thin;
   }
 
-  // Browser autofill must not change the design: keep dark background and white text.
   &:-webkit-autofill,
   &:-webkit-autofill:focus {
     box-shadow: 0 0 0 v.$autofill-spread v.$color-background inset;
@@ -110,14 +107,12 @@
   }
 }
 
-// The space of the message is always reserved, so showing it does not shift the layout.
 .contact__error {
   min-height: v.$height-contact-error;
   font-size: v.$font-size-label;
   color: v.$color-error;
 }
 
-// The whole row (checkbox and text) toggles the checkbox and is at least touch height.
 .contact__privacy {
   display: flex;
   align-items: center;
@@ -161,7 +156,6 @@
   }
 }
 
-// Circle with an up arrow (the down arrow of the icon set, turned around).
 .contact__to-top {
   position: relative;
   display: flex;

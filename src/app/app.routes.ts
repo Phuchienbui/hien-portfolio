@@ -2,7 +2,6 @@ import { Routes } from "@angular/router";
 
 import { Home } from "./pages/home/home";
 
-/** Application routes: home with section anchors plus the two legal pages (lazy loaded). */
 export const ROUTES: Routes = [
   { path: "", component: Home },
   {

@@ -1,25 +1,17 @@
-// Design tokens. Values come from the Figma file (see docs/design-inventory.md).
-// Components consume them via `@use "variables" as v;` – no raw hex or px values there.
-
-// Colors
 $color-background: #141d2f;
 $color-primary: #70e61c;
 $color-accent: #9747ff;
 $color-text: #ffffff;
 $color-text-muted: #b6b6b6;
 $color-line-skills: #1cdae6;
-// Contrast-safe variants (WCAG AA, see docs/responsive-check.md)
-$color-accent-text: #a97bff; // small purple text on the dark background (5.6:1; #9747ff has 3.7:1)
-$color-primary-on-light: #2a7d00; // green text on white (5.2:1; #70e61c has 1.6:1)
-$color-on-primary: $color-background; // text on green buttons (10.5:1; white has 1.6:1)
+$color-accent-text: #a97bff;
+$color-primary-on-light: #2a7d00;
+$color-on-primary: $color-background;
 $color-disabled: #b6b6b6;
-// Derived from the design's error text (rgb 230/28/64, alpha 0 in the default state).
-// Adjusted for contrast on the dark background (5.0:1); the design's red (#e61c40) reaches only 3.7:1.
 $color-error: #f4506a;
 $color-overlay: rgba(20, 29, 47, 0.8);
 $color-shadow: rgba(0, 0, 0, 0.25);
 
-// Typography
 $font-family-base:
   "Poppins",
   system-ui,
@@ -42,7 +34,6 @@ $font-size-lead: 1.4375rem;
 $font-size-body: 1rem;
 $font-size-label: 0.875rem;
 
-// Spacing scale
 $space-xxs: 0.25rem;
 $space-xs: 0.5rem;
 $space-sm: 0.75rem;
@@ -54,47 +45,38 @@ $space-3xl: 3rem;
 $space-4xl: 5rem;
 $space-5xl: 6.25rem;
 
-// Section rhythm
 $section-spacing: $space-4xl;
 $section-spacing-mobile: $space-3xl;
 
-// Border radii
 $radius-sm: 0.625rem;
 $radius-md: 0.9375rem;
 $radius-lg: 2rem;
 $radius-pill: 2.5625rem;
 $radius-circle: 50%;
 
-// Border widths
 $border-thin: 1px;
 $border-medium: 2px;
 $border-thick: 4px;
 
-// Shadows
 $shadow-button: 4px 4px 2px $color-shadow;
 $shadow-icon: 5px 5px 6px $color-shadow;
 $blur-header: 32.5px;
 
-// Minimum size of touch targets (WCAG 2.5.5 / project rule: 44 x 44 px)
 $size-touch: 2.75rem;
 
-// Layout
 $container-width: 1240px;
 $page-gutter-mobile: 1.5625rem;
 $page-gutter-desktop: 6.25rem;
 $header-height: 6.8125rem;
 
-// Stacking order
 $z-base: 0;
 $z-content: 1;
 $z-header: 100;
 $z-overlay: 200;
 
-// Header
 $space-nav: 1.8125rem;
 $font-size-toggle: 1.125rem;
 
-// Hero
 $font-size-greeting: clamp(1.25rem, 7.4vw, 1.8125rem);
 $font-size-greeting-desktop: 5.625rem;
 $size-social-icon: 1.875rem;
@@ -102,13 +84,11 @@ $space-social: 2.625rem;
 $width-social-line: 6.25rem;
 $line-height-tight: 1;
 
-// About me
 $width-about-text: 29.4375rem;
 $ratio-about-photo: 3 / 4;
 $height-about-photo: 40rem;
 $size-about-icon: 3rem;
 
-// Skills
 $size-skill-icon: 3.75rem;
 $size-skill-icon-mobile: 3rem;
 $width-skill-cell: 5.5rem;
@@ -117,20 +97,17 @@ $width-skills-text: 35rem;
 $width-skills-line-mobile: 14rem;
 $width-skills-line: 18.1875rem;
 
-// Portfolio
 $width-portfolio-line: 4.5rem;
 $width-portfolio-line-mobile: 1.5rem;
 $width-portfolio-text: 29.5rem;
 $ratio-project-preview: 3 / 2;
 
-// Testimonials
 $size-avatar: 17rem;
 $size-avatar-mobile: 9rem;
 $width-testimonial-card: 49rem;
 $size-carousel-control: 2.5rem;
 $size-carousel-dot: 0.5rem;
 
-// Contact
 $width-contact-line: 31.5rem;
 $width-contact-line-mobile: 14rem;
 $width-contact-text: 29.5rem;
@@ -141,20 +118,16 @@ $size-checkbox: 1.5rem;
 $size-to-top: 2.4375rem;
 $autofill-spread: 62.5rem;
 
-// Legal pages
 $width-legal-text: 69.5rem;
 $width-legal-line: 8.125rem;
 $font-size-legal-title: 3.8125rem;
 $font-size-legal-title-mobile: 1.625rem;
 
-// Page background (positions as in the design frame "Background and Photo", 1440 px wide)
 $bg-shadows-width: 176.1%;
 $bg-shadows-left: -35.56%;
 $bg-photo-top: 17.9%;
 $bg-photo-left: 43.2%;
 $bg-photo-width: 55.5%;
-// Upper limits (the sizes of the design at 1440 px): wider windows do not enlarge the shapes,
-// they only move them together with the centered content.
 $bg-design-width: 90rem;
 $bg-shadows-width-max: 158.5rem;
 $bg-shadows-left-max: 32rem;
@@ -162,8 +135,6 @@ $bg-photo-left-max: 38.875rem;
 $bg-photo-width-max: 50rem;
 $opacity-bg-blob-mobile: 0.5;
 
-// Project card (design: "47. Portfolio component set", Version B). Sizes in cqw scale with the
-// card width (container query units), so the card looks the same at every width.
 $color-cyan: #1cdae6;
 $color-ink: #000000;
 $color-laptop-bezel: #1d1d1f;
@@ -196,8 +167,6 @@ $font-size-card-title: clamp(1.25rem, 6cqw, 2.25rem);
 $font-size-card-text: clamp(0.875rem, 3.8cqw, 1.4375rem);
 $font-size-card-placeholder: clamp(0.625rem, 2.2cqw, 0.875rem);
 
-// Preview crop: the laptop screen (400 x 250 px at x 90, y 144 inside the 600 px mockup),
-// enlarged to the card width. The top offset is relative to the frame height (62.5 % of the card).
 $mockup-crop-width: 150%;
 $mockup-crop-left: -22.5%;
 $mockup-crop-top: -57.6%;

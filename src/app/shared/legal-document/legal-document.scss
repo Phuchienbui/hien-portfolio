@@ -9,17 +9,14 @@
   padding-block: v.$space-3xl;
 }
 
-// Green title with the purple lines of the design on both sides.
 .legal-document__title {
   display: flex;
   align-items: center;
   gap: v.$space-md;
   color: v.$color-primary;
   font-size: v.$font-size-legal-title-mobile;
-  // A long word may break instead of running out of the screen.
   overflow-wrap: anywhere;
 
-  // The decorative lines need room, so they appear only from tablet width on.
   &::before,
   &::after {
     content: "";

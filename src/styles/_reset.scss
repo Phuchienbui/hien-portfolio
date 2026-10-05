@@ -11,7 +11,6 @@
 }
 
 html {
-  // Keeps anchor targets below the fixed header.
   scroll-padding-top: v.$header-height;
   -webkit-text-size-adjust: 100%;
 }
@@ -54,7 +53,6 @@ ol[class] {
   }
 }
 
-// Visible keyboard focus for every interactive element.
 :focus-visible {
   outline: v.$border-medium solid v.$color-primary;
   outline-offset: v.$space-xxs;

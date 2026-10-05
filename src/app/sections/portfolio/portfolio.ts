@@ -4,7 +4,6 @@ import { ContentService } from "../../core/services/content";
 import { PROJECTS } from "../../data/projects";
 import { ProjectCard } from "../../shared/project-card/project-card";
 
-/** Portfolio section: intro text and one card per project. */
 @Component({
   imports: [ProjectCard],
   selector: "app-portfolio",

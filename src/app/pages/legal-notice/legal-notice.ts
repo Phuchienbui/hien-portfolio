@@ -3,7 +3,6 @@ import { Component, computed, inject } from "@angular/core";
 import { ContentService } from "../../core/services/content";
 import { LegalDocumentView } from "../../shared/legal-document/legal-document";
 
-/** Legal notice (Impressum) page. */
 @Component({
   imports: [LegalDocumentView],
   selector: "app-legal-notice",
