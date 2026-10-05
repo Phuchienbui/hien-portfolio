@@ -56,3 +56,11 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 
 - Bitte bestätige die **Abweichungen vom Figma-Design**, die der Lesbarkeit dienen: dunkler Text auf grünen Buttons (statt weiß), dunkleres Grün für die Tags in den Projektkarten, helleres Violett für kleine violette Texte, helleres Rot für Fehlermeldungen. Wenn du das Design wörtlich willst, ändert man nur wenige Tokens in `_variables.scss`, der Kontrast sinkt dann aber unter die WCAG-AA-Grenze.
 - Die Messungen stammen aus Edge (headless), nicht von echten Geräten. Sieh dir die Seite bitte einmal auf deinem Handy und mit Tastatur (Tab) an. Mit Screenreadern wurde nicht getestet.
+
+## Bilder, Performance und SEO (Phase 13, siehe `docs/performance.md`)
+
+- Domain: `public/sitemap.xml` enthält `[TODO_CONTENT: Domain]` in drei Adressen. In Phase 14 ersetzen und die Zeile `Sitemap: <Domain>/sitemap.xml` in `public/robots.txt` ergänzen (mit Platzhalter wäre die Datei ungültig). Außerdem `canonical` und `og:url` setzen.
+- Meta-Beschreibung (DE und EN, in `content.de.ts` und `content.en.ts`, Schlüssel `meta.description`) bitte prüfen. Ich habe sie aus deinen Fakten formuliert.
+- `og:image` fehlt bewusst. Wenn du ein Vorschaubild für Link-Vorschauen willst (z. B. ein Bild ohne andere Personen), liefere es, dann binde ich es ein.
+- Eine Performance-Zahl (0 bis 100) liegt nicht vor, nur LCP und CLS. Eine Anleitung zum Selbstmessen steht in `docs/performance.md`.
+- Neue Mockups (z. B. für Memory Duel oder andere Projekte) bitte als WebP liefern oder als PNG (dann wandle ich sie um).

@@ -1,7 +1,6 @@
 import { CONTENT_DE } from "./content.de";
 import { CONTENT_EN } from "./content.en";
 
-/** Lists every path of a nested value, e.g. `hero.greeting` or `legalNotice.sections.0.heading`. */
 function collectPaths(value: unknown, prefix = ""): string[] {
   if (typeof value !== "object" || value === null) {
     return [prefix];
@@ -11,7 +10,6 @@ function collectPaths(value: unknown, prefix = ""): string[] {
   );
 }
 
-/** Lists the paths of all string values that are empty. */
 function emptyStringPaths(value: unknown, prefix = ""): string[] {
   if (typeof value === "string") {
     return value.trim() === "" ? [prefix] : [];

@@ -1,7 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
 
-// Text first, photo below on mobile; side by side on desktop.
 .about__layout {
   display: grid;
   gap: v.$space-3xl;
@@ -27,7 +26,6 @@
   }
 }
 
-// Body text keeps the design's line length while the title may use the full column.
 .about__text > p,
 .about__points {
   max-width: v.$width-about-text;
@@ -46,7 +44,6 @@
   gap: v.$space-md;
 }
 
-// Fixed icon box so the texts line up although the icons differ in shape.
 .about__icon {
   flex: none;
   width: v.$size-about-icon;
@@ -70,7 +67,6 @@
   object-fit: cover;
 }
 
-// Visible marker while no photo has been delivered.
 .about__photo-placeholder {
   display: flex;
   align-items: center;

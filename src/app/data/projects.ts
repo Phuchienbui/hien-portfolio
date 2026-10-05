@@ -1,11 +1,10 @@
 import { Project } from "../models/project";
 
-/** Projects chosen by the site owner, in display order (2 x 2 grid of the design). */
 export const PROJECTS: Project[] = [
   {
     id: "el-pollo-loco",
     name: "El Pollo Loco",
-    image: "images/projects/el-pollo-loco.png",
+    image: "images/projects/el-pollo-loco.webp",
     tags: ["JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/Phuchienbui/El-Pollo-Loco",
     liveUrl: "",
@@ -13,7 +12,7 @@ export const PROJECTS: Project[] = [
   {
     id: "join",
     name: "Join",
-    image: "images/projects/join.png",
+    image: "images/projects/join.webp",
     tags: ["Angular", "TypeScript", "HTML", "CSS", "Firebase"],
     githubUrl: "",
     liveUrl: "",
@@ -21,7 +20,7 @@ export const PROJECTS: Project[] = [
   {
     id: "dabubble",
     name: "DABubble",
-    image: "images/projects/dabubble.png",
+    image: "images/projects/dabubble.webp",
     tags: ["Angular", "TypeScript", "Firebase"],
     githubUrl: "",
     liveUrl: "",
@@ -29,7 +28,7 @@ export const PROJECTS: Project[] = [
   {
     id: "pokedex",
     name: "Pokédex",
-    image: "images/projects/pokedex.png",
+    image: "images/projects/pokedex.webp",
     tags: ["HTML", "CSS", "JavaScript", "REST-API"],
     githubUrl: "https://github.com/Phuchienbui/pokedex",
     liveUrl: "",

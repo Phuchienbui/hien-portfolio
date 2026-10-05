@@ -3,7 +3,6 @@ import { OWNER } from "./owner";
 
 const ADDRESS = `${OWNER.street}, ${OWNER.postalCode} ${OWNER.city}`;
 
-/** Legal notice. Draft from the facts in CONTENT_INPUT.md, to be reviewed by the owner. */
 export const LEGAL_NOTICE_EN: LegalDocument = {
   title: "Legal notice",
   sections: [
@@ -18,7 +17,6 @@ export const LEGAL_NOTICE_EN: LegalDocument = {
   ],
 };
 
-/** Privacy policy. Draft from the facts in CONTENT_INPUT.md, to be reviewed by the owner. */
 export const PRIVACY_POLICY_EN: LegalDocument = {
   title: "Privacy policy",
   sections: [

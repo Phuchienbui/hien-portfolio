@@ -17,7 +17,6 @@ describe("ProjectCard", () => {
   let fixture: ComponentFixture<ProjectCard>;
   let element: HTMLElement;
 
-  /** Renders the card with the given project. */
   async function render(project: Project): Promise<void> {
     fixture = TestBed.createComponent(ProjectCard);
     fixture.componentRef.setInput("project", project);
@@ -27,7 +26,6 @@ describe("ProjectCard", () => {
     await fixture.whenStable();
   }
 
-  /** The card element that carries the active state. */
   function card(): HTMLElement {
     return element.querySelector(".project-card") as HTMLElement;
   }

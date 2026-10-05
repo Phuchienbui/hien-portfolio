@@ -25,11 +25,10 @@
       @if (photoSrc()) {
         <img
           class="about__photo"
-          [src]="photoSrc()"
+          [ngSrc]="photoSrc()"
           [alt]="text().photoAlt"
           width="480"
           height="640"
-          loading="lazy"
         />
       } @else {
         <p class="about__photo-placeholder">{{ text().photoPlaceholder }}</p>

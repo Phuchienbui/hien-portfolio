@@ -1,8 +1,6 @@
 @use "variables" as v;
 @use "touch" as t;
 
-// Square card with a green border. Container query units (cqw) make the content scale
-// with the card width, so it matches the design at every size.
 .project-card {
   position: relative;
   container-type: inline-size;
@@ -13,14 +11,11 @@
   background-color: v.$color-background;
 }
 
-// --- Default view: laptop with preview ---------------------------------------------------
-
 .project-card__stage {
   position: absolute;
   inset: 0;
 }
 
-// Dark glow below the laptop (vector from the design).
 .project-card__glow {
   position: absolute;
   top: v.$glow-top;
@@ -54,7 +49,6 @@
   background-color: v.$color-background;
 }
 
-// The finished mockup (laptop with the project) fills the card.
 .project-card__mockup {
   position: absolute;
   inset: 0;
@@ -63,7 +57,6 @@
   object-fit: contain;
 }
 
-// Visible marker while no preview image has been delivered.
 .project-card__placeholder {
   padding: v.$space-xs;
   color: v.$color-text-muted;
@@ -71,7 +64,6 @@
   text-align: center;
 }
 
-// The wider base of the laptop with its notch.
 .project-card__base {
   position: relative;
   margin-inline: v.$laptop-base-offset;
@@ -92,8 +84,6 @@
   }
 }
 
-// --- Details: dimmed preview, links and white panel -------------------------------------
-
 .project-card__overlay {
   position: absolute;
   inset: 0;
@@ -107,14 +97,12 @@
   }
 }
 
-// Visible on tap, on keyboard focus anywhere in the card, and on hover where hover exists.
 .project-card--active .project-card__overlay,
 .project-card:focus-within .project-card__overlay {
   opacity: 1;
   pointer-events: auto;
 }
 
-// Links react only while the details are visible, so an invisible link is never triggered.
 .project-card--active .project-card__link,
 .project-card:focus-within .project-card__link {
   pointer-events: auto;
@@ -131,7 +119,6 @@
   }
 }
 
-// The laptop screen of the mockup, enlarged, dimmed and slightly blurred behind the buttons.
 .project-card__preview {
   position: absolute;
   inset: 0 0 auto;
@@ -147,7 +134,6 @@
   left: v.$mockup-crop-left;
   width: v.$mockup-crop-width;
   max-width: none;
-  // The height attribute of the image must not distort the enlarged picture.
   height: auto;
 }
 
@@ -184,8 +170,6 @@
   list-style: none;
 }
 
-// Transparent button over the whole card: the tap target for touch screens and a real,
-// focusable control for the keyboard. The links sit above it.
 .project-card__toggle {
   position: absolute;
   inset: 0;
@@ -194,7 +178,6 @@
   border: 0;
   background: none;
   cursor: pointer;
-  // The surrounding overlay ignores the pointer while it is hidden; the toggle must not.
   pointer-events: auto;
 
   &:focus-visible {
@@ -203,7 +186,6 @@
   }
 }
 
-// Visible separator between the technologies; spacing by margin so it never collapses.
 .project-card__separator {
   margin-inline: 0.4em;
 }

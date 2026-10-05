@@ -1,13 +1,13 @@
 import { Component, effect, inject } from "@angular/core";
-import { Title } from "@angular/platform-browser";
+import { Meta, Title } from "@angular/platform-browser";
 import { RouterOutlet } from "@angular/router";
 
+import { PageMeta } from "./content/content.model";
 import { ContentService } from "./core/services/content";
 import { Footer } from "./layout/footer/footer";
 import { Header } from "./layout/header/header";
 import { PageBackground } from "./layout/page-background/page-background";
 
-/** Application shell: fixed header, page content and footer. Keeps the tab title in the active language. */
 @Component({
   imports: [Footer, Header, PageBackground, RouterOutlet],
   selector: "app-root",
@@ -16,9 +16,18 @@ import { PageBackground } from "./layout/page-background/page-background";
 })
 export class App {
   private readonly title = inject(Title);
+  private readonly meta = inject(Meta);
   private readonly contentService = inject(ContentService);
 
   constructor() {
-    effect(() => this.title.setTitle(this.contentService.content().meta.title));
+    effect(() => this.applyPageMeta(this.contentService.content().meta));
+  }
+
+  private applyPageMeta(meta: PageMeta): void {
+    this.title.setTitle(meta.title);
+    this.meta.updateTag({ name: "description", content: meta.description });
+    this.meta.updateTag({ property: "og:title", content: meta.title });
+    this.meta.updateTag({ property: "og:description", content: meta.description });
+    this.meta.updateTag({ property: "og:locale", content: meta.locale });
   }
 }

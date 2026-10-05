@@ -1,9 +1,10 @@
+import { NgOptimizedImage } from "@angular/common";
 import { Component, computed, inject } from "@angular/core";
 
 import { ContentService } from "../../core/services/content";
 
-/** About-me section with intro text, icon points and photo. */
 @Component({
+  imports: [NgOptimizedImage],
   selector: "app-about",
   styleUrl: "./about.scss",
   templateUrl: "./about.html",

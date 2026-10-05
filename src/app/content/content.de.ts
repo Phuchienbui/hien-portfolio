@@ -1,9 +1,13 @@
 import { SiteContent } from "./content.model";
 import { LEGAL_NOTICE_DE, PRIVACY_POLICY_DE } from "./legal.de";
 
-/** German texts. */
 export const CONTENT_DE: SiteContent = {
-  meta: { title: "Phuc Hien Bui – Portfolio" },
+  meta: {
+    title: "Phuc Hien Bui – Portfolio",
+    description:
+      "Portfolio von Phuc Hien Bui: Fachinformatiker für Anwendungsentwicklung in Umschulung. Webprojekte mit Angular, TypeScript und SCSS.",
+    locale: "de_DE",
+  },
   site: {
     name: "Phuc Hien Bui",
     logoStart: "Hie",
@@ -11,7 +15,7 @@ export const CONTENT_DE: SiteContent = {
     email: "phuchienbui2@gmail.com",
     githubUrl: "https://github.com/Phuchienbui",
     linkedinUrl: "",
-    aboutPhotoSrc: "images/about-portrait.jpg",
+    aboutPhotoSrc: "images/about-portrait.webp",
   },
   header: {
     homeLinkLabel: "Phuc Hien Bui – zur Startseite",
@@ -29,7 +33,6 @@ export const CONTENT_DE: SiteContent = {
   },
   hero: {
     greeting: "Ich bin",
-    // Soft hyphen (U+00AD) marks where the long word may break on narrow screens.
     role: "Fachinformatiker Anwendungs­entwicklung",
     ctaLabel: "Sprich mich an!",
     scrollLabel: "Nach unten scrollen",

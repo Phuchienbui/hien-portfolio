@@ -1,9 +1,13 @@
 import { SiteContent } from "./content.model";
 import { LEGAL_NOTICE_EN, PRIVACY_POLICY_EN } from "./legal.en";
 
-/** English texts. */
 export const CONTENT_EN: SiteContent = {
-  meta: { title: "Phuc Hien Bui – Portfolio" },
+  meta: {
+    title: "Phuc Hien Bui – Portfolio",
+    description:
+      "Portfolio of Phuc Hien Bui: IT specialist for application development in retraining. Web projects built with Angular, TypeScript and SCSS.",
+    locale: "en_US",
+  },
   site: {
     name: "Phuc Hien Bui",
     logoStart: "Hie",
@@ -11,7 +15,7 @@ export const CONTENT_EN: SiteContent = {
     email: "phuchienbui2@gmail.com",
     githubUrl: "https://github.com/Phuchienbui",
     linkedinUrl: "",
-    aboutPhotoSrc: "images/about-portrait.jpg",
+    aboutPhotoSrc: "images/about-portrait.webp",
   },
   header: {
     homeLinkLabel: "Phuc Hien Bui – go to home page",

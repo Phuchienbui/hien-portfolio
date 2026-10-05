@@ -160,3 +160,17 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 
 - **Entscheidung:** Der Desktop-Hintergrund bleibt bei Designgröße und wird um die halbe Mehrbreite verschoben. Mobile Formen sind auf ihre Dateigröße begrenzt und abgedunkelt.
 - **Warum:** Wachsende Formen schoben sich bei 1920 px unter den Text und senkten den Kontrast.
+
+## Bilder, Performance und SEO (Phase 13)
+
+### WebP statt PNG und JPG
+
+- **Entscheidung:** Alle Inhaltsbilder liegen als WebP vor, die Originale nicht mehr im Projekt. Eingebunden werden sie über `NgOptimizedImage` mit festen Maßen.
+- **Warum:** Die vier Mockups sind von 487 KB auf 83 KB geschrumpft, ohne sichtbaren Qualitätsverlust und mit erhaltener Transparenz. Feste Maße verhindern Layout-Sprünge.
+- **Trade-off:** WebP ist nicht verlustfrei. Wer später ein neues Mockup liefert, muss es selbst in WebP wandeln (oder PNG liefern und selbst konvertieren). Ältere Browser vor 2020 zeigen WebP nicht, das ist hier vernachlässigbar.
+
+### Meta-Daten per Code, mit statischen Standardwerten
+
+- **Entscheidung:** `index.html` enthält deutsche Standardwerte, `App` ersetzt Titel, Beschreibung und Link-Vorschau-Sprache beim Start und bei jedem Sprachwechsel.
+- **Warum:** Suchmaschinen, die kein JavaScript ausführen, sehen trotzdem sinnvolle deutsche Daten. Besucher mit englischer Auswahl bekommen die englischen.
+- **Trade-off:** Link-Vorschauen (z. B. in Messengern) lesen oft nur die statische `index.html`. Dort steht immer die deutsche Fassung. Eine echte mehrsprachige Vorschau bräuchte Server-Rendering oder eigene Seiten pro Sprache.

@@ -1,4 +1,3 @@
-/** Facts about the site owner, taken from CONTENT_INPUT.md; used by the legal texts. */
 export const OWNER = {
   name: "Phuc Hien Bui",
   street: "Emil-Moog-Platz 2",
