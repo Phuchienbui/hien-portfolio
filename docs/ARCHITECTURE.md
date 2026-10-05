@@ -193,3 +193,9 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 - **Entscheidung:** Ordner nach Rolle: `layout` (Header, Footer, Hintergrund), `sections` (eine Komponente je Bereich der Startseite), `pages` (Routen), `shared` (wiederverwendbare Bausteine wie Projektkarte), `core` (Services, Konfiguration), `models`, `data` (Projekte, Skills), `content` (Texte).
 - **Warum:** Wer einen Bereich sucht, findet ihn am Ordnernamen. Seiten setzen nur Sektionen zusammen, Sektionen holen ihre Texte über den `ContentService` und enthalten keine Logik für andere Bereiche.
 - **Trade-off:** Mehr Dateien als bei einer großen Komponente. Dafür bleiben Tests, Templates und Styles klein und liegen direkt neben der Komponente.
+
+### Ordner `graphics` statt `icons`
+
+- **Entscheidung:** Die SVG-Grafiken liegen in `public/graphics`, nicht in `public/icons`.
+- **Warum:** Apache-Server definieren häufig einen eigenen Alias für die Adresse `/icons/` (für die Datei-Symbole des Servers). Dieser Alias greift vor dem eigenen Ordner, alle Grafiken lieferten auf dem Akademie-Server 404.
+- **Trade-off:** Keiner. Der Name ist neutral und hat nur den Pfad geändert.
