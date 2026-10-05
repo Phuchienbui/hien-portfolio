@@ -4,6 +4,10 @@ Stand: Phase 15. Quelle der Kriterien: `Portfolio Checkliste.md` (8 User Stories
 
 Messmethode: Produktions-Build (`dist/hien-portfolio/browser`) lokal ausgeliefert und mit Edge (headless) auf allen drei Routen, in Deutsch und Englisch, bei 1440×900 und 390×844 geprüft (Konsole, Netzwerk, Überschriften, `alt`, kaputte Bilder, horizontales Scrollen). Lighthouse-Werte stehen in `performance.md`. Nicht geprüft: echte Geräte, Screenreader, andere Browser als Edge/Chrome.
 
+## Entscheidung zum Stand der Abgabe
+
+Die Seite läuft vorerst auf dem Übungsserver der Developer Akademie (`phuchienbui.developerakademie.net`). Eigene Domain, Subdomains für die Projekte (User Story 4 und 6) und der Versand des Kontaktformulars (User Story 7) werden bewusst auf einen späteren eigenen Server (VPS) verschoben. Live-Links und GitHub-URLs für Join, DABubble und Pokédex folgen, sobald die Projekte fertig sind. Die Punkte bleiben deshalb als `offen` bzw. `teilweise` stehen.
+
 ## Zusammenfassung
 
 | User Story | Status |
@@ -44,7 +48,7 @@ Messmethode: Produktions-Build (`dist/hien-portfolio/browser`) lokal ausgeliefer
 | Echte Texte, kein Lorem Ipsum | Kein Lorem Ipsum im Code. Es stehen noch `[TODO_CONTENT]`-Marker (siehe unten). | teilweise |
 | Englisch mit DeepL/Grammarly, Deutsch mit LanguageTool geprüft | Nicht geprüft. Die englischen Texte stammen von mir und sind nicht gegengeprüft. Die Marker dafür wurden entfernt, die Prüfung steht weiterhin aus. | offen |
 
-Stand nach der Marker-Bereinigung: Im Quellcode bleibt je ein Marker für den Hosting-Anbieter in `legal.de.ts` und `legal.en.ts`. Die englischen Texte sind nicht gegengeprüft.
+Stand nach der Marker-Bereinigung: Im Quellcode gibt es keinen `[TODO_CONTENT]`-Marker mehr. Die englischen Texte sind nicht gegengeprüft.
 
 ## User Story 4 – Projekte
 

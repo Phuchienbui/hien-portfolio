@@ -31,7 +31,7 @@ export const PRIVACY_POLICY_DE: LegalDocument = {
       heading: "Hosting",
       paragraphs: [
         "Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten, zum Beispiel die IP-Adresse, damit die Seite ausgeliefert werden kann.",
-        "Diese Website wird bei folgendem Hosting-Anbieter betrieben: [TODO_CONTENT: Name und Anschrift des Hosting-Anbieters]. Mit dem Anbieter besteht, soweit erforderlich, ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
+        "Diese Website wird bei folgendem Hosting-Anbieter betrieben: Developer Akademie GmbH, Tassiloplatz 25, 81541 München. Mit dem Anbieter besteht, soweit erforderlich, ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
         "Beim Aufruf der Seite können in Logfiles des Webservers insbesondere folgende Daten gespeichert werden: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browser und Betriebssystem sowie die Referrer-URL. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO: Mein berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. Die Speicherdauer richtet sich nach den Einstellungen des Hosting-Anbieters.",
       ],
     },

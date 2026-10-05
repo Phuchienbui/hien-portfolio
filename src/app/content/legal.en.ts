@@ -31,7 +31,7 @@ export const PRIVACY_POLICY_EN: LegalDocument = {
       heading: "Hosting",
       paragraphs: [
         "When you open this website, the hosting provider processes technically necessary connection data, for example the IP address, so that the page can be delivered.",
-        "This website is operated by the following hosting provider: [TODO_CONTENT: name and address of the hosting provider]. Where required, a data processing agreement under Art. 28 GDPR exists with the provider.",
+        "This website is operated by the following hosting provider: Developer Akademie GmbH, Tassiloplatz 25, 81541 Munich, Germany. Where required, a data processing agreement under Art. 28 GDPR exists with the provider.",
         "When the page is opened, the log files of the web server may store in particular the following data: IP address, date and time, requested page, browser and operating system, and the referrer URL. The legal basis is Art. 6(1)(f) GDPR: my legitimate interest is the secure and stable operation of the website. The retention period depends on the settings of the hosting provider.",
       ],
     },
