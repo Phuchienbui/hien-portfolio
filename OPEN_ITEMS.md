@@ -64,3 +64,12 @@ Fehlende Inhalte, die Hien liefern muss. Im Code als `[TODO_CONTENT: …]` oder 
 - `og:image` fehlt bewusst. Wenn du ein Vorschaubild für Link-Vorschauen willst (z. B. ein Bild ohne andere Personen), liefere es, dann binde ich es ein.
 - Eine Performance-Zahl (0 bis 100) liegt nicht vor, nur LCP und CLS. Eine Anleitung zum Selbstmessen steht in `docs/performance.md`.
 - Neue Mockups (z. B. für Memory Duel oder andere Projekte) bitte als WebP liefern oder als PNG (dann wandle ich sie um).
+
+## Deployment (Phase 14, siehe `deploy/DEPLOY.md`)
+
+- **Kontaktformular:** `CONTACT_ENDPOINT` in `src/app/core/config.ts` ist leer, das Formular läuft im Mock und versendet nichts. Vor dem Livegang einen Weg wählen (Formular-Dienst, eigenes Backend oder `mailto:`), siehe Abschnitt 7 in `deploy/DEPLOY.md`. Danach Datenschutzerklärung anpassen.
+- **Domain:** Noch keine Domain festgelegt. Platzhalter `DEINE-DOMAIN.de` in den nginx-Dateien ersetzen, dazu `sitemap.xml`, `robots.txt` (`Sitemap:`-Zeile), `canonical` und `og:url` (Abschnitt 6).
+- **Server:** Hetzner-Server, SSH-Zugang und Nutzername sind von dir einzurichten. Es liegen bewusst keine Zugangsdaten im Repository und es gibt kein automatisches Deployment.
+- **Content-Security-Policy:** Noch nicht gesetzt, erst sinnvoll, wenn der Kontaktweg feststeht.
+- **Impressum und Datenschutz:** Die `[TODO_CONTENT]`-Marker (Serverstandort, Logdaten, Löschfristen, Postfach-Anbieter) müssen vor dem Livegang gefüllt sein.
+- Die nginx-Konfiguration wurde hier nicht auf einem echten Server getestet (kein nginx lokal). Bitte beim ersten Einrichten `sudo nginx -t` ausführen.
