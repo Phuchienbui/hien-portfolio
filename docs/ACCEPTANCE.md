@@ -42,9 +42,9 @@ Messmethode: Produktions-Build (`dist/hien-portfolio/browser`) lokal ausgeliefer
 | --- | --- | --- |
 | Umschalten DE/EN per Button im Header und im mobilen Menü | `layout/header`, `LanguageService`. Im Abnahmelauf: Klick wechselt `<html lang>` auf allen Routen. Schlüssel-Parität DE/EN per Test (`content.keys.spec.ts`). | erfüllt |
 | Echte Texte, kein Lorem Ipsum | Kein Lorem Ipsum im Code. Es stehen noch `[TODO_CONTENT]`-Marker (siehe unten). | teilweise |
-| Englisch mit DeepL/Grammarly, Deutsch mit LanguageTool geprüft | Nicht geprüft. Die englischen Texte stammen von mir und sind nicht gegengeprüft. Einzelne Absätze tragen `[TODO_CONTENT: Übersetzung prüfen]`. | offen |
+| Englisch mit DeepL/Grammarly, Deutsch mit LanguageTool geprüft | Nicht geprüft. Die englischen Texte stammen von mir und sind nicht gegengeprüft. Die Marker dafür wurden entfernt, die Prüfung steht weiterhin aus. | offen |
 
-Sichtbare Marker im Abnahmelauf: Startseite DE 1 (Text unter „Portfolio“), Startseite EN 8, Datenschutz DE 5, Datenschutz EN 8, Impressum 0.
+Stand nach der Marker-Bereinigung: Im Quellcode bleibt je ein Marker für den Hosting-Anbieter in `legal.de.ts` und `legal.en.ts`. Die englischen Texte sind nicht gegengeprüft.
 
 ## User Story 4 – Projekte
 

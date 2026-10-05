@@ -57,7 +57,7 @@ export const CONTENT_DE: SiteContent = {
       },
     ],
     photoAlt: "Porträt von Phuc Hien Bui",
-    photoPlaceholder: "[TODO_CONTENT: Foto Über mich]",
+    photoPlaceholder: "Foto nicht verfügbar",
   },
   skills: {
     title: "Skills",
@@ -82,7 +82,7 @@ export const CONTENT_DE: SiteContent = {
   },
   portfolio: {
     title: "Portfolio",
-    intro: "[TODO_CONTENT: Text unter dem Titel Portfolio DE]",
+    intro: "Eine Auswahl meiner Projekte, vom Browsergame bis zur Chat-App. Fahre mit der Maus über eine Karte oder tippe sie an, um Details und Links zu sehen.",
     descriptions: {
       "el-pollo-loco": "Browsergame, umgesetzt mit JavaScript, HTML und CSS.",
       join: "Aufgabenverwaltung nach dem Kanban-Prinzip: Aufgaben lassen sich per Drag-and-drop anlegen und organisieren sowie Nutzern und Kategorien zuweisen.",
@@ -97,7 +97,7 @@ export const CONTENT_DE: SiteContent = {
       githubAria: "{name} auf GitHub ansehen",
       toggleLabel: "Details zu {name} anzeigen",
       imageAlt: "Vorschau von {name}",
-      imagePlaceholder: "[TODO_CONTENT: Vorschaubild]",
+      imagePlaceholder: "Vorschau nicht verfügbar",
     },
   },
   testimonial: {

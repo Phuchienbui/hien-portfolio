@@ -40,29 +40,29 @@ export const CONTENT_EN: SiteContent = {
   about: {
     title: "About me",
     intro: [
-      "I am Phuc Hien Bui and I am retraining as an IT specialist for application development. I build web applications with Angular, TypeScript and SCSS. For me it is not about just typing syntax but about understanding why code is structured the way it is. [TODO_CONTENT: Übersetzung prüfen]",
+      "I am Phuc Hien Bui and I am retraining as an IT specialist for application development. I build web applications with Angular, TypeScript and SCSS. For me it is not about just typing syntax but about understanding why code is structured the way it is.",
     ],
     points: [
       {
         icon: "about-location-desktop",
-        text: "I live in Dortmund. I enjoy working on site in a team and am also open to hybrid models. [TODO_CONTENT: Übersetzung prüfen]",
+        text: "I live in Dortmund. I enjoy working on site in a team and am also open to hybrid models.",
       },
       {
         icon: "about-bulb-desktop",
-        text: "I only recently started in software development and learn something new every day. I welcome feedback, put what I learn to the test in my own projects such as the Pokédex and El Pollo Loco, and keep it in my head long-term with Anki. [TODO_CONTENT: Übersetzung prüfen]",
+        text: "I only recently started in software development and learn something new every day. I welcome feedback, put what I learn to the test in my own projects such as the Pokédex and El Pollo Loco, and keep it in my head long-term with Anki.",
       },
       {
         icon: "about-puzzle-desktop",
-        text: "I approach problems systematically: I break them into small parts, look for the cause instead of patching the symptom, and check whether my solution really holds. Strategy games such as chess train my ability to think ahead. [TODO_CONTENT: Übersetzung prüfen]",
+        text: "I approach problems systematically: I break them into small parts, look for the cause instead of patching the symptom, and check whether my solution really holds. Strategy games such as chess train my ability to think ahead.",
       },
     ],
     photoAlt: "Portrait of Phuc Hien Bui",
-    photoPlaceholder: "[TODO_CONTENT: photo About me]",
+    photoPlaceholder: "Photo not available",
   },
   skills: {
     title: "Skills",
     intro:
-      "I am retraining as a software developer with a focus on web development. In my projects, from a browser game in JavaScript to a Pokédex with a REST API to this portfolio in Angular, I work with HTML, CSS/SCSS, JavaScript and TypeScript and manage my code with Git and GitHub. It matters to me to understand why something works, not just how to type it. The web changes quickly, so I keep learning every day. [TODO_CONTENT: Übersetzung prüfen]",
+      "I am retraining as a software developer with a focus on web development. In my projects, from a browser game in JavaScript to a Pokédex with a REST API to this portfolio in Angular, I work with HTML, CSS/SCSS, JavaScript and TypeScript and manage my code with Git and GitHub. It matters to me to understand why something works, not just how to type it. The web changes quickly, so I keep learning every day.",
     skillNames: {
       html: "HTML",
       css: "CSS",
@@ -77,12 +77,12 @@ export const CONTENT_EN: SiteContent = {
     ctaHeading: "Looking for ",
     ctaHighlight: "another skill?",
     ctaText:
-      "A new framework, a language like Python or a tool I do not know yet: I enjoy getting into new technologies and learn systematically with hands-on projects and spaced repetition. Tell me what your team works with, and I will get up to speed. [TODO_CONTENT: Übersetzung prüfen]",
+      "A new framework, a language like Python or a tool I do not know yet: I enjoy getting into new technologies and learn systematically with hands-on projects and spaced repetition. Tell me what your team works with, and I will get up to speed.",
     ctaLabel: "Get in touch",
   },
   portfolio: {
     title: "Portfolio",
-    intro: "[TODO_CONTENT: text below the Portfolio title EN]",
+    intro: "A selection of my projects, from a browser game to a chat app. Hover over a card or tap it to see details and links.",
     descriptions: {
       "el-pollo-loco": "Browser game built with JavaScript, HTML and CSS.",
       join: "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
@@ -97,7 +97,7 @@ export const CONTENT_EN: SiteContent = {
       githubAria: "View {name} on GitHub",
       toggleLabel: "Show details of {name}",
       imageAlt: "Preview of {name}",
-      imagePlaceholder: "[TODO_CONTENT: preview image]",
+      imagePlaceholder: "Preview not available",
     },
   },
   testimonial: {
@@ -111,7 +111,7 @@ export const CONTENT_EN: SiteContent = {
     title: "Contact",
     heading: "Got a problem to solve?",
     intro:
-      "Do you have an idea, a project or an open position? Briefly tell me what it is about. I will get back to you as soon as possible. [TODO_CONTENT: Übersetzung prüfen]",
+      "Do you have an idea, a project or an open position? Briefly tell me what it is about. I will get back to you as soon as possible.",
     name: { label: "Name", placeholder: "Your name", error: "Please enter at least 2 characters." },
     email: {
       label: "Email",

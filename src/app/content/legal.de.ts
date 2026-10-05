@@ -31,8 +31,8 @@ export const PRIVACY_POLICY_DE: LegalDocument = {
       heading: "Hosting",
       paragraphs: [
         "Beim Aufruf dieser Website verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten, zum Beispiel die IP-Adresse, damit die Seite ausgeliefert werden kann.",
-        "Diese Website wird bei der Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Deutschland, gehostet. Der Server befindet sich in [TODO_CONTENT: Standort des Servers, Deutschland oder Finnland]. Mit Hetzner besteht ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
-        "Beim Aufruf der Seite speichert der Webserver in Logfiles [TODO_CONTENT: welche Daten genau, z. B. IP-Adresse gekürzt oder vollständig, Datum und Uhrzeit, aufgerufene Seite, Browser und Betriebssystem, Referrer-URL]. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO: Mein berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. Die Logfiles werden nach [TODO_CONTENT: Anzahl, z. B. 7] Tagen gelöscht.",
+        "Diese Website wird bei folgendem Hosting-Anbieter betrieben: [TODO_CONTENT: Name und Anschrift des Hosting-Anbieters]. Mit dem Anbieter besteht, soweit erforderlich, ein Vertrag zur Auftragsverarbeitung nach Art. 28 DSGVO.",
+        "Beim Aufruf der Seite können in Logfiles des Webservers insbesondere folgende Daten gespeichert werden: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browser und Betriebssystem sowie die Referrer-URL. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO: Mein berechtigtes Interesse liegt im sicheren und stabilen Betrieb der Website. Die Speicherdauer richtet sich nach den Einstellungen des Hosting-Anbieters.",
       ],
     },
     {
@@ -40,7 +40,7 @@ export const PRIVACY_POLICY_DE: LegalDocument = {
       paragraphs: [
         "Wenn du das Kontaktformular nutzt, verarbeite ich die Angaben aus dem Formular (Name, E-Mail-Adresse und Nachricht), um deine Anfrage zu bearbeiten und zu beantworten.",
         "Rechtsgrundlage ist deine Einwilligung, die du mit dem Häkchen zur Datenschutzerklärung erteilst (Art. 6 Abs. 1 lit. a DSGVO). Du kannst sie jederzeit mit Wirkung für die Zukunft widerrufen.",
-        "Deine Nachricht wird verschlüsselt (HTTPS) an meinen Server übertragen und per E-Mail an mein Postfach bei [TODO_CONTENT: Anbieter des Postfachs, Name und Anschrift] weitergeleitet. Empfänger ist ausschließlich ich. Ich speichere deine Angaben, bis deine Anfrage abschließend bearbeitet ist, und lösche sie danach, spätestens nach [TODO_CONTENT: Anzahl, z. B. 6] Monaten, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht.",
+        "Deine Nachricht wird verschlüsselt (HTTPS) übertragen und per E-Mail an mein Postfach bei Google Mail (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) weitergeleitet. Empfänger ist ausschließlich ich. Ich speichere deine Angaben, bis deine Anfrage abschließend bearbeitet ist, und lösche sie danach, soweit keine gesetzliche Aufbewahrungspflicht entgegensteht.",
       ],
     },
     {
