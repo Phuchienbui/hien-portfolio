@@ -1,6 +1,5 @@
 import { Skill } from "../models/skill";
 
-/** Skills confirmed by the site owner, in display order. */
 export const SKILLS: Skill[] = [
   { id: "html", icon: "skill-html" },
   { id: "css", icon: "skill-css" },

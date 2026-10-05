@@ -13,7 +13,6 @@ describe("App language switch", () => {
   let fixture: ComponentFixture<App>;
   let element: HTMLElement;
 
-  /** Switches the language and waits until the view is updated. */
   async function switchTo(language: "de" | "en"): Promise<void> {
     TestBed.inject(LanguageService).setLanguage(language);
     await fixture.whenStable();
@@ -50,6 +49,14 @@ describe("App language switch", () => {
     );
     expect(document.documentElement.lang).toBe("en");
     expect(TestBed.inject(Title).getTitle()).toBe(CONTENT_EN.meta.title);
+  });
+
+  it("keeps the meta description and the link preview locale in the active language", async () => {
+    await switchTo("en");
+    const description = document.querySelector('meta[name="description"]');
+    const locale = document.querySelector('meta[property="og:locale"]');
+    expect(description?.getAttribute("content")).toBe(CONTENT_EN.meta.description);
+    expect(locale?.getAttribute("content")).toBe(CONTENT_EN.meta.locale);
   });
 
   it("switches back to German", async () => {

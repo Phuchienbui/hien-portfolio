@@ -7,7 +7,6 @@ import { Portfolio } from "../../sections/portfolio/portfolio";
 import { Skills } from "../../sections/skills/skills";
 import { Testimonial } from "../../sections/testimonial/testimonial";
 
-/** Landing page: composes the sections in display order. */
 @Component({
   imports: [Hero, About, Skills, Portfolio, Testimonial, Contact],
   selector: "app-home",

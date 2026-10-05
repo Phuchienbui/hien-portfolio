@@ -2,8 +2,6 @@
 @use "breakpoints" as bp;
 @use "touch" as t;
 
-// Fills at least one viewport; the fixed header floats above it. On very low windows (landscape
-// phones) it grows with its content instead of cutting it off.
 .hero {
   position: relative;
   min-height: 100vh;
@@ -27,14 +25,12 @@
   gap: v.$space-md;
 }
 
-// Lets a long name or role wrap (hyphenated by the page language) instead of overflowing.
 .hero__headline {
   min-width: 0;
   overflow-wrap: break-word;
   hyphens: auto;
 }
 
-// Reads bottom to top, like the rotated "I am" in the design.
 .hero__greeting {
   font-size: v.$font-size-greeting;
   writing-mode: vertical-rl;
@@ -78,7 +74,6 @@
   gap: v.$space-social;
   list-style: none;
 
-  // Line before the icons, as in the design.
   &::before {
     content: "";
     width: v.$width-social-line;
@@ -93,7 +88,6 @@
   @include t.touch-target;
 }
 
-// Desktop only: vertical link at the right edge.
 .hero__scroll {
   display: none;
 

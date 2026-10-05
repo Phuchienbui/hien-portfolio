@@ -14,7 +14,6 @@
   max-width: v.$width-portfolio-text;
 }
 
-// Title with the purple line of the design to its left.
 .portfolio__title {
   display: flex;
   align-items: center;
@@ -38,7 +37,6 @@
   }
 }
 
-// One column on mobile, 2 x 2 on desktop.
 .portfolio__grid {
   display: grid;
   gap: v.$space-lg;

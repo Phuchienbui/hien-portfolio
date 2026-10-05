@@ -1,7 +1,5 @@
 @use "variables" as v;
 
-// Base typography. Sizes of headings are set per section, because the design
-// uses different scales for hero, section titles and legal pages.
 body {
   font-family: v.$font-family-base;
   font-size: v.$font-size-body;

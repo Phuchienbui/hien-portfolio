@@ -2,7 +2,6 @@
 @use "breakpoints" as bp;
 @use "touch" as t;
 
-// Fixed bar above the page content. On mobile the menu is a full-screen overlay.
 .header {
   position: fixed;
   inset: 0 0 auto;
@@ -17,7 +16,6 @@
   min-height: v.$header-height;
 }
 
-// Logo and burger stay above the overlay.
 .header__logo,
 .header__burger {
   position: relative;
@@ -119,7 +117,6 @@
   }
 }
 
-// Mobile: plain text "DE / EN". Desktop: two pill buttons.
 .header__language {
   position: relative;
   padding: 0;

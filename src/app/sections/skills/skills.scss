@@ -1,7 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
 
-// Mobile: intro, icons, call to action. Desktop: icons left, text right.
 .skills__layout {
   display: grid;
   gap: v.$space-3xl;
@@ -39,7 +38,6 @@
   }
 }
 
-// Title with the cyan line of the design to its right.
 .skills__title {
   display: flex;
   align-items: center;

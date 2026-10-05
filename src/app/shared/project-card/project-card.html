@@ -1,5 +1,4 @@
 <article class="project-card" [class.project-card--active]="isActive()">
-  <!-- Default view: the project on a laptop. -->
   <div class="project-card__stage">
     <img
       class="project-card__glow"
@@ -11,14 +10,12 @@
     @if (project().image) {
       <img
         class="project-card__mockup"
-        [src]="project().image"
+        [ngSrc]="project().image"
         [alt]="imageAlt()"
         width="601"
         height="600"
-        loading="lazy"
       />
     } @else {
-      <!-- No preview delivered yet: an empty laptop with a visible marker. -->
       <figure class="project-card__laptop">
         <div class="project-card__lid">
           <div class="project-card__screen">
@@ -30,13 +27,12 @@
     }
   </div>
 
-  <!-- Details: shown on hover, keyboard focus or tap, always available to screen readers. -->
   <div class="project-card__overlay">
     @if (project().image) {
       <div class="project-card__preview" aria-hidden="true">
         <img
           class="project-card__preview-image"
-          [src]="project().image"
+          [ngSrc]="project().image"
           alt=""
           width="601"
           height="600"

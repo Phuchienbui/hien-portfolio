@@ -1,7 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
 
-// Fills the whole page behind the content; shapes that leave the page are clipped.
 :host {
   position: absolute;
   inset: 0;
@@ -15,12 +14,10 @@
   height: 100%;
 }
 
-// Desktop shapes are only shown from the desktop layout on.
 .page-background__shadows,
 .page-background__photo-shadows {
   display: none;
   position: absolute;
-  // The reset limits images to their container; these shapes are meant to be wider.
   max-width: none;
 
   @include bp.respond-to(lg) {
@@ -28,10 +25,6 @@
   }
 }
 
-// The file is wider than the page (as in the design) and stretched to the page height,
-// so the shapes keep their relative position when the page gets longer or shorter.
-// Above the design width the content stays 1440 px wide and centered, so the shapes keep their
-// size and shift by the same amount as the content: (window - 1440) / 2.
 .page-background__shadows {
   top: 0;
   left: calc(
@@ -51,15 +44,10 @@
   width: min(#{v.$bg-photo-width}, #{v.$bg-photo-width-max});
 }
 
-// Mobile shapes: position (top, side, width) as percentages of the page, estimated from the
-// mobile frame, because the design does not give them as numbers. The first green shape sits
-// behind the photo in the design, so it is placed behind the portrait of the About section,
-// where it does not lower the contrast of any text.
 .page-background__blob {
   position: absolute;
   max-width: none;
   height: auto;
-  // Dimmed so that text on top of a shape keeps a readable contrast (white on full green: 1.6:1).
   opacity: v.$opacity-bg-blob-mobile;
 
   @include bp.respond-to(lg) {
@@ -67,15 +55,12 @@
   }
 }
 
-// Note: the Figma layers are named "Purple shadow", but purple-shadow-mobile-1 and -4 are cyan
-// in the exported files. The classes keep the file names so they can be traced back.
 $blobs: (
-  // Fixed distance from the top: the shape must end above the hero text on every screen height.
   "purple-1": (
-      top: -24rem,
-      left: -30%,
-      width: min(143%, 34.875rem),
-    ),
+    top: -24rem,
+    left: -30%,
+    width: min(143%, 34.875rem),
+  ),
   "green-1": (
     top: 26%,
     right: -80%,
@@ -100,7 +85,7 @@ $blobs: (
     top: 84%,
     right: -40%,
     width: min(114%, 27.75rem),
-  )
+  ),
 );
 
 @each $name, $placement in $blobs {

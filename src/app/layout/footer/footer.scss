@@ -2,13 +2,11 @@
 @use "breakpoints" as bp;
 @use "touch" as t;
 
-// Full-width bar with the green top border of the design.
 .footer {
   border-top: v.$border-thick solid v.$color-primary;
   background-color: v.$color-background;
 }
 
-// Mobile: everything stacked and centered. Desktop: logo, copyright and icons in one row.
 .footer__content {
   display: grid;
   justify-items: center;

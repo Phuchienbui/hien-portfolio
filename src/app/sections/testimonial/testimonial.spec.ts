@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { Testimonial as TestimonialEntry } from "../../models/testimonial";
 import { Testimonial } from "./testimonial";
 
-/** Builds a testimonial with a predictable name for the given number. */
 function entry(number: number): TestimonialEntry {
   return {
     id: `t${number}`,
@@ -19,7 +18,6 @@ describe("Testimonial", () => {
   let component: Testimonial;
   let element: HTMLElement;
 
-  /** Renders the section with the given number of testimonials. */
   async function render(count: number): Promise<void> {
     fixture = TestBed.createComponent(Testimonial);
     component = fixture.componentInstance;

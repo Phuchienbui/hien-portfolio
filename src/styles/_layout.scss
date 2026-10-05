@@ -1,7 +1,6 @@
 @use "variables" as v;
 @use "breakpoints" as bp;
 
-// Centered content column: 1240px of content plus the page gutter on both sides.
 .container {
   width: 100%;
   max-width: calc(v.$container-width + 2 * v.$page-gutter-desktop);
@@ -13,9 +12,7 @@
   }
 }
 
-// Vertical rhythm between page sections.
 .section {
-  // Anchor links must not end up below the fixed header.
   scroll-margin-top: v.$header-height;
   padding-block: v.$section-spacing-mobile;
 
@@ -24,7 +21,6 @@
   }
 }
 
-// Text for screen readers only, e.g. headings that the design does not show.
 .visually-hidden {
   position: absolute;
   width: 1px;
