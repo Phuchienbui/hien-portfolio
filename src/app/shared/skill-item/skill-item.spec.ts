@@ -20,7 +20,7 @@ describe("SkillItem", () => {
   it("shows the label and a decorative icon", () => {
     const element: HTMLElement = fixture.nativeElement;
     expect(element.querySelector("figcaption")?.textContent).toBe("HTML");
-    expect(element.querySelector("img")?.getAttribute("src")).toBe("icons/skill-html.svg");
+    expect(element.querySelector("img")?.getAttribute("src")).toBe("graphics/skill-html.svg");
     expect(element.querySelector("img")?.getAttribute("alt")).toBe("");
   });
 });
