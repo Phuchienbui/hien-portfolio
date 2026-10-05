@@ -174,3 +174,16 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 - **Entscheidung:** `index.html` enthält deutsche Standardwerte, `App` ersetzt Titel, Beschreibung und Link-Vorschau-Sprache beim Start und bei jedem Sprachwechsel.
 - **Warum:** Suchmaschinen, die kein JavaScript ausführen, sehen trotzdem sinnvolle deutsche Daten. Besucher mit englischer Auswahl bekommen die englischen.
 - **Trade-off:** Link-Vorschauen (z. B. in Messengern) lesen oft nur die statische `index.html`. Dort steht immer die deutsche Fassung. Eine echte mehrsprachige Vorschau bräuchte Server-Rendering oder eigene Seiten pro Sprache.
+
+## Deployment (Phase 14)
+
+### Eigener Server mit nginx, kein automatisches Deployment
+
+- **Entscheidung:** `deploy/` enthält drei nginx-Konfigurationen (nur HTTP für die Zertifikatsausstellung, endgültig mit HTTPS, Subdomain-Variante) und eine deutsche Anleitung. Die CI (`.github/workflows/ci.yml`) führt nur Lint, Build, Tests und Bildprüfung aus.
+- **Warum:** Das Repository ist öffentlich. Deployment aus der CI bräuchte Server-Zugangsdaten als Secrets, die erst existieren, wenn Server und Domain feststehen. Release-Ordner mit Symlink erlauben einen sofortigen Rollback.
+- **Trade-off:** Hochladen ist ein manueller Schritt. Die nginx-Dateien sind nicht gegen einen echten Server getestet.
+
+### Caching und Header
+
+- **Entscheidung:** Dateien mit Hash im Namen ein Jahr (`immutable`), `index.html` nie, Bilder 30 Tage. Security-Header gesetzt, Content-Security-Policy bewusst noch nicht.
+- **Warum:** Angular erzeugt Hashes pro Build, daher ist langes Caching gefahrlos. Eine CSP muss den endgültigen Kontaktformular-Endpunkt kennen.
