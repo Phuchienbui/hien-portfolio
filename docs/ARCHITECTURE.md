@@ -187,3 +187,9 @@ Wird pro Phase ergänzt. Jede Entscheidung mit Begründung und Trade-off.
 
 - **Entscheidung:** Dateien mit Hash im Namen ein Jahr (`immutable`), `index.html` nie, Bilder 30 Tage. Security-Header gesetzt, Content-Security-Policy bewusst noch nicht.
 - **Warum:** Angular erzeugt Hashes pro Build, daher ist langes Caching gefahrlos. Eine CSP muss den endgültigen Kontaktformular-Endpunkt kennen.
+
+## Komponentenstruktur (Überblick)
+
+- **Entscheidung:** Ordner nach Rolle: `layout` (Header, Footer, Hintergrund), `sections` (eine Komponente je Bereich der Startseite), `pages` (Routen), `shared` (wiederverwendbare Bausteine wie Projektkarte), `core` (Services, Konfiguration), `models`, `data` (Projekte, Skills), `content` (Texte).
+- **Warum:** Wer einen Bereich sucht, findet ihn am Ordnernamen. Seiten setzen nur Sektionen zusammen, Sektionen holen ihre Texte über den `ContentService` und enthalten keine Logik für andere Bereiche.
+- **Trade-off:** Mehr Dateien als bei einer großen Komponente. Dafür bleiben Tests, Templates und Styles klein und liegen direkt neben der Komponente.
