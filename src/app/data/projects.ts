@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     image: "images/projects/el-pollo-loco.webp",
     tags: ["JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/Phuchienbui/El-Pollo-Loco",
-    liveUrl: "",
+    liveUrl: "https://phuchienbui.developerakademie.net/El%20pollo%20loco/html/index.html",
   },
   {
     id: "join",
