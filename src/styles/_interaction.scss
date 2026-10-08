@@ -1,0 +1,31 @@
+@use "variables" as v;
+
+@mixin hover-grow($recolor: false, $hover-background: v.$color-accent) {
+  @if $recolor {
+    transition:
+      transform v.$duration-hover v.$easing-hover,
+      background-color v.$duration-hover v.$easing-hover,
+      color v.$duration-hover v.$easing-hover;
+  } @else {
+    transition: transform v.$duration-hover v.$easing-hover;
+  }
+
+  @media (hover: hover) {
+    &:hover:not(:disabled) {
+      transform: scale(v.$scale-button-hover);
+
+      @if $recolor {
+        background-color: $hover-background;
+        color: v.$color-text;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover:not(:disabled) {
+      transform: none;
+    }
+  }
+}

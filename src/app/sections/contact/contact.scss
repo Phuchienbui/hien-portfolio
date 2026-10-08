@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use "interaction" as i;
 @use "breakpoints" as bp;
 @use "touch" as t;
 
@@ -133,6 +134,7 @@
 }
 
 .contact__submit {
+  @include i.hover-grow(true);
   align-self: flex-start;
   padding: v.$space-md v.$space-xl;
   border: 0;
@@ -157,6 +159,7 @@
 }
 
 .contact__to-top {
+  @include i.hover-grow;
   position: relative;
   display: flex;
   align-items: center;

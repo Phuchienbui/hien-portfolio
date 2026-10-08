@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use "interaction" as i;
 @use "breakpoints" as bp;
 
 .skills__layout {
@@ -89,6 +90,7 @@
 }
 
 .skills__button {
+  @include i.hover-grow(true);
   align-self: flex-start;
   padding: v.$space-md v.$space-xl;
   border-radius: v.$radius-sm;
