@@ -224,3 +224,18 @@
   border-color: v.$color-accent;
   background-color: v.$color-accent;
 }
+
+.project-card__badge {
+  position: absolute;
+  top: v.$space-md;
+  right: v.$space-md;
+  z-index: v.$z-content + 1;
+  padding: v.$space-card-button-y v.$space-card-button-x;
+  border: v.$border-thin solid v.$color-accent;
+  border-radius: v.$radius-sm;
+  background-color: v.$color-accent;
+  color: v.$color-text;
+  font-size: v.$font-size-card-text;
+  font-weight: v.$font-weight-bold;
+  pointer-events: none;
+}

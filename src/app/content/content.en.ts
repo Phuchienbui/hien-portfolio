@@ -82,7 +82,8 @@ export const CONTENT_EN: SiteContent = {
   },
   portfolio: {
     title: "Portfolio",
-    intro: "A selection of my projects, from a browser game to a chat app. Hover over a card or tap it to see details and links.",
+    intro:
+      "A selection of my projects, from a browser game to a chat app. Hover over a card or tap it to see details and links.",
     descriptions: {
       "el-pollo-loco": "Browser game built with JavaScript, HTML and CSS.",
       join: "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop functions, assign users and categories.",
@@ -98,6 +99,7 @@ export const CONTENT_EN: SiteContent = {
       toggleLabel: "Show details of {name}",
       imageAlt: "Preview of {name}",
       imagePlaceholder: "Preview not available",
+      comingSoonLabel: "Coming soon",
     },
   },
   testimonial: {

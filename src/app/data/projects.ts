@@ -8,6 +8,7 @@ export const PROJECTS: Project[] = [
     tags: ["JavaScript", "HTML", "CSS"],
     githubUrl: "https://github.com/Phuchienbui/El-Pollo-Loco",
     liveUrl: "https://phuchienbui.developerakademie.net/El%20pollo%20loco/html/index.html",
+    comingSoon: false,
   },
   {
     id: "join",
@@ -16,6 +17,7 @@ export const PROJECTS: Project[] = [
     tags: ["Angular", "TypeScript", "HTML", "CSS", "Firebase"],
     githubUrl: "",
     liveUrl: "",
+    comingSoon: true,
   },
   {
     id: "dabubble",
@@ -24,6 +26,7 @@ export const PROJECTS: Project[] = [
     tags: ["Angular", "TypeScript", "Firebase"],
     githubUrl: "",
     liveUrl: "",
+    comingSoon: false,
   },
   {
     id: "pokedex",
@@ -32,5 +35,6 @@ export const PROJECTS: Project[] = [
     tags: ["HTML", "CSS", "JavaScript", "REST-API"],
     githubUrl: "https://github.com/Phuchienbui/pokedex",
     liveUrl: "",
+    comingSoon: false,
   },
 ];
