@@ -7,4 +7,5 @@ export interface Project {
   tags: string[];
   githubUrl: string;
   liveUrl: string;
+  comingSoon: boolean;
 }

@@ -25,6 +25,8 @@ describe("PageBackground", () => {
 
   it("references only existing shape files from the icon folder", () => {
     const sources = Array.from(element.querySelectorAll("img")).map((i) => i.getAttribute("src"));
-    expect(sources.every((src) => src?.startsWith("graphics/bg/") && src.endsWith(".svg"))).toBe(true);
+    expect(sources.every((src) => src?.startsWith("graphics/bg/") && src.endsWith(".svg"))).toBe(
+      true,
+    );
   });
 });

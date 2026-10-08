@@ -82,7 +82,8 @@ export const CONTENT_DE: SiteContent = {
   },
   portfolio: {
     title: "Portfolio",
-    intro: "Eine Auswahl meiner Projekte, vom Browsergame bis zur Chat-App. Fahre mit der Maus über eine Karte oder tippe sie an, um Details und Links zu sehen.",
+    intro:
+      "Eine Auswahl meiner Projekte, vom Browsergame bis zur Chat-App. Fahre mit der Maus über eine Karte oder tippe sie an, um Details und Links zu sehen.",
     descriptions: {
       "el-pollo-loco": "Browsergame, umgesetzt mit JavaScript, HTML und CSS.",
       join: "Aufgabenverwaltung nach dem Kanban-Prinzip: Aufgaben lassen sich per Drag-and-drop anlegen und organisieren sowie Nutzern und Kategorien zuweisen.",
@@ -98,6 +99,7 @@ export const CONTENT_DE: SiteContent = {
       toggleLabel: "Details zu {name} anzeigen",
       imageAlt: "Vorschau von {name}",
       imagePlaceholder: "Vorschau nicht verfügbar",
+      comingSoonLabel: "Demnächst",
     },
   },
   testimonial: {

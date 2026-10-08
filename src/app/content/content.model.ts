@@ -66,6 +66,7 @@ export interface ProjectCardLabels {
   toggleLabel: string;
   imageAlt: string;
   imagePlaceholder: string;
+  comingSoonLabel: string;
 }
 
 export interface PortfolioContent {

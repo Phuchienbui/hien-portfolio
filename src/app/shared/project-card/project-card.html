@@ -27,6 +27,10 @@
     }
   </div>
 
+  @if (project().comingSoon) {
+    <p class="project-card__badge">{{ labels().comingSoonLabel }}</p>
+  }
+
   <div class="project-card__overlay">
     @if (project().image) {
       <div class="project-card__preview" aria-hidden="true">

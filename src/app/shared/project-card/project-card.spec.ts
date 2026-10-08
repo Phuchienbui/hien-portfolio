@@ -11,6 +11,7 @@ const PROJECT: Project = {
   tags: ["TypeScript", "SCSS"],
   githubUrl: "https://github.com/Phuchienbui/join",
   liveUrl: "",
+  comingSoon: false,
 };
 
 describe("ProjectCard", () => {
@@ -127,5 +128,16 @@ describe("ProjectCard", () => {
   it("renders no preview layer while there is no image", async () => {
     await render(PROJECT);
     expect(element.querySelector(".project-card__preview")).toBeNull();
+  });
+
+  it("shows a coming soon badge for unpublished projects without any link", async () => {
+    await render({ ...PROJECT, githubUrl: "", comingSoon: true });
+    expect(element.querySelector(".project-card__badge")?.textContent).toContain("Coming soon");
+    expect(element.querySelector("a")).toBeNull();
+  });
+
+  it("shows no badge for published projects", async () => {
+    await render(PROJECT);
+    expect(element.querySelector(".project-card__badge")).toBeNull();
   });
 });

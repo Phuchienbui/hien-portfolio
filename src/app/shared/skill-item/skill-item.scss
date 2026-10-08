@@ -13,6 +13,9 @@
   width: auto;
   height: v.$size-skill-icon-mobile;
   filter: drop-shadow(v.$shadow-icon);
+  transition:
+    transform v.$duration-hover v.$easing-hover,
+    filter v.$duration-hover v.$easing-hover;
 
   @include bp.respond-to(xl) {
     height: v.$size-skill-icon;
@@ -22,8 +25,31 @@
 .skill-item__label {
   font-size: v.$font-size-label;
   font-weight: v.$font-weight-bold;
+  transition: color v.$duration-hover v.$easing-hover;
 
   @include bp.respond-to(xl) {
     font-size: v.$font-size-body;
+  }
+}
+
+@media (hover: hover) {
+  .skill-item:hover .skill-item__icon {
+    transform: translateY(v.$lift-hover) scale(v.$scale-hover);
+    filter: drop-shadow(v.$shadow-icon-hover);
+  }
+
+  .skill-item:hover .skill-item__label {
+    color: v.$color-primary;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-item__icon,
+  .skill-item__label {
+    transition: none;
+  }
+
+  .skill-item:hover .skill-item__icon {
+    transform: none;
   }
 }
