@@ -48,14 +48,19 @@ describe("ProjectCard", () => {
     expect(link?.getAttribute("aria-label")).toContain("Join");
   });
 
-  it("does not render a live button without a live URL", async () => {
+  it("renders a disabled live button instead of a link without a live URL", async () => {
     await render(PROJECT);
-    expect(element.querySelector(".project-card__link--live")).toBeNull();
+    const live = element.querySelector<HTMLButtonElement>(".project-card__link--live");
+    expect(live?.tagName).toBe("BUTTON");
+    expect(live?.disabled).toBe(true);
+    expect(live?.getAttribute("aria-label")).toContain("not available yet");
   });
 
-  it("renders no links at all for a private project", async () => {
+  it("renders disabled GitHub and live buttons for a project without any URL", async () => {
     await render({ ...PROJECT, githubUrl: "" });
-    expect(element.querySelector(".project-card__links")).toBeNull();
+    const buttons = element.querySelectorAll<HTMLButtonElement>(".project-card__link--disabled");
+    expect(buttons.length).toBe(2);
+    expect(element.querySelector("a")).toBeNull();
   });
 
   it("shows a placeholder in the laptop screen while no preview image exists", async () => {

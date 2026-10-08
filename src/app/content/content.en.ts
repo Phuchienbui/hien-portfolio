@@ -96,6 +96,8 @@ export const CONTENT_EN: SiteContent = {
       githubLabel: "GitHub",
       liveAria: "View {name} live",
       githubAria: "View {name} on GitHub",
+      liveUnavailableAria: "{name} live: not available yet",
+      githubUnavailableAria: "{name} on GitHub: not available yet",
       toggleLabel: "Show details of {name}",
       imageAlt: "Preview of {name}",
       imagePlaceholder: "Preview not available",

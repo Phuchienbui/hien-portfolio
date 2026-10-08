@@ -1,5 +1,6 @@
 @use "variables" as v;
 @use "touch" as t;
+@use "interaction" as i;
 
 .project-card {
   position: relative;
@@ -212,6 +213,7 @@
   color: v.$color-text;
   font-size: v.$font-size-card-text;
   text-decoration: none;
+  @include i.hover-grow(true, v.$color-cyan-hover);
 
   &:focus-visible {
     outline: v.$border-medium solid v.$color-text;
@@ -231,11 +233,24 @@
   right: v.$space-md;
   z-index: v.$z-content + 1;
   padding: v.$space-card-button-y v.$space-card-button-x;
-  border: v.$border-thin solid v.$color-accent;
   border-radius: v.$radius-sm;
   background-color: v.$color-accent;
   color: v.$color-text;
   font-size: v.$font-size-card-text;
   font-weight: v.$font-weight-bold;
   pointer-events: none;
+}
+
+.project-card__link--disabled {
+  border-color: v.$color-disabled;
+  background-color: transparent;
+  color: v.$color-text-muted;
+  opacity: v.$opacity-disabled;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) {
+  .project-card__link--live:hover:not(:disabled) {
+    background-color: v.$color-accent;
+  }
 }

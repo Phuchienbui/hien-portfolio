@@ -63,6 +63,8 @@ export interface ProjectCardLabels {
   githubLabel: string;
   liveAria: string;
   githubAria: string;
+  liveUnavailableAria: string;
+  githubUnavailableAria: string;
   toggleLabel: string;
   imageAlt: string;
   imagePlaceholder: string;

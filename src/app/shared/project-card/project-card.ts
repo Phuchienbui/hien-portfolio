@@ -23,6 +23,12 @@ export class ProjectCard {
   protected readonly liveAriaLabel = computed(() =>
     this.labels().liveAria.replace("{name}", this.project().name),
   );
+  protected readonly githubUnavailableAriaLabel = computed(() =>
+    this.labels().githubUnavailableAria.replace("{name}", this.project().name),
+  );
+  protected readonly liveUnavailableAriaLabel = computed(() =>
+    this.labels().liveUnavailableAria.replace("{name}", this.project().name),
+  );
   protected readonly toggleAriaLabel = computed(() =>
     this.labels().toggleLabel.replace("{name}", this.project().name),
   );

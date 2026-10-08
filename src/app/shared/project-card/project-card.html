@@ -70,7 +70,7 @@
       (click)="toggleActive()"
     ></button>
 
-    @if (project().liveUrl || project().githubUrl) {
+    @if (!project().comingSoon) {
       <p class="project-card__links">
         @if (project().githubUrl) {
           <a
@@ -81,6 +81,15 @@
             rel="noopener noreferrer"
             >{{ labels().githubLabel }}</a
           >
+        } @else {
+          <button
+            class="project-card__link project-card__link--disabled"
+            type="button"
+            disabled
+            [attr.aria-label]="githubUnavailableAriaLabel()"
+          >
+            {{ labels().githubLabel }}
+          </button>
         }
         @if (project().liveUrl) {
           <a
@@ -91,6 +100,15 @@
             rel="noopener noreferrer"
             >{{ labels().liveLabel }}</a
           >
+        } @else {
+          <button
+            class="project-card__link project-card__link--live project-card__link--disabled"
+            type="button"
+            disabled
+            [attr.aria-label]="liveUnavailableAriaLabel()"
+          >
+            {{ labels().liveLabel }}
+          </button>
         }
       </p>
     }
